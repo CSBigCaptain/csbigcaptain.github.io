@@ -1,5 +1,5 @@
 <template>
-  <div class="mdui-theme-auto main">
+  <div class="mdui-theme-auto webMain">
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
@@ -9,15 +9,15 @@
 <script setup lang="ts">
 import 'mdui/mdui.css';
 import 'mdui';
-import { setColorScheme } from 'mdui/functions/setColorScheme.js';
+import {getPagesTheme} from '~/composables/theme'
 
-setColorScheme('#478384');
+getPagesTheme()
 </script>
 
 <style scoped>
 @import 'assets/css/global.less';
 
-.main {
+.webMain {
   scroll-behavior: smooth;
 }
 </style>

@@ -24,7 +24,7 @@ import '@mdui/icons/more-vert.js'
 import '@mdui/icons/mode-night.js'
 import '@mdui/icons/palette.js'
 import ChangeWebColor from "~/components/ChangeWebColor.vue";
-import DarkmodeChange from "~/components/DarkChangeButton.vue";
+import DarkChangeButton from "~/components/DarkChangeButton.vue";
 import NavSearchButton from "~/components/NavSearchButton.vue";
 import NavMoreButton from "~/components/NavMoreButton.vue";
 
@@ -32,13 +32,5 @@ import NavMoreButton from "~/components/NavMoreButton.vue";
 
 <style>
 @import "assets/css/global.less";
-
-mdui-top-app-bar {
-  .top-read-progress {
-    width: 1.5em;
-  }
-
-}
-
 
 </style>

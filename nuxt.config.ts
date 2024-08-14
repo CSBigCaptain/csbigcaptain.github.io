@@ -21,7 +21,6 @@ export default defineNuxtConfig({
           type: 'text/javascript'
         }
       ],
-      title: "CSBigCaptain",
       link: [
         {
           rel: 'icon',
@@ -39,8 +38,16 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith('mdui-')
     }
   },
+  vite: {
+    css: {
+      modules: {
+
+      }
+    }
+  },
   css: [
     'mdui/mdui.css',
     'assets/css/global.less',
   ],
+  ssr: true,
 })

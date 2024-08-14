@@ -50,12 +50,12 @@ import { followIcons } from "/assets/data/indexData"
 }
 
 .main {
-  height: min(85vh, 600px);
+  height: min(93vh, 800px);
   min-height: max(40vh, 600px);
   .tpc {
     width: 100%;
     text-align: center;
-    padding-top: max(15%, 150px);
+    padding-top: max(10%, 80px);
     .a {
       width: @BigTopicWidth;
       text-align: center;
@@ -73,6 +73,7 @@ import { followIcons } from "/assets/data/indexData"
       text-align: center;
       margin: 10px auto;
       font-size: 1.1rem;
+      min-height: min(12vh, 120px);
       max-height: min(50vh, 500px);
       overflow: hidden;
       overflow-x: visible;
@@ -84,7 +85,7 @@ import { followIcons } from "/assets/data/indexData"
     }
   }
   .follow {
-    padding-top: min(10%, 100px);
+    padding-top: max(4%, 20px);
     .follow-tpc {
       width: 100%;
       .follow-tpc-inner {
@@ -119,7 +120,7 @@ import { followIcons } from "/assets/data/indexData"
       }
     }
     .icons:hover {
-      background-color: lightskyblue;
+      background-color: rgb(var(--mdui-color-on-surface-variant));
       transition: all @TransitionAnimateTime ease-in-out;
     }
     .icons:hover .icons-inner {
