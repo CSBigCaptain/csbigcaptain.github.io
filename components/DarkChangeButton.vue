@@ -4,7 +4,6 @@ import{setDarkTheme} from '~/composables/theme'
 
 </script>
 <template>
-<!-- 使用 mdui-drop-down 的插槽 -->
   <nav-drop-down>
     <mdui-button-icon slot="trigger">
       <mdui-icon-mode-night></mdui-icon-mode-night>

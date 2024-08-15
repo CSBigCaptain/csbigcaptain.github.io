@@ -28,12 +28,10 @@ const selectedThemeColor = ref<string>(defaultThemeColor)
 </template>
 
 <style scoped>
+@import "assets/css/global.less";
+
 mdui-card {
   width: 200px;
-  height: auto;
-  padding: 15px;
-  background-color: rgb(var(--mdui-color-surface-variant));
-  color: rgb(var(--mdui-color-on-surface-variant));
 }
 
 .inner {

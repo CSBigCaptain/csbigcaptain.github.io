@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup lang="ts">
 import { followIcons } from "/assets/data/indexData"
 
 </script>
@@ -50,7 +50,7 @@ import { followIcons } from "/assets/data/indexData"
 }
 
 .main {
-  height: min(93vh, 800px);
+  height: min(70vh, 800px);
   min-height: max(40vh, 600px);
   .tpc {
     width: 100%;

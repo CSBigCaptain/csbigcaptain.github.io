@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Introduce from "~/components/Introduce.vue";
+import Introduce from "~/components/Works.vue";
 
 definePageMeta({
   layout: false,
@@ -16,7 +16,7 @@ useHead({
       <template #topic>首页</template>
       <div class="body">
         <welcome-page />
-        <introduce />
+        <works />
       </div>
     </NuxtLayout>
   </div>

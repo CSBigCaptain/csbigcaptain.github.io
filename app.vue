@@ -11,7 +11,9 @@ import 'mdui/mdui.css';
 import 'mdui';
 import {getPagesTheme} from '~/composables/theme'
 
-getPagesTheme()
+onMounted(() => {
+  getPagesTheme()
+})
 </script>
 
 <style scoped>

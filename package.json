@@ -19,5 +19,9 @@
     "mdui": "^2.1.2",
     "nuxt": "^3.12.4",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1"
   }
 }

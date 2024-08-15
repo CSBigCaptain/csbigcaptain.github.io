@@ -9,6 +9,7 @@
     </mdui-top-app-bar-title>
     <div class="rt-btn-hub">
       <nav-search-button />
+      <battery-helper />
       <dark-change-button />
       <nav-more-button />
       <change-web-color />
