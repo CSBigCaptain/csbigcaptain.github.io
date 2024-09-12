@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   ],
   ssr: true,
   build: {
-    publicPath: process.env.PATH_TYPE === 'gray' ? '/_nuxt/' : 'https://cdn.shaly.sdutacm.cn/csbig/',
+    publicPath: process.env.PATH_TYPE === 'gray' ? '/_nuxt/' : 'https://cdn.shaly.sdutacm.cn/csbig/nuxt_assets/',
   },
   generate: {
     fallback: true
