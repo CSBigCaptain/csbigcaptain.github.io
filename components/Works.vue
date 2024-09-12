@@ -10,11 +10,14 @@ import CardsHub from "~/components/CardsHub.vue";
   <cards-hub />
 </div>
 </template>
+<style scoped lang="less">
+* {
+  box-sizing: border-box;
+}
 
-<style scoped>
 .main {
   height: auto;
-  padding: 50px;
+  padding: var(--inline-padding);
   .topic {
     h1 {
       width: 100%;

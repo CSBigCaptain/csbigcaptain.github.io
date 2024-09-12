@@ -2,11 +2,12 @@
   "web-types": [
     "./node_modules/mdui/web-types.zh-cn.json"
   ],
-  "name": "nuxt-app",
+  "name": "csbigcaptain.github.io",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "cross-env PATH_TYPE=production nuxt build",
+    "gray": "cross-env PATH_TYPE=gray nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -14,7 +15,6 @@
   },
   "dependencies": {
     "@mdui/icons": "^1.0.2",
-    "element-plus": "^2.7.8",
     "less": "^4.2.0",
     "mdui": "^2.1.2",
     "nuxt": "^3.12.4",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@vueuse/core": "^10.11.1",
-    "@vueuse/nuxt": "^10.11.1"
+    "@vueuse/nuxt": "^10.11.1",
+    "cross-env": "^7.0.3"
   }
 }

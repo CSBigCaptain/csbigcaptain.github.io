@@ -1,14 +1,12 @@
 <template>
-  <div class="mdui-theme-auto webMain">
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
+  <div class="webMain">
+    <NuxtPage />
   </div>
 </template>
 
 <script setup lang="ts">
-import 'mdui/mdui.css';
-import 'mdui';
+import 'mdui/mdui.css'
+import 'mdui'
 import {getPagesTheme} from '~/composables/theme'
 
 onMounted(() => {
@@ -16,8 +14,8 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-@import 'assets/css/global.less';
+<style scoped lang="less">
+//@import 'assets/css/global.less';
 
 .webMain {
   scroll-behavior: smooth;

@@ -53,4 +53,13 @@ export default defineNuxtConfig({
     'assets/css/global.less',
   ],
   ssr: true,
+  build: {
+    publicPath: process.env.PATH_TYPE === 'gray' ? '/_nuxt/' : 'https://cdn.shaly.sdutacm.cn/csbig/',
+  },
+  generate: {
+    fallback: true
+  },
+  env: {
+    PATH_TYPE: process.env.PATH_TYPE
+  },
 })

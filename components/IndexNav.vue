@@ -23,6 +23,7 @@ import '@mdui/icons/search.js'
 import '@mdui/icons/menu.js'
 import '@mdui/icons/more-vert.js'
 import '@mdui/icons/mode-night.js'
+import '@mdui/icons/wb-sunny.js'
 import '@mdui/icons/palette.js'
 import ChangeWebColor from "~/components/ChangeWebColor.vue";
 import DarkChangeButton from "~/components/DarkChangeButton.vue";

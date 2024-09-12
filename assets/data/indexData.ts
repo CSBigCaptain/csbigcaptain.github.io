@@ -30,15 +30,34 @@ const followIcons: iconLink[] = [
 
 const works: worksCard[] = [
   {
-    name: "Youthol Exhibition",
+    name: "占位符",
     description: "",
-    href: "https://github.com/ItsDia/youthol-exhibition"
+    href: "https://cnblogs.com/csbig"
   },
   {
     name: "Captain Word Tester",
     description: "",
     href: "https://github.com/CSBigCaptain/CaptainWordTester",
-  }
+  },{
+    name: "占位符",
+    description: "",
+    href: "https://cnblogs.com/csbig"
+  },
+  {
+    name: "Captain Word Tester",
+    description: "",
+    href: "https://github.com/CSBigCaptain/CaptainWordTester",
+  },
+  {
+    name: "占位符",
+    description: "",
+    href: "https://cnblogs.com/csbig"
+  },
+  {
+    name: "Captain Word Tester",
+    description: "",
+    href: "https://github.com/CSBigCaptain/CaptainWordTester",
+  },
 ]
 
 

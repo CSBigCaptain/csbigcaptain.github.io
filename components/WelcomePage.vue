@@ -107,7 +107,7 @@ import { followIcons } from "/assets/data/indexData"
       height: @SingleIconWidth;
       border-radius: 20%;
       margin: 10px;
-      background-color: white;
+      background-color: rgb(var(--mdui-color-surface-light));
       .icons-inner {
         width: 100%;
         height: 100%;
@@ -120,7 +120,7 @@ import { followIcons } from "/assets/data/indexData"
       }
     }
     .icons:hover {
-      background-color: rgb(var(--mdui-color-on-surface-variant));
+      background-color: rgb(var(--mdui-color-surface-variant-light));
       transition: all @TransitionAnimateTime ease-in-out;
     }
     .icons:hover .icons-inner {

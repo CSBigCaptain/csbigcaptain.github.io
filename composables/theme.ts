@@ -1,16 +1,23 @@
-import {getTheme, setTheme} from "mdui";
+import {setTheme} from "mdui";
 import {setColorScheme} from 'mdui';
 import type {Theme} from "mdui/internal/theme";
 
 const defaultThemeColor: string = '#478384'
-let theme
+let isDark
+let toggleDark
 
 /**
  * @description 获取当前页面主题，传到变量 theme 中，并设置默认的颜色主题
  */
 const getPagesTheme = () => {
     if (import.meta.client) {
-        theme = getTheme('.webMain')
+        isDark = useDark({
+            selector: '.webMain',
+            attribute: 'class',
+            valueDark: 'mdui-theme-dark',
+            valueLight: 'mdui-theme-light',
+        })
+        toggleDark = useToggle(isDark)
         setColorScheme(defaultThemeColor, {target: '.webMain'});
     }
 }
@@ -39,6 +46,8 @@ const setColorTheme = (color: string, target: string = '.webMain') => {
 
 export {
     theme,
+    isDark,
+    toggleDark,
     defaultThemeColor,
     getPagesTheme,
     setDarkTheme,

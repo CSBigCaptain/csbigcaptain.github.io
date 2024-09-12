@@ -11,22 +11,26 @@ useHead({
 </script>
 
 <template>
-  <div class="body">
-    <NuxtLayout name="default">
-      <template #topic>首页</template>
-      <div class="body">
+  <NuxtLayout name="default">
+    <template #topic>首页</template>
+    <div class="body">
+      <div class="bodyInner">
         <welcome-page />
         <works />
       </div>
-    </NuxtLayout>
-  </div>
+    </div>
+  </NuxtLayout>
 </template>
 
-<style>
-@import "assets/css/global.less";
+<style scoped lang="less">
+//@import "assets/css/global.less";
 
 .body {
-  height: auto;
+  width: 100%;
+  .bodyInner {
+    width: var(--inline-width);
+    margin: 0 auto;
+  }
 }
 
 </style>

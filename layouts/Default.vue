@@ -4,7 +4,7 @@ import IndexFooter from '~/components/IndexFooter.vue';
 </script>
 
 <template>
-  <index-nav><template #topic>首页</template></index-nav>
+  <index-nav><template #topic><slot name="topic"/></template></index-nav>
     <slot />
   <index-footer />
 </template>
