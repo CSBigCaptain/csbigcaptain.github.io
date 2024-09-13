@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   ],
   app: {
     baseURL: '/',
+    cdnURL: 'https://cdn.shaly.sdutacm.cn/csbig/',
     buildAssetsDir: 'nuxt_assets',
     head: {
       script: [
@@ -53,13 +54,13 @@ export default defineNuxtConfig({
     'assets/css/global.less',
   ],
   ssr: true,
-  build: {
-    publicPath: process.env.PATH_TYPE === 'gray' ? '/_nuxt/' : 'https://cdn.shaly.sdutacm.cn/csbig/nuxt_assets/',
-  },
+  // build: {
+  //   publicPath: process.env.PATH_TYPE === 'gray' ? '/_nuxt/' : 'https://cdn.shaly.sdutacm.cn/csbig/nuxt_assets/',
+  // },
   generate: {
     fallback: true
   },
-  env: {
-    PATH_TYPE: process.env.PATH_TYPE
-  },
+  // env: {
+  //   PATH_TYPE: process.env.PATH_TYPE
+  // },
 })
