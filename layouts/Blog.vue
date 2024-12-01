@@ -1,23 +1,46 @@
 <script setup lang="ts">
-
+const props = defineProps(["append"])
 </script>
 
 <template>
-  <index-nav><template #topic>博文</template></index-nav>
-  <div class="body">
-    <div class="bodyInner">
+  <index-nav>
+    <template #topic>
+      Blog{{ props.append ? ` ${props.append}` : "" }}
+    </template>
+  </index-nav>
+  <div class="outer">
+    <div class="container">
       <slot />
     </div>
   </div>
-  <index-footer />
+  <div class="outer footer">
+    <div class="container">
+      <FooterDefault />
+    </div>
+  </div>
 </template>
 
-<style scoped>
-.body {
-  width: 100%;
-  .bodyInner {
-    width: var(--inline-width);
-    margin: 0 auto;
+<style lang="less" scoped>
+@import url("/assets/css/global.less");
+
+.outer {
+  background-color: var(--body-bg-color);
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 90%;
+    min-width: 370px;
+    max-width: 2160px;
+    padding: var(--inline-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
   }
+}
+
+.footer {
+  // 变量定义在全局 less 文件中
+  background-color: var(--bar-bg-color);
 }
 </style>

@@ -1,14 +1,41 @@
-<script setup>
-import IndexNav from '~/components/IndexNav.vue';
-import IndexFooter from '~/components/IndexFooter.vue';
-</script>
-
 <template>
-  <index-nav><template #topic><slot name="topic"/></template></index-nav>
-    <slot />
-  <index-footer />
+  <IndexNav>
+    <template #topic><slot name="topic" /></template>
+  </IndexNav>
+  <div class="outer">
+    <div class="container">
+      <slot />
+    </div>
+  </div>
+  <div class="outer footer">
+    <div class="container">
+      <FooterDefault />
+    </div>
+  </div>
 </template>
 
-<style scoped lang="less">
+<style lang="less" scoped>
+@import url("/assets/css/global.less");
 
+.outer {
+  background-color: var(--body-bg-color);
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 90%;
+    min-width: 370px;
+    max-width: 2160px;
+    padding: var(--inline-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+
+.footer {
+  // 变量定义在全局 less 文件中
+  background-color: var(--bar-bg-color);
+  
+}
 </style>

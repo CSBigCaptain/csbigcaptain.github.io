@@ -4,12 +4,6 @@ interface iconLink {
   href: string
 }
 
-interface worksCard {
-  name: string,
-  description: string,
-  href: string,
-}
-
 const followIcons: iconLink[] = [
   {
     name: "bilibili",
@@ -28,37 +22,5 @@ const followIcons: iconLink[] = [
   }
 ]
 
-const works: worksCard[] = [
-  {
-    name: "占位符",
-    description: "",
-    href: "https://cnblogs.com/csbig"
-  },
-  {
-    name: "Captain Word Tester",
-    description: "",
-    href: "https://github.com/CSBigCaptain/CaptainWordTester",
-  },{
-    name: "占位符",
-    description: "",
-    href: "https://cnblogs.com/csbig"
-  },
-  {
-    name: "Captain Word Tester",
-    description: "",
-    href: "https://github.com/CSBigCaptain/CaptainWordTester",
-  },
-  {
-    name: "占位符",
-    description: "",
-    href: "https://cnblogs.com/csbig"
-  },
-  {
-    name: "Captain Word Tester",
-    description: "",
-    href: "https://github.com/CSBigCaptain/CaptainWordTester",
-  },
-]
 
-
-export { followIcons, works }
+export { followIcons }

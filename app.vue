@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import 'mdui/mdui.css'
 import 'mdui'
-import {getPagesTheme} from '~/composables/theme'
+import {getPagesTheme} from '/composables/theme'
 
 onMounted(() => {
   getPagesTheme()
@@ -19,5 +19,6 @@ onMounted(() => {
 
 .webMain {
   scroll-behavior: smooth;
+  min-width: 330px;
 }
 </style>

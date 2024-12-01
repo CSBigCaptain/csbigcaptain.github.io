@@ -1,42 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 :root {
-    --inline-width: min(100%, 1440px);
-    --inline-padding: 20px;
+    --inline-padding: 30px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Noto Sans SC", sans-serif;
 }
 
-code, pre {
-    font-family: "Roboto Mono", monospace;
+code,
+pre {
+  font-family: "Roboto Mono", monospace;
 }
 
 .webMain {
-    --body-text-color: rgb(var(--mdui-color-on-surface));
-    --body-bg-color: rgb(var(--mdui-color-surface));
-    --bar-text-color: rgb(var(--mdui-color-on-surface-container));
-    --bar-bg-color: rgb(var(--mdui-color-surface-container));
+  --body-text-color: rgb(var(--mdui-color-on-surface));
+  --body-bg-color: rgb(var(--mdui-color-surface));
+  --bar-text-color: rgb(var(--mdui-color-on-surface-variant));
+  --bar-bg-color: rgb(var(--mdui-color-surface-variant));
 }
 
 mdui-top-app-bar,
 .footer {
-    color: var(--bar-text-color);
-    background-color: var(--bar-bg-color);
+  color: var(--bar-text-color);
 }
 
 .body {
-    color: var(--body-text-color);
-    background-color: var(--body-bg-color);
+  color: var(--body-text-color);
+  background-color: var(--body-bg-color);
 }
 
 mdui-card {
-    //width: 200px;
-    height: auto;
-    padding: 15px;
-    background-color: rgb(var(--mdui-color-surface-variant));
-    color: rgb(var(--mdui-color-on-surface-variant));
+  height: auto;
+  padding: 15px;
 }
