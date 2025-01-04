@@ -6,10 +6,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cross-env PATH_TYPE=production nuxt build",
-    "gray": "cross-env PATH_TYPE=gray nuxt generate",
+    "build": "nuxt build",
+    "gray": "nuxt generate",
     "dev": "nuxt dev",
-    "generate": "cross-env PATH_TYPE=production nuxt generate",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
