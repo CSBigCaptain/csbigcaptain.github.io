@@ -39,6 +39,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    prerender: {
+      failOnError: false,
+    }
+  },
   app: {
     baseURL: "/",
 //    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
@@ -65,7 +70,11 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith("mdui-"),
     },
   },
-  vite: {},
+  vite: {
+    build: {
+      sourcemap: true,
+    }
+  },
   css: [
     "mdui/mdui.css",
     "/assets/css/global.less",
