@@ -5,13 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import 'mdui/mdui.css'
-import 'mdui'
-import {getPagesTheme} from '/composables/theme'
+import "mdui/mdui.css";
+import "mdui";
+import { getPagesTheme } from "/composables/theme";
 
-onMounted(() => {
-  getPagesTheme()
-})
+getPagesTheme()
 </script>
 
 <style scoped lang="less">

@@ -33,7 +33,7 @@
           :style = "{userSelect: item.href ? 'auto' : 'none'}"
         >
           <div class="container">
-            <div class="img"><img :src="item.imgUrl" alt="" /></div>
+            <div class="img"><NuxtImg :src="item.imgUrl" alt="" /></div>
             <div class="info">
               <div class="nick-name">{{ item.nickName }}</div>
               <div class="details">{{ item.details }}</div>

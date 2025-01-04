@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@vueuse/nuxt", "@nuxt/content"],
+  modules: ["@vueuse/nuxt", "@nuxt/content", "@nuxt/image"],
   content: {
     highlight: {
       theme: {
@@ -52,6 +52,9 @@ export default defineNuxtConfig({
           href: "/vite.svg",
         },
       ],
+      noscript: [
+        { children: 'JavaScript is required' }
+      ],
     },
   },
   experimental: {
@@ -59,7 +62,7 @@ export default defineNuxtConfig({
   },
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith("mdui-") || tag === "math",
+      isCustomElement: (tag) => tag.startsWith("mdui-"),
     },
   },
   vite: {},

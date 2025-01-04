@@ -13,11 +13,13 @@ export default {
       nickName: "Mystery Friend",
       imgUrl: "https://avatars.githubusercontent.com/u/46271219?v=4",
       details: "Mystery Friend",
+      href: "",
     },
     {
       nickName: "Mystery Friend",
       imgUrl: "https://avatars.githubusercontent.com/u/70262298?&v=4",
       details: "Mystery Friend",
+      href: "",
     }
   ]
 }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { defaultThemeColor, setColorTheme } from "/composables/theme"
-import { ref } from "vue"
+import { preferredColor, setColorTheme, setRandomColor } from "/composables/theme";
+import { ref } from "vue";
 
-const selectedThemeColor = ref<string>(defaultThemeColor)
+const selectedThemeColor = ref<string>(preferredColor);
 </script>
 
 <template>
@@ -29,6 +29,9 @@ const selectedThemeColor = ref<string>(defaultThemeColor)
           v-model="selectedThemeColor"
         />
       </div>
+      <mdui-button variant="outlined" class="button" @click="selectedThemeColor = setRandomColor()"
+        >Random</mdui-button
+      >
       <mdui-button
         variant="outlined"
         class="button"
@@ -38,7 +41,7 @@ const selectedThemeColor = ref<string>(defaultThemeColor)
       <mdui-button
         variant="outlined"
         class="button"
-        @click="selectedThemeColor = defaultThemeColor"
+        @click="selectedThemeColor = preferredColor"
         >Reset</mdui-button
       >
     </mdui-card>

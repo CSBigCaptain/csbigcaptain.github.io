@@ -15,8 +15,6 @@
 </template>
 
 <style lang="less" scoped>
-@import url("/assets/css/global.less");
-
 .outer {
   background-color: var(--body-bg-color);
   display: flex;

@@ -3,7 +3,7 @@ import "/composables/battery-helper"
 </script>
 
 <template>
-  <client-only>
+  <ClientOnly>
 <!-- 不开仅客户端渲染水合作用会出bug -->
     <NavDropDown>
       <NavBatterySmartIcon />
@@ -11,11 +11,11 @@ import "/composables/battery-helper"
         <div v-if="isSupportBattery">
           <div class="item" v-if="chargingTime != Infinity">
             <strong class="tpc">预计充满时间</strong>
-            <div class="value">{{ chargingTime == Infinity ? "无法估计" : chargingTime }}</div>
+            <div class="value">{{ chargingTime }}</div>
           </div>
           <div class="item" v-if="dischargingTime != Infinity">
             <strong class="tpc">预计续航时间</strong>
-            <div class="value">{{ dischargingTime == Infinity ? "无法估计" : chargingTime }}</div>
+            <div class="value">{{ dischargingTime }}</div>
 
           </div>
           <div class="item">
@@ -32,7 +32,7 @@ import "/composables/battery-helper"
         </div>
       </mdui-card>
     </NavDropDown>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <style scoped>
