@@ -9,19 +9,19 @@
             >我们需要您的建议</a
           >
         </li>
-        <!-- <li></li>
-        <li></li> -->
       </ul>
     </div>
     <div class="copyright">
-      Copyright © 2024 by
+      Copyright © 2024 - {{ year }} by
       <a href="https://github.com/CSBigCaptain" target="_blank">CSBigCaptain</a
       >. All rights reserved.
     </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const year = ref(new Date().getFullYear())
+</script>
 
 <style scoped lang="less">
 * {

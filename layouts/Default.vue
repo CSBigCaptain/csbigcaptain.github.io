@@ -2,6 +2,9 @@
   <IndexNav>
     <template #topic><slot name="topic" /></template>
   </IndexNav>
+  <div class="full-width">
+    <slot name="full-width" />
+  </div>
   <div class="outer">
     <div class="container">
       <slot />
@@ -15,6 +18,11 @@
 </template>
 
 <style lang="less" scoped>
+.full-width {
+  width: 100%;
+  overflow: hidden;
+}
+
 .outer {
   background-color: var(--body-bg-color);
   display: flex;
@@ -22,7 +30,7 @@
   .container {
     width: 90%;
     min-width: 370px;
-    max-width: 2160px;
+    max-width: 1920px;
     padding: var(--inline-padding);
     display: flex;
     flex-direction: column;

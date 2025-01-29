@@ -13,10 +13,10 @@ getPagesTheme()
 </script>
 
 <style scoped lang="less">
-//@import 'assets/css/global.less';
-
 .webMain {
   scroll-behavior: smooth;
   min-width: 330px;
+  overflow: hidden;
+  position: relative;
 }
 </style>

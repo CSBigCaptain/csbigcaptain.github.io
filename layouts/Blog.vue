@@ -8,6 +8,9 @@ const props = defineProps(["append"])
       Blog{{ props.append ? ` ${props.append}` : "" }}
     </template>
   </index-nav>
+  <div class="full-width">
+    <slot name="full-width" />
+  </div>
   <div class="outer">
     <div class="container">
       <slot />
@@ -22,6 +25,10 @@ const props = defineProps(["append"])
 
 <style lang="less" scoped>
 @import url("/assets/css/global.less");
+
+.full-width {
+  width: 100%;
+}
 
 .outer {
   background-color: var(--body-bg-color);

@@ -1,137 +1,114 @@
-<script setup lang="ts">
-import { followIcons } from "/assets/data/indexData"
-
-</script>
-
 <template>
-  <div class="main index-welcome">
-    <div class="tpc">
-      <div class="fst-tpc">
-        <div class="a"><h1>CSBigCaptain</h1></div>
-      </div>
-      <div class="sec-tpc">
-        <div class="b">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, in!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
-            delectus!
-          </p>
-          <mdui-button href="/blog">Went to Blog</mdui-button>
-        </div>
-      </div>
+  <div class="main" Welcome>
+    <div class="slogen">
+      <h1>CSBigCaptain</h1>
+      <h2>Happy New Year, 2025!</h2>
+      <mdui-button class="button" href="/blog">Went to Blog List</mdui-button>
     </div>
-    <div class="follow">
-      <div class="follow-tpc">
-        <div class="follow-tpc-inner"><h2>Follow Me:</h2></div>
-      </div>
-      <div class="icon-container">
-        <div v-for="item in followIcons" class="icons">
-          <a :href="item.href" target="_blank">
-            <div class="icons-inner"><img :src="item.src" :alt="item.name"></div>
-          </a>
-        </div>
-      </div>
-    </div> 
   </div>
 </template>
 
-<style scoped lang="less">
-@BigTopicWidth: min(70%, 25rem);
-@SingleIconWidth: 45px;
-@TransitionAnimateTime: 0.5s;
+<script setup lang="ts">
+onMounted(() => {
+  const createSpark = () => {
+    let spark = document.createElement("div")
+    let main = document.querySelector(".main")
+    spark.classList.add("spark")
+    let randomX = Math.random() * main.offsetWidth
+    let randomY = Math.random() * main.offsetHeight * 2
+    spark.style.left = `${randomX}px`
+    spark.style.top = `${randomY}px`
+    spark.style.transform = `scale(${Math.random() * 3})`
+    spark.style.filter = `hue-rotate(${Math.random() * 360}deg)`
 
+    for (var i = 0; i <= 7; i++) {
+      let span = document.createElement("span")
+      span.style.transform = `rotate(${i * 45}deg)`
+      spark.appendChild(span)
+    }
+
+    main.appendChild(spark)
+    setTimeout(() => {
+      spark.remove()
+    }, 1505)
+  }
+  const createSparks = setInterval(createSpark, 300)
+})
+</script>
+
+<style lang="css" scoped>
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  --nav-height: 64px;
 }
 
-.main > * {
-  // 主轴居中后再稍微往上一点儿更美观
-  transform: translateY(-30px);
-}
 .main {
-  height: calc(80vh - 64px);
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  transform: translateY(40px);
-  .tpc {
-    width: 100%;
-    text-align: center;
-    .a {
-      width: @BigTopicWidth;
-      text-align: center;
-      margin: 0 auto;
-      overflow: visible;
-      h1 {
-        width: auto;
-        margin: auto;
-        font-size: var(--index-welcome-h1);
-        font-weight: bolder;
-      }
-    }
-    .b {
-      min-width: 200px;
-      text-align: center;
-      margin: 10px auto;
-      min-height: min(12vh, 120px);
-      max-height: min(50vh, 500px);
-      overflow: hidden;
-      overflow-x: visible;
-      overflow-y: auto;
-      p {
-        font-size: var(--index-welcome-detail);
-        margin: 7px 0;
-        line-height: 1.5;
-      }
-    }
-    mdui-button {
-      margin-top: 30px;
-    }
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.main .slogen {
+  text-align: center;
+}
+
+.main .slogen h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.125rem;
+  line-height: 3.2rem;
+  color: rgba(00, 00, 00, 0);
+  -webkit-text-stroke: 0.1rem var(--body-primary-color);
+}
+
+.main .slogen h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.02rem;
+  line-height: 2.3rem;
+  color: var(--body-secondary-color);
+}
+
+.main .slogen .button {
+  margin: 0.5rem 0;
+}
+</style>
+
+<style>
+.main[Welcome] .spark {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.main[Welcome] .spark span {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.main[Welcome] .spark span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0.8;
+  animation: animate 1.5s ease-in-out forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-45%);
   }
-  .follow {
-    padding-top: max(4%, 20px);
-    .follow-tpc {
-      width: 100%;
-      .follow-tpc-inner {
-        font-size: var(--index-welcome-h2);
-        text-align: center;
-        margin: 0 auto;
-        width: @BigTopicWidth;
-      }
-    }
-  }
-  .icon-container {
-    display: flex;
-    margin-top: max(2%, 20px);
-    justify-content: center;
-    .icons {
-      width: @SingleIconWidth;
-      height: @SingleIconWidth;
-      border-radius: 20%;
-      margin: 10px;
-      background-color: rgb(var(--mdui-color-surface-light));
-      .icons-inner {
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        padding: 10px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-    .icons:hover {
-      background-color: rgb(var(--mdui-color-surface-variant-light));
-      transition: all @TransitionAnimateTime ease-in-out;
-    }
-    .icons:hover .icons-inner {
-      padding: 9px;
-      transition: all @TransitionAnimateTime ease-in-out;
-    }
+  100% {
+    transform: translateY(-101%);
   }
 }
 </style>

@@ -77,7 +77,7 @@ const setColorTheme = (color: string, target: string = "html") => {
  */
 const setRandomColor = () => {
   const color = getRandomColor();
-  setColorScheme(color);
+  setColorTheme(color);
   return color;
 };
 

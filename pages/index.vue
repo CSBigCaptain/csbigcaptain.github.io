@@ -13,8 +13,9 @@ useHead({
 <template>
   <NuxtLayout name="default">
     <template #topic>首页</template>
-    <SubpageIndexWelcome />
+    <template #full-width>
+      <SubpageIndexWelcome />
+    </template>
     <SubpageIndexSponser />
   </NuxtLayout>
 </template>
-
