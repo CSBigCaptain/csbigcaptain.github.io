@@ -4,49 +4,57 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@vueuse/nuxt", "@nuxt/content", "@nuxt/image"],
   content: {
-    highlight: {
-      theme: {
-        default: "github-light",
-        dark: "github-dark",
-      },
-      langs: [
-        "c",
-        "cpp",
-        "python",
-        "json",
-        "js",
-        "ts",
-        "html",
-        "css",
-        "vue",
-        "shell",
-        "mdc",
-        "md",
-        "yaml",
-      ],
-    },
-    experimental: {
-      search: {
-        indexed: true,
-      },
-    },
-    markdown: {
-      remarkPlugins: ["remark-math"],
-      rehypePlugins: {
-        "rehype-katex": {
-          output: "mathml",
+    build: {
+      markdown: {
+        remarkPlugins: {
+          "remark-emoji": {
+            emoticon: true,
+          },
+          "remark-math": {
+            inlineMathDouble: true,
+            singleDollor: true,
+          },
+        },
+        rehypePlugins: {
+          "rehype-katex": {
+            output: "html",
+          },
+        },
+        highlight: {
+          theme: {
+            default: "github-light",
+            dark: "github-dark",
+          },
+          langs: [
+            "c",
+            "cpp",
+            "python",
+            "js",
+            "ts",
+            "html",
+            "css",
+            "vue",
+            "yaml",
+          ],
+        },
+        toc: {
+          depth: 3,
+          searchDepth: 3,
         },
       },
+    },
+    preview: {
+      api: "https://api.nuxt.studio",
     },
   },
   nitro: {
     prerender: {
       failOnError: false,
-    }
+    },
   },
   app: {
     baseURL: "/",
-//    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
+    //    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: "nuxt_assets",
     head: {
       script: [],
@@ -57,13 +65,8 @@ export default defineNuxtConfig({
           href: "/vite.svg",
         },
       ],
-      noscript: [
-        { children: 'JavaScript is required' }
-      ],
+      noscript: [{ children: "JavaScript is required" }],
     },
-  },
-  experimental: {
-    payloadExtraction: false,
   },
   vue: {
     compilerOptions: {
@@ -73,11 +76,8 @@ export default defineNuxtConfig({
   vite: {
     build: {
       sourcemap: true,
-    }
+    },
   },
-  css: [
-    "mdui/mdui.css",
-    "/assets/css/global.less",
-  ],
+  css: ["mdui/mdui.css", "katex/dist/katex.min.css", "/assets/css/global.less"],
   ssr: true,
-})
+});

@@ -14,8 +14,8 @@ onMounted(() => {
     let spark = document.createElement("div")
     let main = document.querySelector(".main")
     spark.classList.add("spark")
-    let randomX = Math.random() * main.offsetWidth
-    let randomY = Math.random() * main.offsetHeight * 2
+    let randomX = Math.random() * (main as HTMLElement).offsetWidth
+    let randomY = Math.random() * (main as HTMLElement).offsetHeight * 2
     spark.style.left = `${randomX}px`
     spark.style.top = `${randomY}px`
     spark.style.transform = `scale(${Math.random() * 3})`
@@ -27,12 +27,14 @@ onMounted(() => {
       spark.appendChild(span)
     }
 
-    main.appendChild(spark)
+    if (main) {
+      main.appendChild(spark)
+    }
     setTimeout(() => {
       spark.remove()
     }, 1505)
   }
-  const createSparks = setInterval(createSpark, 300)
+  const createSparks = setInterval(createSpark, 250)
 })
 </script>
 
@@ -100,7 +102,7 @@ onMounted(() => {
   height: 100%;
   background-color: blue;
   opacity: 0.8;
-  animation: animate 1.5s ease-in-out forwards;
+  animation: animate 0.75s ease-in-out forwards;
 }
 
 @keyframes animate {

@@ -2,8 +2,8 @@
 useHead({
   title: "List - CSBigCaptain Blog",
 })
-const { data: posts } = await useAsyncData("blog", () =>
-  queryCollection("blog").all()
+const { data: posts } = await useAsyncData("blogs", () =>
+  queryCollection("blog").order('date', 'DESC').all()
 )
 const changeDate = (date: any) => {
   const time = new Date(date)
@@ -14,7 +14,7 @@ const changeDate = (date: any) => {
   const minutes = String(time.getMinutes()).padStart(2, "0")
   const seconds = String(time.getSeconds()).padStart(2, "0")
 
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} (UTC+8)`
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 }
 </script>
 

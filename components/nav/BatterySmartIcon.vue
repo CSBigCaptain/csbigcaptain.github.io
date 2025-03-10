@@ -1,4 +1,4 @@
-<script setup lang="ts" xmlns="">
+<script setup lang="ts">
 import "~/composables/battery-helper"
 import "@mdui/icons/battery-unknown.js"
 import "@mdui/icons/battery-alert.js"
@@ -11,10 +11,6 @@ import "@mdui/icons/battery-5-bar.js"
 import "@mdui/icons/battery-6-bar.js"
 import "@mdui/icons/battery-full.js"
 import "@mdui/icons/battery-charging-full.js"
-
-// if(import.meta.client) {
-//   console.log(batteryLevel)
-// }
 </script>
 
 <template>
