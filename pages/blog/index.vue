@@ -19,7 +19,8 @@ const changeDate = (date: any) => {
 </script>
 
 <template>
-  <NuxtLayout name="blog">
+  <NuxtLayout name="default">
+    <template #topic-text>Blog</template>
     <template #full-width>
       <SubpageBlogRandomSentence />
     </template>

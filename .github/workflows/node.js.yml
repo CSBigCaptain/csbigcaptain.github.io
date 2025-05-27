@@ -1,4 +1,3 @@
-# 将静态内容部署到 GitHub Pages 的简易工作流程
 name: Deploy csbigcaptain.github.io
 
 on:
@@ -38,13 +37,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Generate Static Site
+        env:
+          # 微软分析 ID，在 GitHub Secrets 中
+          MS_ANALYTICS_ID: ${{ secrets.MS_ANALYTICS_ID }}
         run: npm run generate
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist folder
           path: '.output/public'
       - name: Deploy to GitHub Pages
         id: deployment

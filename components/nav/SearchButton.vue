@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <mdui-button-icon>
+  <mdui-button-icon href="/search">
     <mdui-icon-search></mdui-icon-search>
   </mdui-button-icon>
 </template>

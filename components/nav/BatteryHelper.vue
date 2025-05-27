@@ -5,7 +5,7 @@ import "/composables/battery-helper"
 <template>
   <ClientOnly>
 <!-- 不开仅客户端渲染水合作用会出bug -->
-    <NavDropDown>
+    <NavDropDown trigger="hover">
       <NavBatterySmartIcon />
       <mdui-card>
         <div v-if="isSupportBattery">
@@ -16,7 +16,6 @@ import "/composables/battery-helper"
           <div class="item" v-if="dischargingTime != Infinity">
             <strong class="tpc">预计续航时间</strong>
             <div class="value">{{ dischargingTime }}</div>
-
           </div>
           <div class="item">
             <strong class="tpc">充电状态</strong>

@@ -1,0 +1,10 @@
+body:
+  - text: "首页"
+    icon: ""
+    link: "/"
+  - text: "博客列表"
+    icon: ""
+    link: "/blog/"
+  - text: "搜索"
+    icon: ""
+    link: "/search/"

@@ -6,7 +6,7 @@ const selectedThemeColor = ref<string>(preferredColor);
 </script>
 
 <template>
-  <nav-drop-down>
+  <nav-drop-down trigger="click">
     <mdui-button-icon slot="trigger">
       <mdui-icon-palette></mdui-icon-palette>
     </mdui-button-icon>

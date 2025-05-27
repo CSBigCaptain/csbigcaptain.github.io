@@ -1,22 +1,26 @@
 <template>
-  <div class="webMain">
-    <NuxtPage />
-  </div>
+  <NuxtPage />
 </template>
 
 <script setup lang="ts">
-import "mdui/mdui.css";
-import "mdui";
-import { getPagesTheme } from "/composables/theme";
+// 注入 Microsoft Clarity 代码
+const config = useRuntimeConfig();
+const analyticsId = config.public.msAnalyticsId;
 
-getPagesTheme()
+useHead({
+  script: [
+    {
+      innerHTML: `
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "${analyticsId}");
+      `,
+      type: "text/javascript",
+    },
+  ],
+});
+
+getPagesTheme();
 </script>
-
-<style scoped lang="less">
-.webMain {
-  scroll-behavior: smooth;
-  min-width: 330px;
-  overflow: hidden;
-  position: relative;
-}
-</style>

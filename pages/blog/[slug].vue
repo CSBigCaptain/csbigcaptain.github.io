@@ -10,7 +10,8 @@ useHead({
 </script>
 
 <template>
-  <NuxtLayout name="blog">
+  <NuxtLayout name="default">
+    <template #topic-text>Blog</template>
     <main>
       <mdui-chip href="/blog">Return to List</mdui-chip>
       <ContentRenderer :value="post" />
@@ -21,6 +22,9 @@ useHead({
 <style scoped>
 main {
   width: 100%;
-  min-height: 500px;
+  max-width: 768px;
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
 }
 </style>

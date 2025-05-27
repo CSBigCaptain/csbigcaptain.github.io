@@ -1,8 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-03-08",
   devtools: { enabled: true },
-  modules: ["@vueuse/nuxt", "@nuxt/content", "@nuxt/image"],
+  modules: [
+    "@vueuse/nuxt",
+    "@nuxt/content",
+    "@nuxtjs/seo",
+  ],
   content: {
     build: {
       markdown: {
@@ -18,6 +22,7 @@ export default defineNuxtConfig({
         rehypePlugins: {
           "rehype-katex": {
             output: "html",
+            trust: true,
           },
         },
         highlight: {
@@ -47,25 +52,30 @@ export default defineNuxtConfig({
       api: "https://api.nuxt.studio",
     },
   },
+  runtimeConfig: {
+    public: {
+      // 分析器 ID（测试中）
+      msAnalyticsId: process.env.MS_ANALYTICS_ID || "rhd4ry6sym",
+    },
+  },
   nitro: {
     prerender: {
-      failOnError: false,
+      failOnError: true,
     },
   },
   app: {
     baseURL: "/",
-    //    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
+    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: "nuxt_assets",
     head: {
-      script: [],
       link: [
         {
           rel: "icon",
           type: "image/x-icon",
-          href: "/vite.svg",
+          href: "/favicon.ico",
         },
       ],
-      noscript: [{ children: "JavaScript is required" }],
+      noscript: [{ innerHTML: "JavaScript is required" }],
     },
   },
   vue: {
@@ -79,5 +89,11 @@ export default defineNuxtConfig({
     },
   },
   css: ["mdui/mdui.css", "katex/dist/katex.min.css", "/assets/css/global.less"],
+  typescript: {
+    typeCheck: true,
+  },
+  site: {
+    url: "site.com",
+  },
   ssr: true,
 });

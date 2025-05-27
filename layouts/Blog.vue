@@ -3,11 +3,11 @@ const props = defineProps(["append"])
 </script>
 
 <template>
-  <index-nav>
+  <DefaultNav>
     <template #topic>
       Blog{{ props.append ? ` ${props.append}` : "" }}
     </template>
-  </index-nav>
+  </DefaultNav>
   <div class="full-width">
     <slot name="full-width" />
   </div>
@@ -16,16 +16,10 @@ const props = defineProps(["append"])
       <slot />
     </div>
   </div>
-  <div class="outer footer">
-    <div class="container">
-      <FooterDefault />
-    </div>
-  </div>
+  <FooterDefault />
 </template>
 
 <style lang="less" scoped>
-@import url("/assets/css/global.less");
-
 .full-width {
   width: 100%;
 }
@@ -35,9 +29,8 @@ const props = defineProps(["append"])
   display: flex;
   justify-content: center;
   .container {
-    width: 90%;
-    min-width: 370px;
-    max-width: 2160px;
+    width: min(70%, 900px);
+    min-width: 330px;
     padding: var(--inline-padding);
     display: flex;
     flex-direction: column;
@@ -46,8 +39,11 @@ const props = defineProps(["append"])
   }
 }
 
-.footer {
-  // 变量定义在全局 less 文件中
-  background-color: var(--bar-bg-color);
+@media (max-width: 767px) {
+  .outer {
+    .container {
+      width: 100%;
+    }
+  }
 }
 </style>

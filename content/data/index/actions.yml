@@ -1,0 +1,11 @@
+body:
+  - text: "Go to Blog"
+    link: "/blog"
+    variant: "filled"
+    icon: ""
+    endIcon: ""
+  - text: "Github"
+    link: "https://github.com/CSBigCaptain/csbigcaptain.github.io"
+    variant: "tonal"
+    icon: ""
+    endIcon: ""

@@ -1,48 +1,66 @@
 <template>
-  <div class="footer">
-    <div class="more-info">
-      <ul Line1>
-        <li>
-          <NuxtLink
-            to="https://qr61.cn/oQkUx4/qAfZWE6"
-            target="_blank"
-            @click="confirmNavigation"
-            >看看我们的微信公众号?</NuxtLink
-          >
-        </li>
-        <li><NuxtLink to="https://github.com/CSBigCaptain/csbigcaptain.github.io" target="_blank">项目地址</NuxtLink></li>
-        <li>
-          <NuxtLink
-            to="https://github.com/CSBigCaptain/csbigcaptain.github.io/issues"
-            target="_blank"
-            >为本站建言献策</NuxtLink
-          >
-        </li>
-      </ul>
-      <ul Line2>
-        <li>
-          <NuxtLink to="https://space.bilibili.com/606574672" target="_blank"
-            >Bilibili</NuxtLink
-          >
-        </li>
-        <li><NuxtLink to="https://github.com/csbigcaptain" target="_blank">Github</NuxtLink></li>
-      </ul>
+  <footer class="footer">
+    <div class="container">
+      <div class="main">
+        <div class="more-info">
+          <ul Line1>
+            <li>
+              <NuxtLink
+                to="https://qr61.cn/oQkUx4/qAfZWE6"
+                target="_blank"
+                @click="confirmNavigation"
+                >看看我们的微信公众号?</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="https://github.com/CSBigCaptain/csbigcaptain.github.io"
+                target="_blank"
+                >项目地址</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink
+                to="https://github.com/CSBigCaptain/csbigcaptain.github.io/issues"
+                target="_blank"
+                >建言献策</NuxtLink
+              >
+            </li>
+          </ul>
+          <ul Line2>
+            <li>
+              <NuxtLink
+                to="https://space.bilibili.com/606574672"
+                target="_blank"
+                >Bilibili</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="https://github.com/csbigcaptain" target="_blank"
+                >Github</NuxtLink
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="other-info">
+          <div class="copyright">
+            Copyright © 2024 - {{ year }} by
+            <NuxtLink to="https://github.com/CSBigCaptain" target="_blank"
+              >CSBigCaptain</NuxtLink
+            >. All rights reserved.
+          </div>
+          <div class="build-info">
+            Build at 2025-05-27. Look at
+            <NuxtLink
+              to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
+              target="_blank"
+              >Changelog</NuxtLink
+            >.
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="copyright">
-      Copyright © 2024 - {{ year }} by
-      <NuxtLink to="https://github.com/CSBigCaptain" target="_blank"
-        >CSBigCaptain</NuxtLink
-      >. All rights reserved.
-    </div>
-    <div class="build-info">
-      Build at 2025-03-08. Look at
-      <NuxtLink
-        to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
-        target="_blank"
-        >Changelog</NuxtLink
-      >.
-    </div>
-  </div>
+  </footer>
 </template>
 
 <script lang="ts" setup>
@@ -62,23 +80,34 @@ const confirmNavigation = (event: Event) => {
 
 <style scoped lang="less">
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(var(--mdui-color-surface-variant));
+
+  .container {
+    width: 85%;
+    padding: 15px;
+  }
+}
+
+.main {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 20px 0;
   .more-info {
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
   }
-  .copyright {
-    font-size: 0.75rem;
-  }
-  .build-info {
+  .other-info {
+    padding: 15px;
     font-size: 0.75rem;
   }
 }
@@ -113,5 +142,13 @@ a[target="_blank"]::after {
 
 .footer > div {
   padding: 3px 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    .container {
+      width: 100%;
+    }
+  }
 }
 </style>

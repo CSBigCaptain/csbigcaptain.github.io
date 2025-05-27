@@ -1,9 +1,15 @@
 <template>
-  <NuxtImg
+  <img
     :src="refinedSrc"
     :alt="props.alt"
     loading="lazy"
-    style="display: block; max-width: 100%; max-height: 600px; margin: 0 auto"
+    style="
+      display: block;
+      max-width: 85%;
+      max-height: 600px;
+      min-width: 50%;
+      margin: 0 auto;
+    "
   />
 </template>
 

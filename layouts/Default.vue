@@ -1,47 +1,46 @@
 <template>
-  <IndexNav>
-    <template #topic><slot name="topic" /></template>
-  </IndexNav>
-  <div class="full-width">
-    <slot name="full-width" />
-  </div>
-  <div class="outer">
-    <div class="container">
-      <slot />
-    </div>
-  </div>
-  <div class="outer footer">
-    <div class="container">
-      <FooterDefault />
-    </div>
-  </div>
+  <mdui-layout>
+    <ClientOnly>
+      <DefaultNav @open-drawer="toggleDrawer">
+        <template #topic-text><slot name="topic-text" /></template>
+      </DefaultNav>
+      <mdui-navigation-drawer
+        modal
+        close-on-overlay-click
+        close-on-esc
+        :open="drawerStatus"
+        @close="drawerStatus = false"
+      >
+        <NavigationDrawerList />
+      </mdui-navigation-drawer>
+    </ClientOnly>
+    <mdui-layout-main>
+      <csbig-container>
+        <slot />
+      </csbig-container>
+      <FooterDefault
+    /></mdui-layout-main>
+  </mdui-layout>
 </template>
 
+<script setup lang="ts">
+const [drawerStatus, toggleDrawer] = useToggle(false);
+</script>
+
 <style lang="less" scoped>
-.full-width {
-  width: 100%;
+mdui-layout {
+  scroll-behavior: smooth;
+  min-width: 320px;
   overflow: hidden;
+  position: relative;
 }
-
-.outer {
-  background-color: var(--body-bg-color);
-  display: flex;
-  justify-content: center;
-  .container {
-    width: 90%;
-    min-width: 370px;
-    max-width: 1920px;
-    padding: var(--inline-padding);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
+// top-app-bar 的 z-index 值为100
+// navigation-drawer 的 z-index 值为99
+mdui-navigation-drawer {
+  --shape-corner: 0px;
+  --z-index: 99;
+  mdui-list {
+    padding-top: 64px;
   }
-}
-
-.footer {
-  // 变量定义在全局 less 文件中
-  background-color: var(--bar-bg-color);
-  
 }
 </style>
