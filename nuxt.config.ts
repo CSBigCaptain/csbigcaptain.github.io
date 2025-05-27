@@ -65,7 +65,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: "/",
-    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
+    // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: "nuxt_assets",
     head: {
       link: [
@@ -93,7 +93,7 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   site: {
-    url: "site.com",
+    url: "https://csbigcaptain.github.io",
   },
   ssr: true,
 });
