@@ -76,7 +76,7 @@ useHead({
   title: "搜索 - CSBigCaptain Blog",
 });
 
-const query = ref("g");
+const query = ref("");
 
 const { data } = await useAsyncData("search-data", () =>
   queryCollectionSearchSections("blog", {
