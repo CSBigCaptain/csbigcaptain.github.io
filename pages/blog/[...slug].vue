@@ -1,6 +1,7 @@
-<script setup lang="js">
+<script setup lang="ts">
 const route = useRoute()
-const { data: post } = await useAsyncData(route.path, () => {
+console.log(route.path)
+const { data: post } = await useAsyncData(`blog-${route.path}`, () => {
   return queryCollection('blog').path(route.path).first()
 })
 
@@ -14,7 +15,7 @@ useHead({
     <template #topic-text>Blog</template>
     <main>
       <mdui-chip href="/blog">Return to List</mdui-chip>
-      <ContentRenderer :value="post" />
+      <ContentRenderer v-if="post" :value="post" />
     </main>
   </NuxtLayout>
 </template>
