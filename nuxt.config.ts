@@ -2,11 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-03-08",
   devtools: { enabled: true },
-  modules: [
-    "@vueuse/nuxt",
-    "@nuxt/content",
-    "@nuxtjs/seo",
-  ],
+  modules: ["@vueuse/nuxt", "@nuxt/content", "@nuxtjs/seo", "nuxt-schema-org"],
   content: {
     build: {
       markdown: {
@@ -74,6 +70,11 @@ export default defineNuxtConfig({
           type: "image/x-icon",
           href: "/favicon.ico",
         },
+      ],
+      meta: [
+        { property: "og:site_name", content: " CSBigCaptain Blog" },
+        { property: "og:locale", content: "zh-CN" },
+        { name: "author", content: "CSBigCaptain" },
       ],
       noscript: [{ innerHTML: "JavaScript is required" }],
     },

@@ -1,13 +1,21 @@
 <script setup lang="ts">
-const route = useRoute()
-console.log(route.path)
+const route = useRoute();
+
 const { data: post } = await useAsyncData(`blog-${route.path}`, () => {
-  return queryCollection('blog').path(route.path).first()
-})
+  return queryCollection("blog").path(route.path).first();
+});
 
 useHead({
-  title: post.value?.title || 'CSBigCaptain Blog',
-})
+  title: post.value?.title || "CSBigCaptain Blog",
+  meta: [
+    { name: "description", content: post.value?.description || "" },
+    {
+      name: "og:title",
+      content: post.value?.title + "-- CSBigCaptain Blog",
+    },
+    { name: "og:type", content: "article" },
+  ],
+});
 </script>
 
 <template>

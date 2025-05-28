@@ -1,4 +1,14 @@
-# CSBigCaptain Blog v1
+# CSBigCaptain Blog
+
+![GitHub License](https://img.shields.io/github/license/csbigcaptain/csbigcaptain.github.io) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fcsbigcaptain.github.io) ![Node Current](https://img.shields.io/node/v/nuxt3) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/csbigcaptain/csbigcaptain.github.io) 
+
+本项目是 [CSBigCaptain](https://github.com/csbigcaptain) 的个人博客的仓库。使用 Nuxt 3 开发构建，使用 Material Design 设计风格，并使用 [Nuxt Content](https://content.nuxtjs.org/) 来作为本地基于文件的 CMS 系统。
+
+虽然是静态博客系统，但是仍然具有以下优势：
+
+- Markdown 以及 LaTeX 公式支持
+- 极速的搜索功能：博客预渲染时自动生成优化文件，搜索时可以体验毫秒级响应的速度！
+- 完备的 SEO SSR 以及 SMO
 
 ## 预览 & 修改项目
 
