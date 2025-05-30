@@ -1,13 +1,10 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <mdui-button-icon href="/search">
-    <mdui-icon-search></mdui-icon-search>
-  </mdui-button-icon>
+  <NuxtLink to="/search">
+    <mdui-button-icon>
+      <mdui-icon-search></mdui-icon-search> </mdui-button-icon
+  ></NuxtLink>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

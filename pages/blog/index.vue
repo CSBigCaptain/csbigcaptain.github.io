@@ -1,21 +1,21 @@
 <script setup lang="ts">
 useHead({
   title: "List - CSBigCaptain Blog",
-})
+});
 const { data: posts } = await useAsyncData("blogs", () =>
-  queryCollection("blog").order('date', 'DESC').all()
-)
+  queryCollection("blog").order("date", "DESC").all()
+);
 const changeDate = (date: any) => {
-  const time = new Date(date)
-  const year = time.getFullYear()
-  const month = String(time.getMonth() + 1).padStart(2, "0") // 月份从0开始，所以要加1
-  const day = String(time.getDate()).padStart(2, "0")
-  const hours = String(time.getHours()).padStart(2, "0")
-  const minutes = String(time.getMinutes()).padStart(2, "0")
-  const seconds = String(time.getSeconds()).padStart(2, "0")
+  const time = new Date(date);
+  const year = time.getFullYear();
+  const month = String(time.getMonth() + 1).padStart(2, "0"); // 月份从0开始，所以要加1
+  const day = String(time.getDate()).padStart(2, "0");
+  const hours = String(time.getHours()).padStart(2, "0");
+  const minutes = String(time.getMinutes()).padStart(2, "0");
+  const seconds = String(time.getSeconds()).padStart(2, "0");
 
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
-}
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+};
 </script>
 
 <template>
@@ -27,11 +27,13 @@ const changeDate = (date: any) => {
     <main>
       <ul>
         <li v-for="post in posts" :key="post.id">
-          <mdui-card variant="filled" :href="post.path" clickable>
-            <h2>{{ post.title }}</h2>
-            <small>时间：{{ changeDate(post.date) }}</small>
-            <p>{{ post.description }}</p>
-          </mdui-card>
+          <NuxtLink :to="post.path">
+            <mdui-card variant="filled" clickable>
+              <h2>{{ post.title }}</h2>
+              <small>时间：{{ changeDate(post.date) }}</small>
+              <p>{{ post.description }}</p>
+            </mdui-card>
+          </NuxtLink>
         </li>
       </ul>
     </main>
@@ -69,5 +71,11 @@ main {
       }
     }
   }
+}
+
+a:-webkit-any-link,
+a:any-link {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

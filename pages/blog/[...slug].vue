@@ -22,7 +22,7 @@ useHead({
   <NuxtLayout name="default">
     <template #topic-text>Blog</template>
     <main>
-      <mdui-chip href="/blog">Return to List</mdui-chip>
+      <NuxtLink to="/blog"><mdui-chip>Return to List</mdui-chip></NuxtLink>
       <ContentRenderer v-if="post" :value="post" />
     </main>
   </NuxtLayout>
