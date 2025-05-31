@@ -1,7 +1,16 @@
 <script setup lang="ts">
-useHead({
-  title: "List - CSBigCaptain Blog",
+useSeoMeta({
+  title: "文章列表 - CSBigCaptain Blog",
+  ogTitle: "文章列表 - CSBigCaptain Blog",
+  description: "CSBigCaptain Blog list.",
+  ogDescription: "CSBigCaptain Blog List.",
+  ogUrl: 'https://csbigcaptain.github.io/blog', 
+  ogImage: "/__og-image__/static/og.png",
 });
+defineOgImageComponent('Nuxt',{
+  title: "Blog List",
+  headline: "CSBigCaptain Blog",
+})
 const { data: posts } = await useAsyncData("blogs", () =>
   queryCollection("blog").order("date", "DESC").all()
 );

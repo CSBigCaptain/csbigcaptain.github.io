@@ -57,6 +57,13 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       failOnError: true,
+      crawlLinks: true,
+      routes:[
+        "/",
+        "/blog/",
+        "/search",
+        "/rss",
+      ]
     },
   },
   app: {
@@ -83,7 +90,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: process.env.NODE_ENV === 'production' 
-      ? 'https://yourdomain.com' 
+      ? 'https://csbigcaptain.github.io' 
       : 'http://localhost:3000',
     name: "CSBigCaptain Blog",
   },

@@ -5,9 +5,7 @@ useSeoMeta({
   description: "The introduction to CSBigCaptain Blog.",
   ogDescription: "The introduction to  CSBigCaptain Blog.",
   ogUrl: 'https://csbigcaptain.github.io/',
-  ogImage: "/__og-image__/image/og.png",
-  icon: '/favicon.ico',
-  lang: "zh-CN",
+  ogImage: "/__og-image__/static/og.png",
 });
 defineOgImageComponent('Nuxt',{
   title: "首页",
