@@ -17,7 +17,7 @@
     "@mdui/icons": "^1.0.3",
     "@nuxt/content": "^3.5.1",
     "@nuxtjs/seo": "^3.0.3",
-    "@vueuse/integrations": "^13.2.0",
+    "@vueuse/integrations": "^13.3.0",
     "fuse.js": "^7.1.0",
     "katex": "^0.16.22",
     "less": "^4.3.0",
@@ -26,13 +26,13 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "ufo": "^1.6.1",
-    "vue": "^3.5.14"
+    "vue": "^3.5.16"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.4.1",
-    "@vueuse/core": "^13.2.0",
-    "@vueuse/nuxt": "^13.2.0",
-    "nuxt-feedme": "^2.0.0-rc1",
+    "@vueuse/core": "^13.3.0",
+    "@vueuse/nuxt": "^13.3.0",
+    "nuxt-feedme": "2.0.0-rc1",
     "typescript": "^5.8.3",
     "vue-tsc": "^2.2.10"
   }

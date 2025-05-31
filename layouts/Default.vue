@@ -1,20 +1,19 @@
 <template>
   <mdui-layout>
-    <ClientOnly>
-      <DefaultNav @open-drawer="toggleDrawer">
-        <template #topic-text><slot name="topic-text" /></template>
-      </DefaultNav>
-      <mdui-navigation-drawer
-        modal
-        close-on-overlay-click
-        close-on-esc
-        :open="drawerStatus"
-        @close="drawerStatus = false"
-      >
-        <NavigationDrawerList />
-      </mdui-navigation-drawer>
-    </ClientOnly>
+    <DefaultNav @open-drawer="toggleDrawer">
+      <template #topic-text><slot name="topic-text" /></template>
+    </DefaultNav>
+    <mdui-navigation-drawer
+      modal
+      close-on-overlay-click
+      close-on-esc
+      :open="drawerStatus"
+      @close="drawerStatus = false"
+    >
+      <NavigationDrawerList />
+    </mdui-navigation-drawer>
     <mdui-layout-main>
+      <slot name="full-width"></slot>
       <csbig-container>
         <slot />
       </csbig-container>
@@ -24,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-const [drawerStatus, toggleDrawer] = useToggle(false);
+const [drawerStatus, toggleDrawer] = useToggle(false)
 </script>
 
 <style lang="less" scoped>
@@ -43,6 +42,4 @@ mdui-navigation-drawer {
     padding-top: 64px;
   }
 }
-
-
 </style>

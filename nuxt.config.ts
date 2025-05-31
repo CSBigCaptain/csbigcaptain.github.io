@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-03-08",
   devtools: { enabled: true },
-  modules: ["@vueuse/nuxt", "@nuxt/content", "@nuxtjs/seo", "nuxt-schema-org"],
+  modules: ["@vueuse/nuxt", "@nuxtjs/seo", "@nuxt/content"],
   content: {
     build: {
       markdown: {
@@ -64,18 +64,6 @@ export default defineNuxtConfig({
     // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: "nuxt_assets",
     head: {
-      link: [
-        {
-          rel: "icon",
-          type: "image/x-icon",
-          href: "/favicon.ico",
-        },
-      ],
-      meta: [
-        { property: "og:site_name", content: " CSBigCaptain Blog" },
-        { property: "og:locale", content: "zh-CN" },
-        { name: "author", content: "CSBigCaptain" },
-      ],
       noscript: [{ innerHTML: "JavaScript is required" }],
     },
   },
@@ -94,7 +82,33 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   site: {
-    url: "https://csbigcaptain.github.io",
+    url: process.env.NODE_ENV === 'production' 
+      ? 'https://yourdomain.com' 
+      : 'http://localhost:3000',
+    name: "CSBigCaptain Blog",
   },
   ssr: true,
-});
+  nuxtseo: {
+    colorMode: {
+      performance: "system",
+      fallback: "dark",
+    },
+  },
+  ogImage: {
+    // zeroRuntime: true,
+    googleFontMirror: true,
+    fonts: ["Noto+Sans+SC"],
+  },
+  robots: {
+    enabled: false,
+  },
+  seo: {
+    enabled: false,
+  },
+  schemaOrg: {
+    enabled: false,
+  },
+  linkChecker: {
+    enabled: false,
+  },
+})

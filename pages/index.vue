@@ -1,7 +1,18 @@
 <script setup lang="js">
-useHead({
+useSeoMeta({
   title: "首页 - CSBigCaptain Blog",
+  ogTitle: "首页 - CSBigCaptain Blog",
+  description: "The introduction to CSBigCaptain Blog.",
+  ogDescription: "The introduction to  CSBigCaptain Blog.",
+  ogUrl: 'https://csbigcaptain.github.io/',
+  ogImage: "/__og-image__/image/og.png",
+  icon: '/favicon.ico',
+  lang: "zh-CN",
 });
+defineOgImageComponent('Nuxt',{
+  title: "首页",
+  headline: "CSBigCaptain Blog",
+})
 
 const {data: main} = await useAsyncData('indexMain', () => {
   return queryCollection('indexMain').all();

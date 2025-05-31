@@ -1,4 +1,5 @@
 <template>
+  <ClientOnly>
     <mdui-top-app-bar style="position: fixed">
       <mdui-button-icon @click="$emit('open-drawer')">
         <mdui-icon-menu></mdui-icon-menu>
@@ -16,6 +17,7 @@
         <!-- <NavMoreButton /> -->
       </div>
     </mdui-top-app-bar>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
