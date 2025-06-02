@@ -72,7 +72,7 @@
 import { useFuse } from "@vueuse/integrations/useFuse";
 import "@mdui/icons/chevron-right";
 
-useHead({
+useSeoMeta({
   title: "搜索 - CSBigCaptain Blog",
 });
 

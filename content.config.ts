@@ -1,6 +1,7 @@
 import { defineCollection, defineContentConfig, z } from "@nuxt/content"
 import { asSeoCollection } from "@nuxtjs/seo/content"
 
+
 export default defineContentConfig({
   collections: {
     blog: defineCollection(
@@ -10,12 +11,6 @@ export default defineContentConfig({
         schema: z.object({
           date: z.date(),
         }),
-      }),
-    ),
-    content: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: '**/*.md',
       }),
     ),
     indexActions: defineCollection({

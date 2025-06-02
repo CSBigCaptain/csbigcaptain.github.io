@@ -12,41 +12,56 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-let sentence = ref()
-let displayText = ref('')
-let fullText = ref('')
-let isTyping = ref(false)  // 添加打字状态控制
+<script setup>
+const sentence = ref()
+const displayText = ref("")
+const fullText = ref("")
+const isTyping = ref(false)
 
-// 改进的打字效果函数
+// 打字效果函数
 const typeText = async () => {
   isTyping.value = true
-  displayText.value = ''
-  
-  // 为每个字符设置随机的打字间隔，模拟真实打字效果
+  displayText.value = ""
+
   for (let i = 0; i < fullText.value.length; i++) {
-    if (!isTyping.value) break  // 允许中断打字
+    if (!isTyping.value) break
     displayText.value += fullText.value[i]
-    // 根据标点符号调整停顿时间
     const delay = fullText.value[i].match(/[，。！？、]/) ? 300 : 50
-    await new Promise(resolve => setTimeout(resolve, delay))
+    await new Promise((resolve) => setTimeout(resolve, delay))
   }
-  
+
   isTyping.value = false
 }
 
-const getSentence = async () => {
-  const res = await fetch("https://open.saintic.com/api/sentence/", {
-    method: "GET",
-  })
-  const data = await res.json()
-  sentence.value = data.data
-  fullText.value = data.data.sentence
-  await typeText()
-}
+// 获取随机句子
+const { data } = await useAsyncData(
+  `sentence-${Math.floor(Date.now() / 60000)}`,
+  async () => {
+    const res = await $fetch("https://open.saintic.com/api/sentence/")
+    return {
+      sentence: res?.data?.sentence || "",
+      author: res?.data?.author || "",
+      name: res?.data?.name || "",
+    }
+  },
+  {
+    default: () => null,
+    server: false
+  }
+)
 
-onMounted(() => {
-  getSentence()
+// 监听数据变化并执行打字效果
+watch(data, async (newData) => {
+  if (newData?.sentence) {
+    sentence.value = newData
+    fullText.value = newData.sentence
+    await typeText()
+  }
+}, { immediate: true })
+
+// 组件卸载时停止打字
+onBeforeUnmount(() => {
+  isTyping.value = false
 })
 </script>
 
@@ -59,6 +74,7 @@ onMounted(() => {
   height: 45vh;
   background: rgb(var(--mdui-color-surface-container-highest));
   transform: translateY(calc(-1 * var(--inline-padding)));
+  
   .inner {
     width: 70%;
     min-width: 370px;
@@ -68,28 +84,32 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    
     .sentence {
       font-size: 1.5rem;
-      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      min-height: 2em;
+      cursor: pointer;
       text-align: center;
-      margin-bottom: 10px;
-      transform: translateX(7px);
+      font-weight: bold;
     }
+    
     .source {
-      width: 100%;
       font-size: 1rem;
-      font-weight: 400;
+      opacity: 0.7;
       text-align: center;
-      margin-top: 10px;
+    }
+    
+    .cursor {
+      animation: blink 1s infinite;
+      color: var(--mdui-color-primary);
     }
   }
 }
-.cursor {
-  animation: blink 0.8s infinite;
-}
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 </style>

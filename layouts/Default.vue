@@ -24,6 +24,23 @@
 
 <script setup lang="ts">
 const [drawerStatus, toggleDrawer] = useToggle(false)
+
+useHead({
+  htmlAttrs: {
+    lang: "zh-CN",
+  },
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
+    },
+  ],
+})
+
+useSeoMeta({
+  ogImage: "/__og-image__/static/og.png",
+})
 </script>
 
 <style lang="less" scoped>

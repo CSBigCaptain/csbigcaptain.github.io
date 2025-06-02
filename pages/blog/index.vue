@@ -5,7 +5,6 @@ useSeoMeta({
   description: "CSBigCaptain Blog list.",
   ogDescription: "CSBigCaptain Blog List.",
   ogUrl: 'https://csbigcaptain.github.io/blog', 
-  ogImage: "/__og-image__/static/og.png",
 });
 defineOgImageComponent('Nuxt',{
   title: "Blog List",

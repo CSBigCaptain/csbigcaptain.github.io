@@ -5,11 +5,11 @@ useSeoMeta({
   description: "The introduction to CSBigCaptain Blog.",
   ogDescription: "The introduction to  CSBigCaptain Blog.",
   ogUrl: 'https://csbigcaptain.github.io/',
-  ogImage: "/__og-image__/static/og.png",
 });
 defineOgImageComponent('Nuxt',{
-  title: "首页",
-  headline: "CSBigCaptain Blog",
+  title: "CSBigCaptain Blog",
+  headline: "WELCOME TO",
+  description: "A open-source Git-CMS blog system driven by Nuxt 3.",
 })
 
 const {data: main} = await useAsyncData('indexMain', () => {
@@ -40,15 +40,18 @@ const data = {
             <span class="text">{{ data.main.text }}</span>
           </h1>
           <div class="actions">
-            <mdui-button
+            <NuxtLink
               v-for="item in data.actions"
               :key="item.text"
               :href="item.link"
-              :variant="item.variant"
-              :icon="item.icon"
-              :end-icon="item.endIcon"
-              >{{ item.text }}</mdui-button
             >
+              <mdui-button
+                :variant="item.variant"
+                :icon="item.icon"
+                :end-icon="item.endIcon"
+                >{{ item.text }}
+              </mdui-button>
+            </NuxtLink>
           </div>
         </div>
       </div>

@@ -1,21 +1,17 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 
 const { data: post } = await useAsyncData(`blog-${route.path}`, () => {
-  return queryCollection("blog").path(route.path).first();
-});
+  return queryCollection("blog").path(route.path).first()
+})
 
-useHead({
-  title: post.value?.title || "CSBigCaptain Blog",
-  meta: [
-    { name: "description", content: post.value?.description || "" },
-    {
-      name: "og:title",
-      content: post.value?.title + "-- CSBigCaptain Blog",
-    },
-    { name: "og:type", content: "article" },
-  ],
-});
+useSeoMeta({
+  title: (post.value?.title || "Blog") + " - CSBigCaptain Blog",
+  ogTitle: (post.value?.title || "Blog") + " - CSBigCaptain Blog",
+  description: "The introduction to CSBigCaptain Blog.",
+  ogDescription: "The introduction to  CSBigCaptain Blog.",
+  ogUrl: "https://csbigcaptain.github.io" + route.path,
+})
 </script>
 
 <template>

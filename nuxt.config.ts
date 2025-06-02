@@ -58,12 +58,7 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: true,
       crawlLinks: true,
-      routes:[
-        "/",
-        "/blog/",
-        "/search",
-        "/rss",
-      ]
+      routes: ["/", "/blog/", "/search", "/rss"],
     },
   },
   app: {
@@ -71,6 +66,8 @@ export default defineNuxtConfig({
     // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: "nuxt_assets",
     head: {
+      htmlAttrs: { lang: "zh-CN" },
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       noscript: [{ innerHTML: "JavaScript is required" }],
     },
   },
@@ -89,9 +86,10 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   site: {
-    url: process.env.NODE_ENV === 'production' 
-      ? 'https://csbigcaptain.github.io' 
-      : 'http://localhost:3000',
+    url:
+      process.env.NODE_ENV === "production"
+        ? "https://csbigcaptain.github.io"
+        : "http://localhost:3000",
     name: "CSBigCaptain Blog",
   },
   ssr: true,
@@ -104,7 +102,6 @@ export default defineNuxtConfig({
   ogImage: {
     // zeroRuntime: true,
     googleFontMirror: true,
-    fonts: ["Noto+Sans+SC"],
   },
   robots: {
     enabled: false,
