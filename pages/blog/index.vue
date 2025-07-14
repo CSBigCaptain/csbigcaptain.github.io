@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="js">
 useSeoMeta({
   title: "文章列表 - CSBigCaptain Blog",
   ogTitle: "文章列表 - CSBigCaptain Blog",
@@ -13,7 +13,7 @@ defineOgImageComponent('Nuxt',{
 const { data: posts } = await useAsyncData("blogs", () =>
   queryCollection("blog").order("date", "DESC").all()
 );
-const changeDate = (date: any) => {
+const changeDate = (date) => {
   const time = new Date(date);
   const year = time.getFullYear();
   const month = String(time.getMonth() + 1).padStart(2, "0"); // 月份从0开始，所以要加1

@@ -100,11 +100,12 @@ export default defineNuxtConfig({
     },
   },
   ogImage: {
-    // zeroRuntime: true,
+    zeroRuntime: true,
     googleFontMirror: true,
   },
   robots: {
-    enabled: false,
+    // sitemap 模块依赖于 robots 模块
+    enabled: true,
   },
   seo: {
     enabled: false,
