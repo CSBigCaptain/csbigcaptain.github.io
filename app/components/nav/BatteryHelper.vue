@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import "/composables/battery-helper"
+import "~/composables/battery-helper"
 </script>
 
 <template>

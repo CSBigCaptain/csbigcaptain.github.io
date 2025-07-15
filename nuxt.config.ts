@@ -76,11 +76,6 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith("mdui-"),
     },
   },
-  vite: {
-    build: {
-      sourcemap: true,
-    },
-  },
   css: ["mdui/mdui.css", "katex/dist/katex.min.css", "/assets/css/global.less"],
   typescript: {
     typeCheck: true,
@@ -92,7 +87,6 @@ export default defineNuxtConfig({
         : "http://localhost:3000",
     name: "CSBigCaptain Blog",
   },
-  ssr: true,
   nuxtseo: {
     colorMode: {
       performance: "system",

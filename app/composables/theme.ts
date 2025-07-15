@@ -85,6 +85,7 @@ export {
   theme,
   mduiDark,
   toggleDark,
+  defaultThemeColor,
   preferredColor,
   getPagesTheme,
   setDarkTheme,

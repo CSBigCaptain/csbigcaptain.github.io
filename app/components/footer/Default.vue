@@ -135,7 +135,7 @@ a[target="_blank"]::after {
   margin-left: 0.2em;
   margin-right: 0.2em;
   transform: translateY(-0.15em);
-  background-image: url("/public/icons/link.svg");
+  background-image: url("/icons/link.svg");
   background-size: 0.8em 0.8em;
   display: inline-block;
 }
