@@ -17,23 +17,23 @@
     "@mdui/icons": "^1.0.3",
     "@nuxt/content": "^3.6.3",
     "@nuxtjs/seo": "^3.1.0",
-    "@vueuse/integrations": "^13.5.0",
+    "@vueuse/integrations": "^13.6.0",
     "fuse.js": "^7.1.0",
     "katex": "^0.16.22",
-    "less": "^4.3.0",
+    "less": "^4.4.0",
     "mdui": "^2.1.4",
-    "nuxt": "4.0.0-rc.0",
+    "nuxt": "4.0.2",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "ufo": "^1.6.1",
-    "vue": "^3.5.17"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.6.2",
-    "@vueuse/core": "^13.5.0",
-    "@vueuse/nuxt": "^13.5.0",
+    "@vueuse/core": "^13.6.0",
+    "@vueuse/nuxt": "^13.6.0",
     "nuxt-feedme": "2.0.0-rc1",
-    "typescript": "^5.8.3",
-    "vue-tsc": "^3.0.1"
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.0.5"
   }
 }
