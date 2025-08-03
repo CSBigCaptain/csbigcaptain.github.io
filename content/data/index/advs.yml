@@ -2,7 +2,7 @@ body:
 - title: 简约清爽
   detail: 基于 Material Design 3 设计语言，页面简约而不失美观。
 - title: 个性化
-  detail: 支持深浅切换，可以自由选择主题色并智能生成配色，偏好设置储存本地，下次访问时无需重新设置。
+  detail: 支持深浅切换和动态配色，且能够保存个性化设置。
 - title: SEO 友好
   detail: 使用服务端渲染，页面加载迅速，且对搜索引擎友好。
 - title: LateX 语法支持

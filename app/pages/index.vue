@@ -34,7 +34,6 @@ const data = {
     <template #topic-text>首页</template>
     <main>
       <div class="welcome">
-        <div class="main">
           <h1>
             <span class="name">{{ data.main.name }}</span>
             <span class="text">{{ data.main.text }}</span>
@@ -53,7 +52,6 @@ const data = {
               </mdui-button>
             </NuxtLink>
           </div>
-        </div>
       </div>
       <div class="advs">
         <div class="container">
@@ -76,25 +74,26 @@ main {
   min-height: 100vh;
 
   --h1-font-size: 3rem;
+  --h1-subtitle-font-size: 2.7rem;
   --box-title-font-size: 1.2rem;
   --box-detail-font-size: 1rem;
 
   @media (width <= 1024px) {
     --h1-font-size: 2.5rem;
+    --h1-subtitle-font-size: 2.2rem;
     --box-title-font-size: 1.1rem;
     --box-detail-font-size: 0.9rem;
   }
 
   @media (width <= 768px) {
     --h1-font-size: 2rem;
+    --h1-subtitle-font-size: 1.7rem;
     --box-title-font-size: 1rem;
     --box-detail-font-size: 0.8rem;
   }
-
   @media (width <= 425px) {
-    --h1-font-size: 1.8rem;
-    --box-title-font-size: 0.9rem;
-    --box-detail-font-size: 0.7rem;
+    --h1-font-size: 1.7rem;
+    --h1-subtitle-font-size: 1.4rem;
   }
 
   .welcome {
@@ -105,10 +104,13 @@ main {
       display: flex;
       flex: 1;
       flex-direction: column;
-      font-size: var(--h1-font-size);
       font-weight: bold;
       margin: 0;
       padding: 2rem 0;
+
+      @media (width <= 1024px) {
+        padding-top: 0;
+      }
 
       .name {
         background: linear-gradient(
@@ -116,6 +118,7 @@ main {
           rgb(var(--mdui-color-primary)),
           rgb(var(--mdui-color-on-primary))
         );
+        font-size: var(--h1-font-size);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -123,6 +126,7 @@ main {
 
       .text {
         color: rgb(var(--mdui-color-secondary));
+        font-size: var(--h1-subtitle-font-size);
       }
     }
 
@@ -140,15 +144,24 @@ main {
     padding: 50px 15px 150px;
 
     .container {
-      display: flex;
-      flex-wrap: wrap;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+
+      @media (width <= 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      @media (width <= 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (width <= 425px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .items {
-      box-sizing: border-box;
-      width: 25%;
-      height: 220px;
-      padding: 8px;
 
       mdui-card {
         width: 100%;
@@ -166,17 +179,6 @@ main {
             font-size: var(--box-detail-font-size);
             margin: 0.8rem 0 0;
           }
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1023px) {
-    .advs {
-      .container {
-        .items {
-          width: 50%;
-          height: 190px;
         }
       }
     }

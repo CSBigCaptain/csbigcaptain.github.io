@@ -1,8 +1,7 @@
 <template>
   <footer class="footer">
-    <div class="container">
-      <div class="main">
-        <div class="more-info">
+      <div class="main page-container">
+        <div class="more-info content-container">
           <ul Line1>
             <li>
               <NuxtLink
@@ -42,7 +41,7 @@
             </li>
           </ul>
         </div>
-        <div class="other-info">
+        <div class="other-info content-container">
           <div class="copyright">
             Copyright © 2024 - {{ year }} by
             <NuxtLink to="https://github.com/CSBigCaptain" target="_blank"
@@ -59,7 +58,6 @@
           </div>
         </div>
       </div>
-    </div>
   </footer>
 </template>
 
@@ -79,35 +77,21 @@ const confirmNavigation = (event: Event) => {
 </script>
 
 <style scoped lang="less">
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .footer {
   display: flex;
   justify-content: center;
   background-color: rgb(var(--mdui-color-surface-variant));
 
-  .container {
-    width: 85%;
-    padding: 15px;
-  }
 }
 
 .main {
-  width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
+
   .more-info {
-    padding: 15px;
     display: flex;
     flex-wrap: wrap;
   }
   .other-info {
-    padding: 15px;
     font-size: 0.75rem;
   }
 }
@@ -138,17 +122,5 @@ a[target="_blank"]::after {
   background-image: url("/icons/link.svg");
   background-size: 0.8em 0.8em;
   display: inline-block;
-}
-
-.footer > div {
-  padding: 3px 0;
-}
-
-@media (max-width: 767px) {
-  .footer {
-    .container {
-      width: 100%;
-    }
-  }
 }
 </style>

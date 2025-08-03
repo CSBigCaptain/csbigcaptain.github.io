@@ -30,7 +30,7 @@ const changeDate = (date) => {
   <NuxtLayout name="default">
     <template #topic-text>Blog</template>
     <template #full-width>
-      <SubpageBlogRandomSentence />
+      <AppRandomSentence />
     </template>
     <main>
       <ul>

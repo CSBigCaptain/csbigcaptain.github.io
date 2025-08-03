@@ -52,7 +52,21 @@ mdui-top-app-bar,
   background-color: var(--body-bg-color);
 }
 
-mdui-card {
-  height: auto;
+.page-container {
+  width: 85%;
+  max-width: 1920px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  @media (width <= 768px) {
+    width: 100%;
+  }
+  @media (width <= 425px) {
+    padding: 22px;
+  }
+}
+
+.content-container {
   padding: 15px;
 }

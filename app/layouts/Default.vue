@@ -14,11 +14,11 @@
     </mdui-navigation-drawer>
     <mdui-layout-main>
       <slot name="full-width"></slot>
-      <csbig-container>
+      <AppContainer>
         <slot />
-      </csbig-container>
-      <FooterDefault
-    /></mdui-layout-main>
+      </AppContainer>
+      <FooterDefault />
+    </mdui-layout-main>
   </mdui-layout>
 </template>
 
