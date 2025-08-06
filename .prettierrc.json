@@ -1,0 +1,11 @@
+{
+  "semi": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "printWidth": 80,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSameLine": false,
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto"
+}
