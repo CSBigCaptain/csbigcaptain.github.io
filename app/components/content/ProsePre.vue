@@ -90,7 +90,7 @@ const copyCode = async () => {
       font-size: 0.85rem;
       line-height: 1.2rem;
       padding: 10px 15px;
-      overflow-x: scroll;
+      overflow-x: auto;
       flex: 1;
     }
   }

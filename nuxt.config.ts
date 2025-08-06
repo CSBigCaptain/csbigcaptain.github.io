@@ -48,11 +48,6 @@ export default defineNuxtConfig({
       api: 'https://api.nuxt.studio',
     },
   },
-  // fonts: {
-  //   adobe: {
-  //     id: ['wih3lxc']
-  //   }
-  // },
   runtimeConfig: {
     public: {
       // 分析器 ID（测试中）
@@ -68,7 +63,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/',
-    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
+    // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
