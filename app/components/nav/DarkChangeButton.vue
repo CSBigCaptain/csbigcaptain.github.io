@@ -5,7 +5,7 @@
       slot="trigger"
       @click="
         () => {
-          toggleDark[0]();
+          toggleDark[0]()
           toggleDark[1]()
         }
       "

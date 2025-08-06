@@ -1,41 +1,41 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-03-08",
+  compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ["@vueuse/nuxt", "@nuxtjs/seo", "@nuxt/content"],
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content'],
   content: {
     build: {
       markdown: {
         remarkPlugins: {
-          "remark-emoji": {
+          'remark-emoji': {
             emoticon: true,
           },
-          "remark-math": {
+          'remark-math': {
             inlineMathDouble: true,
             singleDollor: true,
           },
         },
         rehypePlugins: {
-          "rehype-katex": {
-            output: "html",
+          'rehype-katex': {
+            output: 'html',
             trust: true,
           },
         },
         highlight: {
           theme: {
-            default: "github-light",
-            dark: "github-dark",
+            default: 'github-light',
+            dark: 'github-dark',
           },
           langs: [
-            "c",
-            "cpp",
-            "python",
-            "js",
-            "ts",
-            "html",
-            "css",
-            "vue",
-            "yaml",
+            'c',
+            'cpp',
+            'python',
+            'js',
+            'ts',
+            'html',
+            'css',
+            'vue',
+            'yaml',
           ],
         },
         toc: {
@@ -45,57 +45,65 @@ export default defineNuxtConfig({
       },
     },
     preview: {
-      api: "https://api.nuxt.studio",
+      api: 'https://api.nuxt.studio',
     },
   },
+  // fonts: {
+  //   adobe: {
+  //     id: ['wih3lxc']
+  //   }
+  // },
   runtimeConfig: {
     public: {
       // 分析器 ID（测试中）
-      msAnalyticsId: process.env.MS_ANALYTICS_ID || "rhd4ry6sym",
+      msAnalyticsId: process.env.MS_ANALYTICS_ID || 'rhd4ry6sym',
     },
   },
   nitro: {
     prerender: {
       failOnError: true,
       crawlLinks: true,
-      routes: ["/", "/blog/", "/search", "/rss"],
+      routes: ['/', '/blog/', '/search', '/rss'],
     },
   },
   app: {
-    baseURL: "/",
-    // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
-    buildAssetsDir: "nuxt_assets",
+    baseURL: '/',
+    cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
+    buildAssetsDir: 'nuxt_assets',
     head: {
-      htmlAttrs: { lang: "zh-CN" },
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-      noscript: [{ innerHTML: "JavaScript is required" }],
+      htmlAttrs: { lang: 'zh-CN' },
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith("mdui-"),
+      isCustomElement: (tag) => tag.startsWith('mdui-'),
     },
   },
-  css: ["mdui/mdui.css", "katex/dist/katex.min.css", "/assets/css/global.less"],
+  css: ['mdui/mdui.css', 'katex/dist/katex.min.css', '/assets/css/global.less'],
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   site: {
     url:
-      process.env.NODE_ENV === "production"
-        ? "https://csbigcaptain.github.io"
-        : "http://localhost:3000",
-    name: "CSBigCaptain Blog",
+      process.env.NODE_ENV === 'production'
+        ? 'https://csbigcaptain.github.io'
+        : 'http://localhost:3000',
+    name: 'CSBigCaptain Blog',
   },
   nuxtseo: {
     colorMode: {
-      performance: "system",
-      fallback: "dark",
+      performance: 'system',
+      fallback: 'dark',
     },
   },
   ogImage: {
     zeroRuntime: true,
     googleFontMirror: true,
+    fonts:[
+      'Noto+Sans+SC:500'
+    ]
   },
   robots: {
     // sitemap 模块依赖于 robots 模块

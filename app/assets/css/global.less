@@ -1,26 +1,42 @@
-// @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
-li, li {
+li,
+li {
   list-style: none;
 }
 
 :root {
   --inline-padding: 15px;
+  font-family:
+    source-han-sans-sc-variable,
+    -apple-system,
+    sans-serif;
+  font-variation-settings: 'wght' 480;
+  letter-spacing: 0.015rem;
+  word-spacing: 0.1rem;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", -apple-system, sans-serif;
+}
+
+h1, h2 {
+  font-variation-settings: 'wght' 400;
+}
+// 部分 mdui 组件不支持可变粗细字体
+mdui-chip,
+mdui-button {
+  font-family: sans-serif;
 }
 
 code,
 pre {
-  font-family: "Jetbrains Mono", "Roboto Mono", monospace;
+  font-family: 'Jetbrains Mono', 'Roboto Mono', monospace;
 }
 
 .webMain {
@@ -29,15 +45,21 @@ pre {
   --body-primary-color: rgb(var(--mdui-color-primary));
   --body-on-primary-color: rgb(var(--mdui-color-on-primary));
   --body-primary-container-color: rgb(var(--mdui-color-primary-container));
-  --body-on-primary-container-color: rgb(var(--mdui-color-on-primary-container));
+  --body-on-primary-container-color: rgb(
+    var(--mdui-color-on-primary-container)
+  );
   --body-secondary-color: rgb(var(--mdui-color-secondary));
   --body-on-secondary-color: rgb(var(--mdui-color-on-secondary));
   --body-secondary-container-color: rgb(var(--mdui-color-secondary-container));
-  --body-on-secondary-container-color: rgb(var(--mdui-color-on-secondary-container));
+  --body-on-secondary-container-color: rgb(
+    var(--mdui-color-on-secondary-container)
+  );
   --body-tertiary-color: rgb(var(--mdui-color-tertiary));
   --body-on-tertiary-color: rgb(var(--mdui-color-on-tertiary));
   --body-tertiary-container-color: rgb(var(--mdui-color-tertiary-container));
-  --body-on-tertiary-container-color: rgb(var(--mdui-color-on-tertiary-container));
+  --body-on-tertiary-container-color: rgb(
+    var(--mdui-color-on-tertiary-container)
+  );
   --bar-text-color: rgb(var(--mdui-color-on-surface-variant));
   --bar-bg-color: rgb(var(--mdui-color-surface-variant));
 }

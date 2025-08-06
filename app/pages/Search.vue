@@ -2,11 +2,14 @@
   <NuxtLayout name="default">
     <template #topic-text>搜索</template>
     <main class="main">
-      <div style="padding: 15px;">
+      <div style="padding: 15px">
         <mdui-chip>Back</mdui-chip>
       </div>
       <div class="main-topic">
-        <h1 style="margin: 0;">搜索<mdui-badge style="margin: 5px">测试中</mdui-badge></h1>
+        <h1 style="margin: 0">
+          搜索
+          <mdui-badge style="margin: 5px">测试中</mdui-badge>
+        </h1>
       </div>
       <div class="input">
         <mdui-text-field
@@ -32,12 +35,24 @@
                 </template>
                 <div
                   class="title"
-                  v-html="highlightMatch(item.item.title, item.matches as any[], 'title')"
+                  v-html="
+                    highlightMatch(
+                      item.item.title,
+                      item.matches as any[],
+                      'title',
+                    )
+                  "
                 ></div>
               </div>
               <div
                 class="lower"
-                v-html="highlightMatch(item.item.content, item.matches as any[], 'content')"
+                v-html="
+                  highlightMatch(
+                    item.item.content,
+                    item.matches as any[],
+                    'content',
+                  )
+                "
               ></div>
             </mdui-card>
           </li>
@@ -69,73 +84,70 @@
 </template>
 
 <script lang="ts" setup>
-import { useFuse } from "@vueuse/integrations/useFuse";
-import "@mdui/icons/chevron-right";
+import { useFuse } from '@vueuse/integrations/useFuse'
+import '@mdui/icons/chevron-right'
 
 useSeoMeta({
-  title: "搜索 - CSBigCaptain Blog",
-});
+  title: '搜索 - CSBigCaptain Blog',
+})
 
-const query = ref("");
+const query = ref('')
 
-const { data } = await useAsyncData("search-data", () =>
-  queryCollectionSearchSections("blog", {
-    ignoredTags: ["header", "footer"],
-  })
-);
+const { data } = await useAsyncData('search-data', () =>
+  queryCollectionSearchSections('blog', {
+    ignoredTags: ['header', 'footer'],
+  }),
+)
 
 const { results } = useFuse(query, data.value || [], {
   fuseOptions: {
-    keys: ["title", "content", "titles"],
+    keys: ['title', 'content', 'titles'],
     threshold: 0.4,
     includeScore: true,
     includeMatches: true,
     ignoreLocation: true,
   },
   resultLimit: 20,
-});
+})
 
-const randomPosts = ref<any[]>([]);
+const randomPosts = ref<any[]>([])
 
 onMounted(() => {
   if (data.value) {
     randomPosts.value = [...data.value]
       .sort(() => Math.random() - 0.5)
-      .slice(0, 8);
+      .slice(0, 8)
   }
-});
+})
 
 // 添加高亮函数
 const highlightMatch = (text: string, matches: any[], key: string) => {
   // 如果没有文本或匹配信息，直接返回原文本
-  if (!text || !matches) return text;
+  if (!text || !matches) return text
 
   // 查找对应字段的匹配信息
-  const match = matches.find((m) => m.key === key);
-  if (!match || !match.indices || !match.indices.length) return text;
+  const match = matches.find((m) => m.key === key)
+  if (!match || !match.indices || !match.indices.length) return text
 
   // 根据匹配索引构建高亮文本
-  let result = "";
-  let lastIndex = 0;
+  let result = ''
+  let lastIndex = 0
 
   // 按顺序处理每个匹配区间
   match.indices.forEach(([start, end]: [number, number]) => {
     // 添加匹配前的文本
-    result += text.substring(lastIndex, start);
+    result += text.substring(lastIndex, start)
     // 添加带高亮的匹配文本
-    result += `<span class="highlight">${text.substring(
-      start,
-      end + 1
-    )}</span>`;
+    result += `<span class="highlight">${text.substring(start, end + 1)}</span>`
     // 更新上次处理位置
-    lastIndex = end + 1;
-  });
+    lastIndex = end + 1
+  })
 
   // 添加最后一个匹配后的文本
-  result += text.substring(lastIndex);
+  result += text.substring(lastIndex)
 
-  return result;
-};
+  return result
+}
 </script>
 
 <style scoped lang="less">

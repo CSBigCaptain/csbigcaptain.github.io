@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import "~/composables/battery-helper"
+import '~/composables/battery-helper'
 </script>
 
 <template>
   <ClientOnly>
-<!-- 不开仅客户端渲染水合作用会出bug -->
+    <!-- 不开仅客户端渲染水合作用会出bug -->
     <NavDropDown trigger="hover">
       <NavBatterySmartIcon />
       <mdui-card>
@@ -21,7 +21,10 @@ import "~/composables/battery-helper"
             <strong class="tpc">充电状态</strong>
             <div class="value">{{ charging ? '充电中' : '使用电池' }}</div>
           </div>
-          <div class="item" style="display: flex; justify-content: space-between;">
+          <div
+            class="item"
+            style="display: flex; justify-content: space-between"
+          >
             <strong class="tpc">当前电量</strong>
             <div class="value">{{ `${batteryLevel * 100}%` }}</div>
           </div>
@@ -35,10 +38,10 @@ import "~/composables/battery-helper"
 </template>
 
 <style scoped>
-@import "/assets/css/global.less";
+@import '/assets/css/global.less';
 
 mdui-card {
   width: 150px;
+  padding: 15px;
 }
-
 </style>

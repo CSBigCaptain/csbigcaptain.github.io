@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const props = defineProps([
-  'trigger',
-])
+const props = defineProps(['trigger'])
 </script>
 
 <template>
@@ -11,6 +9,4 @@ const props = defineProps([
   </mdui-dropdown>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

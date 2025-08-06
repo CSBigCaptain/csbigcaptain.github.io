@@ -1,9 +1,9 @@
 body:
-- title: 简约清爽
-  detail: 基于 Material Design 3 设计语言，页面简约而不失美观。
-- title: 个性化
-  detail: 支持深浅切换和动态配色，且能够保存个性化设置。
-- title: SEO 友好
-  detail: 使用服务端渲染，页面加载迅速，且对搜索引擎友好。
-- title: LateX 语法支持
-  detail: 文章内容支持 LateX 语法，可方便地插入数学公式。
+  - title: 🤩 简约清爽
+    detail: 基于 Material Design 3 设计语言，页面简约而不失美观。
+  - title: ✨ 个性化
+    detail: 支持深浅切换和动态配色，且个性化设置自动保存。
+  - title: 🚀 超级快
+    detail: 服务端渲染，数据库本地检索，无论是加载还是搜索都超级快！
+  - title: 🔍 SEO
+    detail: 引入 Nuxt SEO 模块，不管是 Open Graph 协议还是 Sitemap，都不在话下！

@@ -21,14 +21,14 @@
 </template>
 
 <script lang="ts" setup>
-import "mdui/components/button-icon.js";
-import "@mdui/icons/search.js";
-import "@mdui/icons/menu.js";
-import "@mdui/icons/more-vert.js";
-import "@mdui/icons/mode-night.js";
-import "@mdui/icons/wb-sunny.js";
-import "@mdui/icons/palette.js";
-import "@mdui/icons/share.js";
+import 'mdui/components/button-icon.js'
+import '@mdui/icons/search.js'
+import '@mdui/icons/menu.js'
+import '@mdui/icons/more-vert.js'
+import '@mdui/icons/mode-night.js'
+import '@mdui/icons/wb-sunny.js'
+import '@mdui/icons/palette.js'
+import '@mdui/icons/share.js'
 </script>
 
 <style scoped>

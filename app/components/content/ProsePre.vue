@@ -29,26 +29,26 @@
 </template>
 
 <script setup lang="ts">
-import "@mdui/icons/content-copy.js";
-import "@mdui/icons/done.js";
+import '@mdui/icons/content-copy.js'
+import '@mdui/icons/done.js'
 
 // 定义组件属性
 const props = defineProps<{
-  code: string;
-  language?: string;
-  filename?: string;
-}>();
+  code: string
+  language?: string
+  filename?: string
+}>()
 
-const copied = ref(false);
+const copied = ref(false)
 
 // 复制代码功能
 const copyCode = async () => {
-  await navigator.clipboard.writeText(props.code);
-  copied.value = true;
+  await navigator.clipboard.writeText(props.code)
+  copied.value = true
   setTimeout(() => {
-    copied.value = false;
-  }, 2000);
-};
+    copied.value = false
+  }, 2000)
+}
 </script>
 
 <style scoped lang="less">

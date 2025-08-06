@@ -4,14 +4,17 @@
       <mdui-list-item>{{ item.text }}</mdui-list-item>
     </NuxtLink>
     <NuxtLink to="/rss">
-      <mdui-list-item>RSS 订阅 <mdui-badge>Beta</mdui-badge> </mdui-list-item>
+      <mdui-list-item>
+        RSS 订阅
+        <mdui-badge>Beta</mdui-badge>
+      </mdui-list-item>
     </NuxtLink>
   </mdui-list>
 </template>
 
 <script lang="js" setup>
-const {data} = await useAsyncData("NavigationDrawerList", () => {
-  return queryCollection("navigationDrawerList").all()
+const { data } = await useAsyncData('NavigationDrawerList', () => {
+  return queryCollection('navigationDrawerList').all()
 })
 const list = data.value[0].meta.body
 </script>

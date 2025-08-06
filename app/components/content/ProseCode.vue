@@ -1,5 +1,5 @@
 <template>
-    <code class="inline-code"><slot /></code>
+  <code class="inline-code"><slot /></code>
 </template>
 
 <style scoped>
@@ -8,7 +8,7 @@
   border-radius: 4px;
   padding: 0.2em 0.4em;
   margin: 0 0.15em;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
   color: rgb(var(--mdui-color-on-surface));
   display: inline;

@@ -4,10 +4,10 @@ import {
   preferredColor,
   setColorTheme,
   setRandomColor,
-} from "../../composables/theme";
-import { ref } from "vue";
+} from '../../composables/theme'
+import { ref } from 'vue'
 
-const selectedThemeColor = ref<string>(preferredColor);
+const selectedThemeColor = ref<string>(preferredColor)
 </script>
 
 <template>
@@ -38,32 +38,38 @@ const selectedThemeColor = ref<string>(preferredColor);
         variant="outlined"
         class="button"
         @click="selectedThemeColor = setRandomColor()"
-        >Random</mdui-button
       >
+        Random
+      </mdui-button>
       <mdui-button
         variant="outlined"
         class="button"
         @click="setColorTheme(selectedThemeColor)"
-        >Confirm</mdui-button
       >
+        Confirm
+      </mdui-button>
       <mdui-button
         variant="outlined"
         class="button"
         @click="
-          selectedThemeColor = defaultThemeColor;
-          setColorTheme(selectedThemeColor);
+          () => {
+            selectedThemeColor = defaultThemeColor
+            setColorTheme(selectedThemeColor)
+          }
         "
-        >Reset</mdui-button
       >
+        Reset
+      </mdui-button>
     </mdui-card>
   </nav-drop-down>
 </template>
 
 <style scoped>
-@import "/assets/css/global.less";
+@import '/assets/css/global.less';
 
 mdui-card {
   width: 200px;
+  padding: 15px;
 }
 
 .inner {

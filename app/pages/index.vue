@@ -1,32 +1,35 @@
 <script setup lang="js">
+const titleaa = '首页 - CSBigCaptain Blog'
+const descriptionaa = 'The introduction to CSBigCaptain Blog.'
+
 useSeoMeta({
-  title: "首页 - CSBigCaptain Blog",
-  ogTitle: "首页 - CSBigCaptain Blog",
-  description: "The introduction to CSBigCaptain Blog.",
-  ogDescription: "The introduction to  CSBigCaptain Blog.",
+  title: titleaa,
+  ogTitle: titleaa,
+  description: descriptionaa,
+  ogDescription: descriptionaa,
   ogUrl: 'https://csbigcaptain.github.io/',
-});
-defineOgImageComponent('Nuxt',{
-  title: "CSBigCaptain Blog",
-  headline: "WELCOME TO",
-  description: "A open-source Git-CMS blog system driven by Nuxt 3.",
+})
+defineOgImageComponent('Nuxt', {
+  title: 'CSBigCaptain Blog',
+  headline: 'WELCOME TO',
+  description: 'A open-source Git-CMS blog system driven by Nuxt 4.',
 })
 
-const {data: main} = await useAsyncData('indexMain', () => {
-  return queryCollection('indexMain').all();
-});
-const {data: actions} = await useAsyncData('indexActions', () => {
-  return queryCollection('indexActions').all();
-});
-const {data: advs} = await useAsyncData('indexAdvs', () => {
-  return queryCollection('indexAdvs').all();
-});
+const { data: main } = await useAsyncData('indexMain', () => {
+  return queryCollection('indexMain').all()
+})
+const { data: actions } = await useAsyncData('indexActions', () => {
+  return queryCollection('indexActions').all()
+})
+const { data: advs } = await useAsyncData('indexAdvs', () => {
+  return queryCollection('indexAdvs').all()
+})
 
 const data = {
   main: main.value[0].meta.body,
   actions: actions.value[0].meta.body,
   advs: advs.value[0].meta.body,
- };
+}
 </script>
 
 <template>
@@ -34,24 +37,25 @@ const data = {
     <template #topic-text>首页</template>
     <main>
       <div class="welcome">
-          <h1>
-            <span class="name">{{ data.main.name }}</span>
-            <span class="text">{{ data.main.text }}</span>
-          </h1>
-          <div class="actions">
-            <NuxtLink
-              v-for="item in data.actions"
-              :key="item.text"
-              :href="item.link"
+        <h1>
+          <span class="name">{{ data.main.name }}</span>
+          <span class="text">{{ data.main.text }}</span>
+        </h1>
+        <div class="actions">
+          <NuxtLink
+            v-for="item in data.actions"
+            :key="item.text"
+            :href="item.link"
+          >
+            <mdui-button
+              :variant="item.variant"
+              :icon="item.icon"
+              :end-icon="item.endIcon"
             >
-              <mdui-button
-                :variant="item.variant"
-                :icon="item.icon"
-                :end-icon="item.endIcon"
-                >{{ item.text }}
-              </mdui-button>
-            </NuxtLink>
-          </div>
+              {{ item.text }}
+            </mdui-button>
+          </NuxtLink>
+        </div>
       </div>
       <div class="advs">
         <div class="container">
@@ -122,11 +126,13 @@ main {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        font-variation-settings: 'wght' 600;
       }
 
       .text {
         color: rgb(var(--mdui-color-secondary));
         font-size: var(--h1-subtitle-font-size);
+        font-variation-settings: 'wght' 400;
       }
     }
 
@@ -162,7 +168,6 @@ main {
     }
 
     .items {
-
       mdui-card {
         width: 100%;
         height: 100%;

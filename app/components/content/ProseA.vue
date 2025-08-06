@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-.main a{
+.main a {
   text-decoration: none;
   box-sizing: content-box;
   padding: 0.1em 0.35em;
@@ -22,19 +22,19 @@
 </style>
 
 <script setup lang="ts">
-import type { PropType } from "vue";
+import type { PropType } from 'vue'
 
 const props = defineProps({
   href: {
     type: String,
-    default: "",
+    default: '',
   },
   target: {
     type: String as PropType<
-      | "_blank"
-      | "_parent"
-      | "_self"
-      | "_top"
+      | '_blank'
+      | '_parent'
+      | '_self'
+      | '_top'
       | (string & object)
       | null
       | undefined
@@ -42,5 +42,5 @@ const props = defineProps({
     default: undefined,
     required: false,
   },
-});
+})
 </script>

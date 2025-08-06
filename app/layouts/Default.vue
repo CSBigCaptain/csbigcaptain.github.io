@@ -27,19 +27,19 @@ const [drawerStatus, toggleDrawer] = useToggle(false)
 
 useHead({
   htmlAttrs: {
-    lang: "zh-CN",
+    lang: 'zh-CN',
   },
   link: [
     {
-      rel: "icon",
-      type: "image/png",
-      href: "/favicon.png",
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
     },
   ],
 })
 
 useSeoMeta({
-  ogImage: "/__og-image__/static/og.png",
+  ogImage: '/__og-image__/static/og.png',
 })
 </script>
 

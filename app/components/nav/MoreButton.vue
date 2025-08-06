@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <mdui-button-icon>
@@ -8,6 +6,4 @@
   </mdui-button-icon>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

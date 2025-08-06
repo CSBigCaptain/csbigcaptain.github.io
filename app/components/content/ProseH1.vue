@@ -15,7 +15,7 @@
   padding: 3rem 0 2.5rem 0;
   margin: 1rem 0 2rem 0;
   background: rgb(var(--mdui-color-surface-container-highest));
-  
+
   .content {
     position: relative;
     display: flex;
@@ -23,7 +23,7 @@
     align-items: center;
     max-width: 800px;
     padding: 0 2rem;
-    
+
     h1 {
       margin: 0;
       cursor: pointer;
@@ -32,7 +32,7 @@
       text-align: center;
       color: rgb(var(--mdui-color-on-surface));
       transition: transform 0.3s ease;
-      
+
       &:hover {
         transform: translateY(-2px);
         color: rgb(var(--mdui-color-primary));
@@ -42,7 +42,7 @@
         }
       }
     }
-    
+
     .underline {
       position: relative;
       width: 50px;
@@ -57,6 +57,4 @@
 }
 </style>
 
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
