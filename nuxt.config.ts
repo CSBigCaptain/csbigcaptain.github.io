@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
   modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content'],
+  // @ts-expect-error
   content: {
     build: {
       markdown: {
@@ -78,7 +79,7 @@ export default defineNuxtConfig({
   },
   css: ['mdui/mdui.css', 'katex/dist/katex.min.css', '/assets/css/global.less'],
   typescript: {
-    typeCheck: false,
+    typeCheck: true,
   },
   site: {
     url:
