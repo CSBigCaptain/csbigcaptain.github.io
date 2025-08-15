@@ -20,6 +20,10 @@ const list = data.value[0].meta.body
 </script>
 
 <style scoped>
+mdui-list {
+  padding-top: 64px;
+}
+
 mdui-list-item {
   padding-left: 4px;
 }

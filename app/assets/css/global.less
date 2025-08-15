@@ -18,6 +18,9 @@ li {
   font-variation-settings: 'wght' 480;
   letter-spacing: 0.015rem;
   word-spacing: 0.1rem;
+
+  --mdui-breakpoint-md: 767px;
+  --mdui-breakpoint-sm: 424px;
 }
 
 body {
@@ -65,8 +68,9 @@ pre {
 }
 
 mdui-top-app-bar,
-.footer {
-  color: var(--bar-text-color);
+footer {
+  color: rgb(var(--mdui-color-on-surface-variant));
+  background-color: rgb(var(--mdui-color-surface-variant));
 }
 
 .body {

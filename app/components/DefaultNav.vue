@@ -1,6 +1,6 @@
 <template>
-  <ClientOnly>
-    <mdui-top-app-bar style="position: fixed">
+  <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
+    <mdui-top-app-bar>
       <mdui-button-icon @click="$emit('open-drawer')">
         <mdui-icon-menu></mdui-icon-menu>
       </mdui-button-icon>
@@ -14,10 +14,10 @@
         <NavDarkChangeButton />
         <NavChangeWebColor />
         <NavShareButton />
-        <!-- <NavMoreButton /> -->
+        <NavMoreButton />
       </div>
     </mdui-top-app-bar>
-  </ClientOnly>
+  </header>
 </template>
 
 <script lang="ts" setup>
@@ -32,11 +32,12 @@ import '@mdui/icons/share.js'
 </script>
 
 <style scoped>
-mdui-top-app-bar {
+.header {
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: rgb(var(--mdui-color-surface-variant));
+  position: fixed;
+  height: 64px;
 }
 </style>
