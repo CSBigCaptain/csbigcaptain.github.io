@@ -40,4 +40,10 @@ import '@mdui/icons/share.js'
   position: fixed;
   height: 64px;
 }
+
+@media (max-width: 375px) {
+  mdui-top-app-bar-title {
+    visibility: hidden;
+  }
+}
 </style>

@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
 * {
   box-sizing: border-box;
 }
 
-li,
 li {
   list-style: none;
 }
@@ -16,8 +13,6 @@ li {
     -apple-system,
     sans-serif;
   font-variation-settings: 'wght' 480;
-  letter-spacing: 0.015rem;
-  word-spacing: 0.1rem;
 
   --mdui-breakpoint-md: 767px;
   --mdui-breakpoint-sm: 424px;
@@ -34,7 +29,7 @@ h1, h2 {
 // 部分 mdui 组件不支持可变粗细字体
 mdui-chip,
 mdui-button {
-  font-family: sans-serif;
+  font-family: -apple-system, sans-serif;
 }
 
 code,

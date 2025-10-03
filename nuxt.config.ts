@@ -49,12 +49,6 @@ export default defineNuxtConfig({
       api: 'https://api.nuxt.studio',
     },
   },
-  runtimeConfig: {
-    public: {
-      // 分析器 ID（测试中）
-      msAnalyticsId: process.env.MS_ANALYTICS_ID || 'rhd4ry6sym',
-    },
-  },
   nitro: {
     prerender: {
       failOnError: true,
@@ -68,7 +62,13 @@ export default defineNuxtConfig({
     buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/public/favicon.ico' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap',
+        },
+      ],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
@@ -97,9 +97,7 @@ export default defineNuxtConfig({
   ogImage: {
     zeroRuntime: true,
     googleFontMirror: true,
-    fonts:[
-      'Noto+Sans+SC:500'
-    ]
+    fonts: ['Roboto:500', 'Roboto:800', 'Noto+Sans+SC:500', 'Noto+Sans+SC:800'],
   },
   robots: {
     // sitemap 模块依赖于 robots 模块
