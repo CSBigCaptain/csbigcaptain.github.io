@@ -26,19 +26,6 @@
 
 <script setup lang="ts">
 const [drawerStatus, toggleDrawer] = useToggle(false)
-
-useHead({
-  htmlAttrs: {
-    lang: 'zh-CN',
-  },
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png',
-    },
-  ],
-})
 </script>
 
 <style lang="less" scoped>

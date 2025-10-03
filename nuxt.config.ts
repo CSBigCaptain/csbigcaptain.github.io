@@ -63,7 +63,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'zh-CN' },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/public/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap',
