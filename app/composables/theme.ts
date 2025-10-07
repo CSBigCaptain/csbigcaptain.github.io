@@ -82,7 +82,6 @@ const setRandomColor = () => {
 }
 
 export {
-  theme,
   mduiDark,
   toggleDark,
   defaultThemeColor,
