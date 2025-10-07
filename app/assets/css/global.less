@@ -9,10 +9,9 @@ li {
 :root {
   --inline-padding: 15px;
   font-family:
-    source-han-sans-sc-variable,
+    'Noto Sans SC',
     -apple-system,
     sans-serif;
-  font-variation-settings: 'wght' 480;
 
   --mdui-breakpoint-md: 767px;
   --mdui-breakpoint-sm: 424px;
@@ -23,18 +22,9 @@ body {
   padding: 0;
 }
 
-h1, h2 {
-  font-variation-settings: 'wght' 400;
-}
-// 部分 mdui 组件不支持可变粗细字体
-mdui-chip,
-mdui-button {
-  font-family: -apple-system, sans-serif;
-}
-
 code,
 pre {
-  font-family: 'Jetbrains Mono', 'Roboto Mono', monospace;
+  font-family: 'Jetbrains Mono', monospace;
 }
 
 .webMain {
