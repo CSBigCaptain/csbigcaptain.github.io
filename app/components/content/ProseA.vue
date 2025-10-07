@@ -35,9 +35,6 @@ const props = defineProps({
       | '_parent'
       | '_self'
       | '_top'
-      | (string & object)
-      | null
-      | undefined
     >,
     default: undefined,
     required: false,

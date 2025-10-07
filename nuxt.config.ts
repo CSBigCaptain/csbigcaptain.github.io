@@ -1,9 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
   modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content'],
-  // @ts-expect-error
+  // @ts-expect-error: types are not up to date
   content: {
     build: {
       markdown: {
