@@ -182,6 +182,7 @@ main {
 
           .detail {
             font-size: var(--box-detail-font-size);
+            line-height: var(--content-line-height);
             margin: 0.8rem 0 0;
           }
         }

@@ -42,7 +42,9 @@ const changeDate = (date) => {
             <mdui-card variant="filled" clickable>
               <h2>{{ post.title }}</h2>
               <p>{{ post.description }}</p>
-              <small>{{ changeDate(post.date) }}</small>
+              <small>
+                {{ changeDate(post.update ?? post.date) }}
+              </small>
             </mdui-card>
           </NuxtLink>
         </li>

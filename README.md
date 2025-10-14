@@ -2,7 +2,7 @@
 
 ![GitHub License](https://img.shields.io/github/license/csbigcaptain/csbigcaptain.github.io) ![Website](https://img.shields.io/website?url=https%3A%2F%2Fcsbigcaptain.github.io) ![Node Current](https://img.shields.io/node/v/nuxt) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/csbigcaptain/csbigcaptain.github.io)
 
-本项目是 [CSBigCaptain](https://github.com/csbigcaptain) 的个人博客的仓库。使用 Nuxt 3 开发构建，使用 Material Design 设计风格，并使用 [Nuxt Content](https://content.nuxtjs.org/) 来作为本地基于文件的 CMS 系统。
+本项目是 [CSBigCaptain](https://github.com/csbigcaptain) 的个人博客的仓库。使用 Nuxt 4 开发构建，使用 Material Design 设计风格，并使用 [Nuxt Content](https://content.nuxtjs.org/) 来作为本地基于文件的 CMS 系统。
 
 虽然是静态博客系统，但是仍然具有以下优势：
 
