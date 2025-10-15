@@ -92,7 +92,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
-    googleFontMirror: true,
+    googleFontMirror: false,
     fonts: ['Roboto:500', 'Roboto:800', 'Noto+Sans+SC:500', 'Noto+Sans+SC:800'],
   },
   robots: {
