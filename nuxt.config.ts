@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/fonts'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', 'nuxt-og-image', '@nuxt/content', '@nuxt/fonts'],
   // @ts-expect-error: types are not up to date
   content: {
     build: {
@@ -64,9 +64,7 @@ export default defineNuxtConfig({
     buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
@@ -112,5 +110,5 @@ export default defineNuxtConfig({
   },
   fonts: {
     provider: 'bunny',
-  }
+  },
 })
