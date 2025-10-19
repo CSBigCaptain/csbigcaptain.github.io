@@ -44,3 +44,21 @@ pnpm install
 ```shell
 pnpm approve-builds
 ```
+
+### 剔除原有数据
+
+如果你想部署本项目使用，请删除 `/content` 目录下的文章，并修改 `/content/data/` 目录下的显示信息。否则会造成侵权。
+
+### 开发服务器 & 构建
+
+```shell
+pnpm dev
+```
+
+```shell
+pnpm generate
+```
+
+## 交流
+
+由于本项目为个人博客，因此具有较高的定制程度，如有文档未尽之事宜可以添加[交流 QQ 群](https://qm.qq.com/q/c2bJHbwTDy)。

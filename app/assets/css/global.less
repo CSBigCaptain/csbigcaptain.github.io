@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  letter-spacing: .045em;
 }
 
 li {
@@ -7,12 +8,17 @@ li {
 }
 
 :root {
-  --inline-padding: 15px;
-  --content-line-height: 1.5;
+  font-optical-sizing: auto;
+  font-synthesis: weight style;
   font-family:
+    'Alata',
     'Noto Sans SC',
+    system-ui,
     -apple-system,
     sans-serif;
+
+  --inline-padding: 15px;
+  --content-line-height: 1.5;
 
   --mdui-breakpoint-md: 767px;
   --mdui-breakpoint-sm: 424px;
@@ -81,4 +87,9 @@ footer {
 
 .content-container {
   padding: 15px;
+}
+
+// 提供空 div 促使 Nuxt Fonts 加载字体
+.provide-font {
+  font-family: var(--nuxt-fonts-download-noto-sans-sc);
 }

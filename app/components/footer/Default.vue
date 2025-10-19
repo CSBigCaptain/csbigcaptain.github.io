@@ -37,7 +37,12 @@
           </li>
           <li>
             <NuxtLink to="https://github.com/csbigcaptain" target="_blank">
-              Github
+              GitHub
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="https://qm.qq.com/q/c2bJHbwTDy" target="_blank">
+              QQ 交流群
             </NuxtLink>
           </li>
         </ul>
@@ -51,7 +56,7 @@
           . All rights reserved.
         </div>
         <div class="build-info">
-          Build at 2025-10-14. Look at
+          Build at 2025-10-19. Look at
           <NuxtLink
             to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
             target="_blank"
@@ -96,6 +101,7 @@ const confirmNavigation = (event: Event) => {
   }
   .other-info {
     font-size: 0.75rem;
+    line-height: var(--content-line-height);
   }
 }
 
@@ -120,11 +126,11 @@ a:hover {
 // footer 外链图标样式
 a[target='_blank']::after {
   content: '';
-  width: 0.8em;
-  height: 0.8em;
+  width: 0.6em;
+  height: 0.6em;
   transform: translateY(-0.15em);
   background-image: url('/icons/link.svg');
-  background-size: 0.8em 0.8em;
+  background-size: 0.6em 0.6em;
   display: inline-flex;
 }
 </style>

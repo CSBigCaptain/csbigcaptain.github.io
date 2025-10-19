@@ -19,19 +19,21 @@ const preferredColor = userSettings.value.preferredColor
  */
 const getPagesTheme = () => {
   if (import.meta.client) {
+    // 网页主题
     mduiDark = useDark({
       selector: 'html',
       attribute: 'class',
       valueDark: 'mdui-theme-dark',
       valueLight: 'mdui-theme-light',
     })
+    // Shiki 代码块主题使用此
     nuxtDark = useDark({
       selector: 'html',
       attribute: 'class',
       valueDark: 'dark',
       valueLight: 'light',
     })
-    toggleDark = [useToggle(mduiDark), useToggle(nuxtDark)]
+    toggleDark = [useToggle(mduiDark)]
     setColorScheme(userSettings.value.preferredColor, { target: 'html' })
   }
 }

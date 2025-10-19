@@ -1,21 +1,18 @@
 <script setup lang="ts"></script>
 <template>
-  <nav-drop-down>
-    <mdui-button-icon
-      slot="trigger"
-      @click="
-        () => {
-          toggleDark[0]()
-          toggleDark[1]()
-        }
-      "
-    >
-      <client-only>
-        <mdui-icon-mode-night v-if="mduiDark"></mdui-icon-mode-night>
-        <mdui-icon-wb-sunny v-else></mdui-icon-wb-sunny>
-      </client-only>
-    </mdui-button-icon>
-  </nav-drop-down>
+  <mdui-button-icon
+    slot="trigger"
+    @click="
+      () => {
+        toggleDark[0]()
+      }
+    "
+  >
+    <client-only>
+      <mdui-icon-mode-night v-if="mduiDark"></mdui-icon-mode-night>
+      <mdui-icon-wb-sunny v-else></mdui-icon-wb-sunny>
+    </client-only>
+  </mdui-button-icon>
 </template>
 <style scoped>
 mdui-menu {

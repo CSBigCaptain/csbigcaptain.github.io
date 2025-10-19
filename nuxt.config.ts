@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/seo', '@nuxt/content', '@nuxt/fonts'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/fonts'],
   // @ts-expect-error: types are not up to date
   content: {
     build: {
@@ -65,6 +65,21 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'zh-CN' },
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      script: [
+        {
+          innerHTML: /* js */ `
+            const localPreference = localStorage.getItem('vueuse-color-scheme');
+            const systemPreferenceDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if(localPreference === 'dark') {
+              document.documentElement.classList.toggle('mdui-theme-dark');
+            } if (localPreference === 'light') {
+              document.documentElement.classList.remove('mdui-theme-dark');
+            } else if (systemPreferenceDark) {
+              document.documentElement.classList.toggle('mdui-theme-dark', localPreference !== 'light');
+            }
+          `,
+        },
+      ],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
@@ -92,7 +107,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
-    fonts: ['Roboto:500', 'Roboto:800', 'Noto+Sans+SC:500', 'Noto+Sans+SC:800'],
+    fonts: ['Alata', 'Noto+Sans+SC'],
   },
   robots: {
     // sitemap 模块依赖于 robots 模块

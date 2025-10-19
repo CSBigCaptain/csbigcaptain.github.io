@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-.main a {
+a {
   text-decoration: none;
   box-sizing: content-box;
   padding: 0.1em 0.35em;
@@ -16,8 +16,12 @@
   transition: background-color 0.35s;
 }
 
-.main a:hover {
+a:hover {
   background-color: rgb(var(--mdui-color-surface-container-highest));
+}
+
+a, a:active, a:visited {
+  color: rgb(var(--mdui-color-secondary));
 }
 </style>
 
