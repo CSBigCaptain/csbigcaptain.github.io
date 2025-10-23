@@ -20,7 +20,9 @@ a:hover {
   background-color: rgb(var(--mdui-color-surface-container-highest));
 }
 
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
   color: rgb(var(--mdui-color-secondary));
 }
 </style>
@@ -34,12 +36,7 @@ const props = defineProps({
     default: '',
   },
   target: {
-    type: String as PropType<
-      | '_blank'
-      | '_parent'
-      | '_self'
-      | '_top'
-    >,
+    type: String as PropType<'_blank' | '_parent' | '_self' | '_top'>,
     default: undefined,
     required: false,
   },

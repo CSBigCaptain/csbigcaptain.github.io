@@ -10,6 +10,4 @@ th {
   font-weight: border;
   border-left: 2px solid rgb(var(--mdui-color-primary));
 }
-
-
 </style>

@@ -126,13 +126,11 @@ main {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        font-variation-settings: 'wght' 600;
       }
 
       .text {
         color: rgb(var(--mdui-color-secondary));
         font-size: var(--h1-subtitle-font-size);
-        font-variation-settings: 'wght' 400;
       }
     }
 
