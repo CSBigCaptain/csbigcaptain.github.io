@@ -1,22 +1,24 @@
 <template>
   <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
-    <mdui-top-app-bar>
-      <mdui-button-icon @click="$emit('open-drawer')">
-        <mdui-icon-menu></mdui-icon-menu>
-      </mdui-button-icon>
-      <mdui-top-app-bar-title style="flex-grow: 1">
-        <!-- 插槽 topic-text : 顶部导航显示的标题 -->
-        <slot name="topic-text" />
-      </mdui-top-app-bar-title>
-      <div class="rt-btn-hub">
-        <NavSearchButton />
-        <NavBatteryHelper />
-        <NavDarkChangeButton />
-        <NavChangeWebColor />
-        <NavShareButton />
-        <NavMoreButton />
-      </div>
-    </mdui-top-app-bar>
+    <ClientOnly>
+      <mdui-top-app-bar>
+        <mdui-button-icon @click="$emit('open-drawer')">
+          <mdui-icon-menu></mdui-icon-menu>
+        </mdui-button-icon>
+        <mdui-top-app-bar-title style="flex-grow: 1">
+          <!-- 插槽 topic-text : 顶部导航显示的标题 -->
+          <slot name="topic-text" />
+        </mdui-top-app-bar-title>
+        <div class="rt-btn-hub">
+          <NavSearchButton />
+          <NavBatteryHelper />
+          <NavDarkChangeButton />
+          <NavChangeWebColor />
+          <NavShareButton />
+          <NavMoreButton />
+        </div>
+      </mdui-top-app-bar>
+    </ClientOnly>
   </header>
 </template>
 

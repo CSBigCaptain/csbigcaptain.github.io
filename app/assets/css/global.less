@@ -69,7 +69,14 @@ pre {
   --bar-bg-color: rgb(var(--mdui-color-surface-variant));
 }
 
-mdui-top-app-bar,
+mdui-top-app-bar {
+  color: rgb(var(--mdui-color-on-surface-variant));
+  background-color: rgba(var(--mdui-color-surface-variant), 0.8);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  backdrop-filter: saturate(140%) blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
 footer {
   color: rgb(var(--mdui-color-on-surface-variant));
   background-color: rgb(var(--mdui-color-surface-variant));
