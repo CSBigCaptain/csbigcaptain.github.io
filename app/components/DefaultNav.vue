@@ -11,9 +11,9 @@
         </mdui-top-app-bar-title>
         <div class="rt-btn-hub">
           <NavSearchButton />
-          <NavBatteryHelper />
-          <NavDarkChangeButton />
           <NavChangeWebColor />
+          <NavDarkChangeButton />
+          <NavBatteryHelper />
           <NavShareButton />
           <NavMoreButton />
         </div>

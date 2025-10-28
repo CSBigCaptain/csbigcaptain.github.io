@@ -5,9 +5,9 @@ import '~/composables/battery-helper'
 <template>
   <ClientOnly>
     <!-- 不开仅客户端渲染水合作用会出bug -->
-    <NavDropDown trigger="hover">
+    <NavDropdown trigger="hover">
       <NavBatterySmartIcon />
-      <mdui-card>
+      <NavDropdownCard>
         <div v-if="isSupportBattery">
           <div class="item" v-if="chargingTime != Infinity">
             <strong class="tpc">预计充满时间</strong>
@@ -32,16 +32,9 @@ import '~/composables/battery-helper'
         <div v-else>
           当前设备不支持查看电池信息，部分浏览器和设备无法查看系正常现象
         </div>
-      </mdui-card>
-    </NavDropDown>
+      </NavDropdownCard>
+    </NavDropdown>
   </ClientOnly>
 </template>
 
-<style scoped>
-@import '/assets/css/global.less';
-
-mdui-card {
-  width: 150px;
-  padding: 15px;
-}
-</style>
+<style scoped></style>

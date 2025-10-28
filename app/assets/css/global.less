@@ -44,47 +44,19 @@ pre {
   font-family: 'Jetbrains Mono', monospace;
 }
 
-.webMain {
-  --body-text-color: rgb(var(--mdui-color-on-surface));
-  --body-bg-color: rgb(var(--mdui-color-surface));
-  --body-primary-color: rgb(var(--mdui-color-primary));
-  --body-on-primary-color: rgb(var(--mdui-color-on-primary));
-  --body-primary-container-color: rgb(var(--mdui-color-primary-container));
-  --body-on-primary-container-color: rgb(
-    var(--mdui-color-on-primary-container)
-  );
-  --body-secondary-color: rgb(var(--mdui-color-secondary));
-  --body-on-secondary-color: rgb(var(--mdui-color-on-secondary));
-  --body-secondary-container-color: rgb(var(--mdui-color-secondary-container));
-  --body-on-secondary-container-color: rgb(
-    var(--mdui-color-on-secondary-container)
-  );
-  --body-tertiary-color: rgb(var(--mdui-color-tertiary));
-  --body-on-tertiary-color: rgb(var(--mdui-color-on-tertiary));
-  --body-tertiary-container-color: rgb(var(--mdui-color-tertiary-container));
-  --body-on-tertiary-container-color: rgb(
-    var(--mdui-color-on-tertiary-container)
-  );
-  --bar-text-color: rgb(var(--mdui-color-on-surface-variant));
-  --bar-bg-color: rgb(var(--mdui-color-surface-variant));
-}
-
 mdui-top-app-bar {
   color: rgb(var(--mdui-color-on-surface-variant));
-  background-color: rgba(var(--mdui-color-surface-variant), 0.8);
-  -webkit-backdrop-filter: saturate(140%) blur(8px);
-  backdrop-filter: saturate(140%) blur(8px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
+  background-color: rgba(var(--mdui-color-surface-variant), 0.9);
+  -webkit-backdrop-filter: saturate(140%) blur(4.8px);
+  backdrop-filter: saturate(140%) blur(4.8px);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 footer {
   color: rgb(var(--mdui-color-on-surface-variant));
   background-color: rgb(var(--mdui-color-surface-variant));
-}
-
-.body {
-  color: var(--body-text-color);
-  background-color: var(--body-bg-color);
 }
 
 .page-container {
@@ -104,9 +76,4 @@ footer {
 
 .content-container {
   padding: 15px;
-}
-
-// 提供空 div 促使 Nuxt Fonts 加载字体
-.provide-font {
-  font-family: var(--nuxt-fonts-download-noto-sans-sc);
 }

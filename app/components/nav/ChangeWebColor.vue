@@ -5,24 +5,22 @@ import {
   setColorTheme,
   setRandomColor,
 } from '../../composables/theme'
-import { ref } from 'vue'
 
 const selectedThemeColor = ref<string>(preferredColor)
 </script>
 
 <template>
-  <nav-drop-down trigger="click">
+  <NavDropdown trigger="click">
     <mdui-button-icon slot="trigger">
       <mdui-icon-palette></mdui-icon-palette>
     </mdui-button-icon>
-    <mdui-card>
+    <NavDropdownCard width="300">
       <div class="inner">
         <div class="topic">选择网页主题色</div>
         <input
           type="color"
           name="theme-color"
           class="color-chooser"
-          id=""
           v-model="selectedThemeColor"
         />
         <div class="topic">或手动输入HEX色号</div>
@@ -60,17 +58,12 @@ const selectedThemeColor = ref<string>(preferredColor)
       >
         Reset
       </mdui-button>
-    </mdui-card>
-  </nav-drop-down>
+    </NavDropdownCard>
+  </NavDropdown>
 </template>
 
 <style scoped>
 @import '/assets/css/global.less';
-
-mdui-card {
-  width: 200px;
-  padding: 15px;
-}
 
 .inner {
   padding-bottom: 10px;
