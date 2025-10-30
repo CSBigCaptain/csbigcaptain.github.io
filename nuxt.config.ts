@@ -55,7 +55,6 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: true,
       crawlLinks: true,
-      routes: ['/', '/blog/', '/search', '/rss'],
     },
   },
   app: {

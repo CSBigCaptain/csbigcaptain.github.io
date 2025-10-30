@@ -2,7 +2,7 @@
   <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
     <ClientOnly>
       <mdui-top-app-bar>
-        <mdui-button-icon @click="$emit('open-drawer')">
+        <mdui-button-icon @click="toggleDrawerStatus()">
           <mdui-icon-menu></mdui-icon-menu>
         </mdui-button-icon>
         <mdui-top-app-bar-title style="flex-grow: 1">
@@ -18,7 +18,7 @@
           <NavMoreButton />
         </div>
       </mdui-top-app-bar>
-    </ClientOnly>
+    </ClientOnly> 
   </header>
 </template>
 
@@ -31,6 +31,8 @@ import '@mdui/icons/mode-night.js'
 import '@mdui/icons/wb-sunny.js'
 import '@mdui/icons/palette.js'
 import '@mdui/icons/share.js'
+
+const { toggleDrawerStatus } = useLayoutStatus()
 </script>
 
 <style scoped>

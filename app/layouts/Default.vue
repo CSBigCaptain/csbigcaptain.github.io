@@ -1,6 +1,6 @@
 <template>
   <mdui-layout>
-    <DefaultNav @open-drawer="toggleDrawer">
+    <DefaultNav>
       <template #topic-text><slot name="topic-text" /></template>
     </DefaultNav>
     <aside>
@@ -22,10 +22,21 @@
       <FooterDefault />
     </mdui-layout-main>
   </mdui-layout>
+  <mdui-dialog
+    :open="searchStatus"
+    close-on-esc
+    close-on-overlay-click
+    @close="closeAll()"
+    headline="搜索"
+  >
+    <AppSearch />
+  </mdui-dialog>
 </template>
 
 <script setup lang="ts">
-const [drawerStatus, toggleDrawer] = useToggle(false)
+const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
+
+
 </script>
 
 <style lang="less" scoped>
