@@ -56,7 +56,7 @@
           . All rights reserved.
         </div>
         <div class="build-info">
-          Build at 2025-10-28. Look at
+          Build at 2025-10-31. Look at
           <NuxtLink
             to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
             target="_blank"
@@ -126,11 +126,11 @@ a:hover {
 // footer 外链图标样式
 a[target='_blank']::after {
   content: '';
-  width: 0.6em;
-  height: 0.6em;
-  transform: translateY(-0.15em);
-  background-image: url('/icons/link.svg');
-  background-size: 0.6em 0.6em;
+  width: 0.7em;
+  height: 0.7em;
+  transform: translateY(-0.2em);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23828181' d='M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1M14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 1 0 1.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1'/%3E%3C/svg%3E");
+  background-size: 0.7em 0.7em;
   display: inline-flex;
 }
 </style>

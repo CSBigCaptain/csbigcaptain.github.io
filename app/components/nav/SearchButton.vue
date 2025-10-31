@@ -3,7 +3,7 @@
 <template>
   <NuxtLink to="/search">
     <mdui-button-icon>
-      <mdui-icon-search></mdui-icon-search>
+      <Icon name="ic:round-search" />
     </mdui-button-icon>
   </NuxtLink>
 </template>

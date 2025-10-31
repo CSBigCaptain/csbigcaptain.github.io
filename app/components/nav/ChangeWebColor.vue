@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import {
-  defaultThemeColor,
-  preferredColor,
-  setColorTheme,
+const {
   setRandomColor,
-} from '../../composables/theme'
-
+  setColorTheme,
+  preferredColor,
+  defaultThemeColor,
+  checkHexColor,
+} = useTheme()
 const selectedThemeColor = ref<string>(preferredColor)
+
+const isHexColor = computed(() => {
+  return checkHexColor(selectedThemeColor.value)
+})
 </script>
 
 <template>
   <NavDropdown trigger="click">
     <mdui-button-icon slot="trigger">
-      <mdui-icon-palette></mdui-icon-palette>
+      <Icon name="ic:round-palette" />
     </mdui-button-icon>
-    <NavDropdownCard width="300">
+    <NavDropdownCard width="180">
       <div class="inner">
         <div class="topic">选择网页主题色</div>
         <input
@@ -28,43 +32,40 @@ const selectedThemeColor = ref<string>(preferredColor)
           type="text"
           name="theme-color"
           class="color-hex"
-          id=""
           v-model="selectedThemeColor"
         />
       </div>
-      <mdui-button
-        variant="outlined"
-        class="button"
-        @click="selectedThemeColor = setRandomColor()"
-      >
-        Random
-      </mdui-button>
-      <mdui-button
-        variant="outlined"
-        class="button"
-        @click="setColorTheme(selectedThemeColor)"
-      >
-        Confirm
-      </mdui-button>
-      <mdui-button
-        variant="outlined"
-        class="button"
-        @click="
-          () => {
-            selectedThemeColor = defaultThemeColor
-            setColorTheme(selectedThemeColor)
-          }
-        "
-      >
-        Reset
-      </mdui-button>
+      <div class="button-collection">
+        <mdui-button-icon
+          variant="filled"
+          :disabled="!isHexColor"
+          @click="setColorTheme(selectedThemeColor)"
+        >
+          <Icon name="ic:round-check" />
+        </mdui-button-icon>
+        <mdui-button-icon
+          variant="tonal"
+          @click="selectedThemeColor = setRandomColor()"
+        >
+          <Icon name="ic:baseline-auto-awesome" />
+        </mdui-button-icon>
+        <mdui-button-icon
+          variant="outlined"
+          @click="
+            () => {
+              setColorTheme(defaultThemeColor)
+              selectedThemeColor = defaultThemeColor
+            }
+          "
+        >
+          <Icon name="ic:round-refresh" />
+        </mdui-button-icon>
+      </div>
     </NavDropdownCard>
   </NavDropdown>
 </template>
 
 <style scoped>
-@import '/assets/css/global.less';
-
 .inner {
   padding-bottom: 10px;
   .topic {
@@ -73,18 +74,19 @@ const selectedThemeColor = ref<string>(preferredColor)
     line-height: 30px;
   }
   .color-chooser {
-    width: 60px;
+    width: 80px;
     height: 30px;
     margin: 5px;
   }
   .color-hex {
-    width: 60px;
+    width: 80px;
     height: 20px;
     margin: 5px;
   }
-  .button {
-    height: 30px;
-    margin: 5px;
-  }
+}
+.button-collection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 </style>

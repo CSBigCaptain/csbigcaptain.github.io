@@ -1,6 +1,6 @@
 <template>
   <mdui-button-icon @click="share">
-    <mdui-icon-share></mdui-icon-share>
+    <Icon name="ic:round-share" />
   </mdui-button-icon>
 </template>
 

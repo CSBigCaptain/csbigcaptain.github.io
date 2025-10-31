@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { mduiDark, toggleDark } = useTheme()
+</script>
 <template>
   <mdui-button-icon
     slot="trigger"
@@ -9,8 +11,8 @@
     "
   >
     <client-only>
-      <mdui-icon-mode-night v-if="mduiDark"></mdui-icon-mode-night>
-      <mdui-icon-wb-sunny v-else></mdui-icon-wb-sunny>
+      <Icon name="ic:round-nightlight" v-if="mduiDark" />
+      <Icon name="ic:round-wb-sunny" v-else />
     </client-only>
   </mdui-button-icon>
 </template>
