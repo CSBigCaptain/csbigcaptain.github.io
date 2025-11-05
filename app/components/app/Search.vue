@@ -11,34 +11,37 @@
     <div v-if="query" class="results">
       <ul class="container">
         <li v-for="item in results" :key="item.item.id">
-          <mdui-card variant="filled" :href="item.item.id">
-            <div class="upper">
-              <div class="titles">
-                {{ item.item.titles[0] ? item.item.titles[0] + ' > ' : '' }}
-                {{ item.item.titles[-1] }}
+          <NuxtLink to="item.item.id">
+            <mdui-card variant="filled" clickable>
+              <div class="upper">
+                <div class="titles">
+                  {{ item.item.titles[0] ? item.item.titles[0] + ' > ' : '' }}
+                  {{ item.item.titles[-1] }}
+                </div>
+                <div
+                  class="title"
+                  v-html="
+                    highlightMatch(
+                      item.item.title,
+                      item.matches as any[],
+                      'title',
+                    )
+                  "
+                ></div>
               </div>
               <div
-                class="title"
+                class="lower"
+                v-if="item.item.content"
                 v-html="
                   highlightMatch(
-                    item.item.title,
+                    item.item.content,
                     item.matches as any[],
-                    'title',
+                    'content',
                   )
                 "
               ></div>
-            </div>
-            <div
-              class="lower"
-              v-html="
-                highlightMatch(
-                  item.item.content,
-                  item.matches as any[],
-                  'content',
-                )
-              "
-            ></div>
-          </mdui-card>
+            </mdui-card>
+          </NuxtLink>
         </li>
       </ul>
     </div>
@@ -108,6 +111,7 @@ const highlightMatch = (text: string, matches: any[], key: string) => {
   .input {
     width: 100%;
     height: auto;
+    padding-bottom: var(--inline-padding);
   }
   .results {
     width: 100%;

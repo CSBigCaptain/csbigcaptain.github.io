@@ -98,10 +98,4 @@ main {
     }
   }
 }
-
-a:-webkit-any-link,
-a:any-link {
-  color: inherit;
-  text-decoration: none;
-}
 </style>
