@@ -4,7 +4,7 @@ const { toggleSearchStatus } = useLayoutStatus()
 
 <template>
   <mdui-button-icon @click="toggleSearchStatus()">
-    <mdui-icon-search></mdui-icon-search>
+    <Icon name="ic:round-search" />
   </mdui-button-icon>
 </template>
 

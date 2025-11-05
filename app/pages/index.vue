@@ -52,6 +52,8 @@ const data = {
               :icon="item.icon"
               :end-icon="item.endIcon"
             >
+              <Icon slot="icon" :name="item.icon" v-if="item.icon" />
+              <Icon slot="end-icon" :name="item.endIcon" v-if="item.endIcon" />
               {{ item.text }}
             </mdui-button>
           </NuxtLink>

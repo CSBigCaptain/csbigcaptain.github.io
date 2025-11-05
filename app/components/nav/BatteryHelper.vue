@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import '~/composables/battery-helper'
+const {
+  isSupported,
+  chargingTime,
+  dischargingTime,
+  charging,
+  level,
+} = useBattery()
 </script>
 
 <template>
@@ -8,7 +14,7 @@ import '~/composables/battery-helper'
     <NavDropdown trigger="hover">
       <NavBatterySmartIcon />
       <NavDropdownCard>
-        <div v-if="isSupportBattery">
+        <div v-if="isSupported">
           <div class="item" v-if="chargingTime != Infinity">
             <strong class="tpc">预计充满时间</strong>
             <div class="value">{{ chargingTime }}</div>
@@ -26,7 +32,7 @@ import '~/composables/battery-helper'
             style="display: flex; justify-content: space-between"
           >
             <strong class="tpc">当前电量</strong>
-            <div class="value">{{ `${batteryLevel * 100}%` }}</div>
+            <div class="value">{{ `${level * 100}%` }}</div>
           </div>
         </div>
         <div v-else>

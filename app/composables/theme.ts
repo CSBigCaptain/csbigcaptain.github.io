@@ -4,9 +4,9 @@ import type { Theme } from 'mdui/internal/theme'
 import { useStorage } from '@vueuse/core'
 
 const defaultThemeColor: string = '#478384'
-let mduiDark
-let nuxtDark
-let toggleDark
+let mduiDark: any
+let nuxtDark: any
+let toggleDark: any
 
 const userSettings = useStorage('user-settings', {
   preferredColor: defaultThemeColor,
@@ -77,19 +77,29 @@ const setColorTheme = (color: string, target: string = 'html') => {
  * @description 设置主题颜色为随机的颜色
  * @returns color 设置的颜色
  */
-const setRandomColor = () => {
+const setRandomColor = (): string => {
   const color = getRandomColor()
   setColorTheme(color)
   return color
 }
 
-export {
-  mduiDark,
-  toggleDark,
-  defaultThemeColor,
-  preferredColor,
-  getPagesTheme,
-  setDarkTheme,
-  setColorTheme,
-  setRandomColor,
+const checkHexColor = (hex: string, withAlpha = false): boolean => {
+  const re = withAlpha
+    ? /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/
+    : /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
+  return re.test(hex.trim())
+}
+
+export const useTheme = () => {
+  return {
+    mduiDark,
+    toggleDark,
+    defaultThemeColor,
+    preferredColor,
+    getPagesTheme,
+    setDarkTheme,
+    setColorTheme,
+    setRandomColor,
+    checkHexColor,
+  }
 }
