@@ -4,7 +4,13 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/fonts', '@nuxt/icon'],
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxtjs/seo',
+    '@nuxt/content',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+  ],
   // @ts-expect-error: types are not up to date
   content: {
     build: {

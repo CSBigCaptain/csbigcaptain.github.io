@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@mdui/icons": "^1.0.3",
-    "@nuxt/content": "^3.7.1",
+    "@nuxt/content": "^3.8.0",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "2.1.0",
     "@nuxtjs/seo": "3.2.2",
@@ -32,16 +32,16 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "ufo": "^1.6.1",
-    "unstorage": "1.17.1",
+    "unstorage": "1.17.2",
     "vue": "^3.5.18"
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.2.4",
-    "@nuxt/devtools": "3.0.0-beta.1",
+    "@nuxt/devtools": "3.0.1",
     "@vueuse/core": "14.0.0",
     "@vueuse/nuxt": "14.0.0",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
-    "vue-tsc": "3.1.2"
+    "vue-tsc": "3.1.3"
   }
 }

@@ -49,21 +49,25 @@
       </div>
       <div class="other-info content-container">
         <div class="copyright">
-          Copyright © 2024 - {{ year }} by
-          <NuxtLink to="https://github.com/CSBigCaptain" target="_blank">
-            CSBigCaptain
-          </NuxtLink>
-          . All rights reserved.
+          <small>
+            Copyright © 2024 - {{ year }} by
+            <NuxtLink to="https://github.com/CSBigCaptain" target="_blank">
+              CSBigCaptain
+            </NuxtLink>
+            . All rights reserved.
+          </small>
         </div>
         <div class="build-info">
-          Build at 2025-10-31. Look at
-          <NuxtLink
-            to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
-            target="_blank"
-          >
-            Changelog
-          </NuxtLink>
-          .
+          <small>
+            Build at 2025-10-31. Look at
+            <NuxtLink
+              to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
+              target="_blank"
+            >
+              Changelog
+            </NuxtLink>
+            .
+          </small>
         </div>
       </div>
     </div>
@@ -100,7 +104,7 @@ const confirmNavigation = (event: Event) => {
     flex-wrap: wrap;
   }
   .other-info {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: var(--content-line-height);
   }
 }
