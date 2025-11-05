@@ -13,12 +13,10 @@
         <li v-for="item in results" :key="item.item.id">
           <mdui-card variant="filled" :href="item.item.id">
             <div class="upper">
-              <template v-for="(i, index) in item.item.titles" :key="index">
-                <div class="titles">
-                  {{ i }}
-                </div>
-                <mdui-icon-chevron-right size="small"></mdui-icon-chevron-right>
-              </template>
+              <div class="titles">
+                {{ item.item.titles[0] ? item.item.titles[0] + ' > ' : '' }}
+                {{ item.item.titles[-1] }}
+              </div>
               <div
                 class="title"
                 v-html="
@@ -102,8 +100,10 @@ const highlightMatch = (text: string, matches: any[], key: string) => {
 
 <style scoped lang="less">
 .main {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
 
   .input {
     width: 100%;
@@ -128,6 +128,7 @@ const highlightMatch = (text: string, matches: any[], key: string) => {
 
         mdui-card {
           width: 100%;
+          padding: var(--inline-padding);
 
           .upper {
             width: 100%;
@@ -136,8 +137,7 @@ const highlightMatch = (text: string, matches: any[], key: string) => {
             align-items: center;
             overflow: hidden;
 
-            .titles,
-            .title {
+            .titles {
               height: 100%;
               line-height: 1.5rem;
               font-size: 1.1rem;
