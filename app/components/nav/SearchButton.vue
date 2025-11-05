@@ -1,11 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { toggleSearchStatus } = useLayoutStatus()
+</script>
 
 <template>
-  <NuxtLink to="/search">
-    <mdui-button-icon>
-      <Icon name="ic:round-search" />
-    </mdui-button-icon>
-  </NuxtLink>
+  <mdui-button-icon @click="toggleSearchStatus()">
+    <Icon name="ic:round-search" />
+  </mdui-button-icon>
 </template>
 
 <style scoped></style>

@@ -5,6 +5,3 @@ body:
   - text: '博客列表'
     icon: ''
     link: '/blog/'
-  - text: '搜索'
-    icon: ''
-    link: '/search/'

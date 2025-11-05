@@ -58,16 +58,14 @@
           </small>
         </div>
         <div class="build-info">
-          <small>
-            Build at 2025-10-31. Look at
-            <NuxtLink
-              to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
-              target="_blank"
-            >
-              Changelog
-            </NuxtLink>
-            .
-          </small>
+          Build at 2025-11-5. Look at
+          <NuxtLink
+            to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
+            target="_blank"
+          >
+            Changelog
+          </NuxtLink>
+          .
         </div>
       </div>
     </div>

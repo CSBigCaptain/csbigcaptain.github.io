@@ -2,7 +2,7 @@
   <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
     <ClientOnly>
       <mdui-top-app-bar>
-        <mdui-button-icon @click="$emit('open-drawer')">
+        <mdui-button-icon @click="toggleDrawerStatus()">
           <Icon name="ic:round-menu" />
         </mdui-button-icon>
         <mdui-top-app-bar-title style="flex-grow: 1">
@@ -18,7 +18,7 @@
           <NavMoreButton />
         </div>
       </mdui-top-app-bar>
-    </ClientOnly>
+    </ClientOnly> 
   </header>
 </template>
 
