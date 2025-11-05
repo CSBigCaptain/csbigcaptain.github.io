@@ -22,6 +22,10 @@
   </header>
 </template>
 
+<script setup lang="ts">
+const { toggleDrawerStatus } = useLayoutStatus()
+</script>
+
 <style scoped>
 .header {
   top: 0;
