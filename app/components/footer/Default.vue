@@ -56,7 +56,7 @@
           . All rights reserved.
         </div>
         <div class="build-info">
-          Build at 2025-10-28. Look at
+          Build at 2025-11-5. Look at
           <NuxtLink
             to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
             target="_blank"
