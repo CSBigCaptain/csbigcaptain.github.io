@@ -11,7 +11,7 @@
     <div v-if="query" class="results">
       <ul class="container">
         <li v-for="item in results" :key="item.item.id">
-          <NuxtLink to="item.item.id">
+          <NuxtLink :to="item.item.id">
             <mdui-card variant="filled" clickable>
               <div class="upper">
                 <div class="titles">
@@ -50,7 +50,6 @@
 
 <script lang="ts" setup>
 import { useFuse } from '@vueuse/integrations/useFuse'
-import '@mdui/icons/chevron-right'
 
 const query = ref('')
 
