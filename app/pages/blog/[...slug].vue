@@ -26,14 +26,53 @@ defineOgImageComponent('Nuxt', {
 <template>
   <NuxtLayout name="default">
     <template #topic-text>Blog</template>
+    <template #full-width>
+      <div class="title-wrapper">
+        <h1 v-if="post">{{ post.title }}</h1>
+        <div v-if="post" class="date">
+          {{ new Date(post.date).toLocaleDateString() }}
+        </div>
+      </div>
+    </template>
     <main class="content-container">
-      <NuxtLink to="/blog"><mdui-chip>Return to List</mdui-chip></NuxtLink>
-      <ContentRenderer v-if="post" :value="post" />
+      <div class="content">
+        <ContentRenderer v-if="post" :value="post" />
+      </div>
     </main>
   </NuxtLayout>
 </template>
 
-<style scoped>
+<style scoped lang="less">
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45vh;
+  background: rgb(var(--mdui-color-surface-container-highest));
+  transform: translateY(calc(-1 * var(--inline-padding)));
+
+  h1 {
+    line-height: 1.3;
+    font-weight: 350;
+    margin: 0 0 0.5rem 0;
+    color: rgb(var(--mdui-color-on-surface));
+
+    @media (max-width: 600px) {
+      font-size: 1.75rem;
+      line-height: 1.4;
+      padding: 0 0rem;
+    }
+  }
+
+  .date {
+    font-size: 0.9rem;
+    color: rgb(var(--mdui-color-thirdary));
+    margin-top: 0.5rem;
+  }
+}
+
 main {
   width: 100%;
   max-width: 768px;
@@ -41,5 +80,9 @@ main {
   padding: 0;
   min-height: 100vh;
   overflow: hidden;
+
+  .content {
+    padding: var(--inline-padding);
+  }
 }
 </style>

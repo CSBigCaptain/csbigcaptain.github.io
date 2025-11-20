@@ -9,9 +9,18 @@
       max-height: 600px;
       min-width: 50%;
       margin: 0 auto;
-    "
-  />
-</template>
+  height: auto;
+
+  img {
+    max-height: 600px;
+  }
+
+  @media (width <= 425px) {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+</style>
 
 <script setup lang="ts">
 import { withTrailingSlash, withLeadingSlash, joinURL } from 'ufo'

@@ -12,7 +12,7 @@
   border-left: 4px solid rgb(var(--mdui-color-primary));
   border-radius: 4px;
   color: rgb(var(--mdui-color-on-surface));
-  font-style: italic;
+  font-style: normal;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 0;
   font-size: 0.9rem; /* 减小字体大小 */
