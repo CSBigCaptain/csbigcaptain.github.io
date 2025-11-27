@@ -119,6 +119,8 @@ main {
       }
 
       .name {
+        font-weight: 600;
+        letter-spacing: var(--compact-letter-spacing);
         background: linear-gradient(
           45deg,
           rgb(var(--mdui-color-primary)),

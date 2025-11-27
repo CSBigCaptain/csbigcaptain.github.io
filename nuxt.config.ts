@@ -67,6 +67,12 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         {
           rel: 'stylesheet',
+          href: 'https://rsms.me/inter/inter.css',
+          media: 'print',
+          onload: 'this.media="all"',
+        },
+        {
+          rel: 'stylesheet',
           href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap',
           media: 'print',
           onload: 'this.media="all"',
@@ -91,7 +97,7 @@ export default defineNuxtConfig({
           defer: true,
           src: 'https://stats.kungal.org/script.js',
           'data-website-id': '3822f94c-9a02-4e86-9a8f-906edb1e0e2c',
-        }
+        },
       ],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },

@@ -5,8 +5,24 @@
 }
 
 :root {
-  --normal-text-letter-space: 0.045em;
-  --compact-text-letter-space: -0.06em;
+  font-optical-sizing: auto;
+  font-synthesis: weight style;
+  font-family:
+    'InterVariable',
+    'MiSans',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-variant-alternates: styleset(open-digits, disambiguation, round-quotes-and-commas);
+
+  --inline-padding: 15px;
+  --content-line-height: 1.5;
+
+  --mdui-breakpoint-md: 767px;
+  --mdui-breakpoint-sm: 424px;
+
+  --normal-text-letter-space: 0.025em;
+  --compact-text-letter-space: -0.065em;
 
   --regular-font-weight: 500;
   --bold-font-weight: 600;
@@ -27,22 +43,6 @@ h4,
 h5,
 h6 {
   font-weight: var(--bold-font-weight);
-}
-
-:root {
-  font-optical-sizing: auto;
-  font-synthesis: weight style;
-  font-family:
-    'MiSans',
-    system-ui,
-    -apple-system,
-    sans-serif;
-
-  --inline-padding: 15px;
-  --content-line-height: 1.5;
-
-  --mdui-breakpoint-md: 767px;
-  --mdui-breakpoint-sm: 424px;
 }
 
 body {

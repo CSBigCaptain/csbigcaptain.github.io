@@ -54,6 +54,8 @@ defineOgImageComponent('Nuxt', {
   transform: translateY(calc(-1 * var(--inline-padding)));
 
   h1 {
+    width: 80%;
+    text-align: center;
     line-height: 1.3;
     font-weight: 350;
     letter-spacing: var(--compact-text-letter-space);
