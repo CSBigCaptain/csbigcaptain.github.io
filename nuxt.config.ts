@@ -86,6 +86,12 @@ export default defineNuxtConfig({
             }
           `,
         },
+        {
+          // Umami 统计脚本
+          defer: true,
+          src: 'https://stats.kungal.org/script.js',
+          'data-website-id': '3822f94c-9a02-4e86-9a8f-906edb1e0e2c',
+        }
       ],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
