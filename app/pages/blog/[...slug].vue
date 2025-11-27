@@ -56,6 +56,7 @@ defineOgImageComponent('Nuxt', {
   h1 {
     line-height: 1.3;
     font-weight: 350;
+    letter-spacing: var(--compact-text-letter-space);
     margin: 0 0 0.5rem 0;
     color: rgb(var(--mdui-color-on-surface));
 

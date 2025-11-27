@@ -4,13 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: [
-    '@vueuse/nuxt',
-    '@nuxtjs/seo',
-    '@nuxt/content',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-  ],
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon'],
   // @ts-expect-error: types are not up to date
   content: {
     build: {
@@ -69,7 +63,15 @@ export default defineNuxtConfig({
     buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'stylesheet',
+          href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap',
+          media: 'print',
+          onload: 'this.media="all"',
+        },
+      ],
       script: [
         {
           innerHTML: /* js */ `
@@ -112,7 +114,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
-    fonts: ['Alata', 'Noto+Sans+SC'],
+    fonts: ['Noto+Sans+SC'],
   },
   robots: {
     // sitemap 模块依赖于 robots 模块
@@ -126,8 +128,5 @@ export default defineNuxtConfig({
   },
   linkChecker: {
     enabled: false,
-  },
-  fonts: {
-    provider: 'bunny',
   },
 })

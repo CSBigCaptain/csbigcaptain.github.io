@@ -3,12 +3,6 @@
     <NuxtLink :to="item.link" v-for="item in list" :key="item.text">
       <mdui-list-item>{{ item.text }}</mdui-list-item>
     </NuxtLink>
-    <NuxtLink to="/rss">
-      <mdui-list-item>
-        RSS 订阅
-        <mdui-badge>Beta</mdui-badge>
-      </mdui-list-item>
-    </NuxtLink>
   </mdui-list>
 </template>
 
@@ -26,6 +20,7 @@ mdui-list {
 
 mdui-list-item {
   padding-left: 4px;
+  letter-spacing: 9em;
 }
 
 a:-webkit-any-link,

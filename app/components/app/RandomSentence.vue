@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
       min-height: 2em;
       cursor: pointer;
       text-align: center;
-      font-weight: bold;
+      font-weight: var(--bold-font-weight);
     }
 
     .source {

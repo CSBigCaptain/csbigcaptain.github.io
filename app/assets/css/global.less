@@ -1,11 +1,19 @@
 * {
   box-sizing: border-box;
-  letter-spacing: 0.045em;
-  font-weight: 550;
+  letter-spacing: var(--normal-text-letter-space);
+  font-weight: var(--regular-font-weight);
+}
+
+:root {
+  --normal-text-letter-space: 0.045em;
+  --compact-text-letter-space: -0.06em;
+
+  --regular-font-weight: 500;
+  --bold-font-weight: 600;
 }
 
 small {
-  font-weight: 400;
+  font-weight: var(--regular-font-weight);
 }
 
 li {
@@ -18,15 +26,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 650;
+  font-weight: var(--bold-font-weight);
 }
 
 :root {
   font-optical-sizing: auto;
   font-synthesis: weight style;
   font-family:
-    'Alata',
-    'Noto Sans SC',
+    'MiSans',
     system-ui,
     -apple-system,
     sans-serif;
