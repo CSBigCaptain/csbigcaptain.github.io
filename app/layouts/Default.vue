@@ -34,9 +34,12 @@
 </template>
 
 <script setup lang="ts">
+import 'mdui/components/navigation-drawer'
+import 'mdui/components/layout'
+import 'mdui/components/layout-main'
+import 'mdui/components/dialog'
+
 const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
-
-
 </script>
 
 <style lang="less" scoped>

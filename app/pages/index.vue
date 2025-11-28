@@ -1,4 +1,7 @@
 <script setup lang="js">
+import 'mdui/components/card'
+import 'mdui/components/button'
+
 const titleaa = '首页 - CSBigCaptain Blog'
 const descriptionaa = 'The introduction to CSBigCaptain Blog.'
 

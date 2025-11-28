@@ -1,17 +1,12 @@
 <script setup lang="ts">
-const {
-  isSupported,
-  chargingTime,
-  dischargingTime,
-  charging,
-  level,
-} = useBattery()
+const { isSupported, chargingTime, dischargingTime, charging, level } =
+  useBattery()
 </script>
 
 <template>
   <ClientOnly>
     <!-- 不开仅客户端渲染水合作用会出bug -->
-    <NavDropdown trigger="hover">
+    <NavDropdown trigger="click">
       <NavBatterySmartIcon />
       <NavDropdownCard>
         <div v-if="isSupported">

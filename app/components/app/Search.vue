@@ -49,6 +49,8 @@
 </template>
 
 <script lang="ts" setup>
+import 'mdui/components/card'
+import 'mdui/components/text-field'
 import { useFuse } from '@vueuse/integrations/useFuse'
 
 const query = ref('')

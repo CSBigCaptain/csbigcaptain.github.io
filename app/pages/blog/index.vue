@@ -1,4 +1,6 @@
 <script setup lang="js">
+import 'mdui/components/card'
+
 const titleaa = '文章列表 - CSBigCaptain Blog'
 const descriptionaa = 'CSBigCaptain Blog list.'
 

@@ -1,5 +1,5 @@
-import { setTheme } from 'mdui'
-import { setColorScheme } from 'mdui'
+import { setTheme } from 'mdui/functions/setTheme'
+import { setColorScheme } from 'mdui/functions/setColorScheme'
 import type { Theme } from 'mdui/internal/theme'
 import { useStorage } from '@vueuse/core'
 

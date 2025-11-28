@@ -1,7 +1,6 @@
 const { closeAll } = useLayoutStatus()
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const { toggleDrawerStatus } = useLayoutStatus()
   const router = useRouter()
 
   // Ensure closed on initial client mount

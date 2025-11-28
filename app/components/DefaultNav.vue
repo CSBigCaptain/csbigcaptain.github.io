@@ -18,11 +18,15 @@
           <NavMoreButton />
         </div>
       </mdui-top-app-bar>
-    </ClientOnly> 
+    </ClientOnly>
   </header>
 </template>
 
 <script setup lang="ts">
+import 'mdui/components/top-app-bar'
+import 'mdui/components/top-app-bar-title'
+import 'mdui/components/button-icon'
+
 const { toggleDrawerStatus } = useLayoutStatus()
 </script>
 

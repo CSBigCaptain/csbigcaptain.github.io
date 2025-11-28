@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const props = defineProps(['trigger'])
+import 'mdui/components/dropdown'
+import type { Dropdown } from 'mdui/components/dropdown'
+
+const props = defineProps<{
+  trigger: Dropdown['trigger']
+}>()
 </script>
 
 <template>

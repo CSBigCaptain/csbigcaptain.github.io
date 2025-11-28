@@ -81,6 +81,7 @@ export default defineNuxtConfig({
       script: [
         {
           innerHTML: /* js */ `
+          // 解决首屏加载闪白问题
             const localPreference = localStorage.getItem('vueuse-color-scheme');
             const systemPreferenceDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if(localPreference === 'dark') {

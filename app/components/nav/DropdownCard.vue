@@ -14,7 +14,8 @@ const props = defineProps({
 </script>
 
 <style scoped>
-mdui-card, div {
+mdui-card,
+div {
   border: 1px solid rgba(var(--mdui-color-outline), 0.2);
   background-color: rgba(var(--mdui-color-surface), 0.85);
   padding: var(--inline-padding);

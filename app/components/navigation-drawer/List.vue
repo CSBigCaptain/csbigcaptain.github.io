@@ -7,6 +7,9 @@
 </template>
 
 <script lang="js" setup>
+import 'mdui/components/list'
+import 'mdui/components/list-item'
+
 const { data } = await useAsyncData('NavigationDrawerList', () => {
   return queryCollection('navigationDrawerList').all()
 })
