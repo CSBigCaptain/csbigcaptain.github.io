@@ -1,76 +1,40 @@
-import { setTheme } from 'mdui/functions/setTheme'
-import { setColorScheme } from 'mdui/functions/setColorScheme'
-import type { Theme } from 'mdui/internal/theme'
 import { useStorage } from '@vueuse/core'
+import { setColorScheme } from 'mdui/functions/setColorScheme'
+import { hslToHex, nextHue, hexToHue } from '~/utils/theme'
 
-const defaultThemeColor: string = '#478384'
-let mduiDark: any
-let nuxtDark: any
-let toggleDark: any
-
-const userSettings = useStorage('user-settings', {
-  preferredColor: defaultThemeColor,
+const userThemeSettings = useStorage('user-settings', {
+  preferredColor: '#478384',
+  enableDynamicColor: true,
 })
 
-const preferredColor = userSettings.value.preferredColor
+const mduiDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'mdui-theme-dark',
+  valueLight: 'mdui-theme-light',
+})
+
+/** Shiki 代码块深浅模式 */
+const nuxtDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light',
+})
+
+const toggleDark = [useToggle(mduiDark)]
 
 /**
- * @description 获取当前页面主题，传到变量 theme 中，并设置默认的颜色主题
- */
-const getPagesTheme = () => {
-  if (import.meta.client) {
-    // 网页主题
-    mduiDark = useDark({
-      selector: 'html',
-      attribute: 'class',
-      valueDark: 'mdui-theme-dark',
-      valueLight: 'mdui-theme-light',
-    })
-    // Shiki 代码块主题使用此
-    nuxtDark = useDark({
-      selector: 'html',
-      attribute: 'class',
-      valueDark: 'dark',
-      valueLight: 'light',
-    })
-    toggleDark = [useToggle(mduiDark)]
-    setColorScheme(userSettings.value.preferredColor, { target: 'html' })
-  }
-}
-
-/**
- * @description 更改页面深浅
- * @param theme 深浅或者跟随系统
- * @param target 目标，默认是 html
- */
-const setDarkTheme = (theme: Theme, target: string = 'html') => {
-  if (import.meta.client) {
-    setTheme(theme, target)
-  }
-}
-
-/**
- * @description 生成随机的 HEX 色彩
- * @returns color 随机的字符串类型十六进制 RGB 颜色
- */
-const getRandomColor = (): string => {
-  let color: string = '#'
-  for (let i = 0; i < 6; i++) {
-    color += Math.floor(Math.random() * 16).toString(16)
-  }
-  return color
-}
-
-/**
- * @description 设置主题颜色
- * @param color
+ * @description 设置主题颜色，并更新本地 Storage
+ * @param color 颜色值，默认使用本地 Storage 里的首选颜色
  * @param target 更改的HTML元素，默认直接用 html 元素
  */
-const setColorTheme = (color: string, target: string = 'html') => {
-  setColorScheme(color, {
-    target: target,
-  })
-  userSettings.value.preferredColor = color
+const setColorTheme = (
+  color: string = userThemeSettings.value.preferredColor,
+  target: string = 'html',
+) => {
+  setColorScheme(color, { target })
+  userThemeSettings.value.preferredColor = color
 }
 
 /**
@@ -83,23 +47,53 @@ const setRandomColor = (): string => {
   return color
 }
 
-const checkHexColor = (hex: string, withAlpha = false): boolean => {
-  const re = withAlpha
-    ? /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/
-    : /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
-  return re.test(hex.trim())
+const useDynamicTheme = () => {
+  const hue = ref(0)
+  let timer: number | null = null // interval 的句柄
+  /**
+   * @param [interval] 颜色变化周期，默认 1000 毫秒
+   * @param [step] 颜色变化步长，默认 1
+   */
+  const start = (interval: number = 1000, step: number = 1) => {
+    if (!import.meta.client) return
+    if (timer !== null) return // 防止重复启动
+    hue.value = hexToHue(userThemeSettings.value.preferredColor)
+    timer = window.setInterval(() => {
+      hue.value = nextHue(hue.value, step)
+      const color = hslToHex(hue.value, 70, 55)
+      setColorScheme(color, { target: 'html' })
+    }, interval)
+  }
+  const stop = () => {
+    if (timer !== null) {
+      clearInterval(timer)
+      timer = null
+      setColorScheme(userThemeSettings.value.preferredColor, { target: 'html' })
+    }
+  }
+  watch(
+    () => userThemeSettings.value.enableDynamicColor,
+    (enabled) => {
+      enabled ? start() : stop()
+    },
+    { immediate: true },
+  )
+
+  return {
+    hue,
+    start,
+    stop,
+  }
 }
 
 export const useTheme = () => {
   return {
+    userThemeSettings,
     mduiDark,
+    nuxtDark,
     toggleDark,
-    defaultThemeColor,
-    preferredColor,
-    getPagesTheme,
-    setDarkTheme,
     setColorTheme,
     setRandomColor,
-    checkHexColor,
+    useDynamicTheme,
   }
 }

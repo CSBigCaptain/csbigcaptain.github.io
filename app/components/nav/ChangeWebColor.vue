@@ -1,12 +1,10 @@
 <script setup lang="ts">
-const {
-  setRandomColor,
-  setColorTheme,
-  preferredColor,
-  defaultThemeColor,
-  checkHexColor,
-} = useTheme()
-const selectedThemeColor = ref<string>(preferredColor)
+import { checkHexColor } from '~/utils/theme'
+
+const { userThemeSettings, setRandomColor, setColorTheme } = useTheme()
+
+const defaultThemeColor = userThemeSettings.value.preferredColor
+const selectedThemeColor = ref<string>(defaultThemeColor)
 
 const isHexColor = computed(() => {
   return checkHexColor(selectedThemeColor.value)
@@ -15,7 +13,7 @@ const isHexColor = computed(() => {
 
 <template>
   <NavDropdown trigger="click">
-    <mdui-button-icon slot="trigger">
+    <mdui-button-icon disabled="" slot="trigger">
       <Icon name="ic:round-palette" />
     </mdui-button-icon>
     <NavDropdownCard width="180">

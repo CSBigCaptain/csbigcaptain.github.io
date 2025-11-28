@@ -6,7 +6,7 @@ const { mduiDark, toggleDark } = useTheme()
     slot="trigger"
     @click="
       () => {
-        toggleDark[0]()
+        toggleDark[0]!()
       }
     "
   >

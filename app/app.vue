@@ -4,6 +4,7 @@
 </template>
 
 <script setup lang="ts">
-const { getPagesTheme } = useTheme()
-getPagesTheme()
+const { setColorTheme, useDynamicTheme } = useTheme()
+setColorTheme()
+useDynamicTheme().start()
 </script>
