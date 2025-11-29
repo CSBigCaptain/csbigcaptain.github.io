@@ -2,7 +2,7 @@
   <p><slot /></p>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 p {
   line-height: var(--content-line-height);
 }

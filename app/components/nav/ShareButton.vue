@@ -1,12 +1,6 @@
-<template>
-  <mdui-button-icon @click="share">
-    <Icon name="ic:round-share" />
-  </mdui-button-icon>
-</template>
-
 <script lang="ts" setup>
-const share = () => {
-  const { share, isSupported } = useShare()
+function share() {
+  const { share } = useShare()
   share({
     title: document.title,
     text: '嘿伙计👋，给你分享个好东西！',
@@ -15,4 +9,10 @@ const share = () => {
 }
 </script>
 
-<style></style>
+<template>
+  <mdui-button-icon @click="share">
+    <Icon name="ic:round-share" />
+  </mdui-button-icon>
+</template>
+
+<style lang="less"></style>

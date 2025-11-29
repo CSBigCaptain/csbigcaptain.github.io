@@ -1,3 +1,16 @@
+<script lang="ts" setup>
+const props = defineProps({
+  title: { type: String, required: false, default: 'title' },
+  description: { type: String, required: false, default: 'description' },
+  headline: { type: String, required: false, default: '' },
+  date: { type: Date, required: false, default: null },
+})
+const title = computed(() => (props.title || '').slice(0, 60))
+const description = computed(() => (props.description || '').slice(0, 200))
+const headline = props.headline || ''
+const _date = props.date || new Date()
+</script>
+
 <template>
   <div class="w-full h-full flex flex-col justify-center bg-[#020420] relative">
     <svg
@@ -63,7 +76,7 @@
     <img
       class="absolute right-[100px] bottom-[50px] w-[100px] h-[100px] rounded-full object-cover"
       src="https://avatars.githubusercontent.com/u/81836540?v=4"
-    />
+    >
     <p
       class="absolute left-[100px] bottom-[40px] font-bold text-[15px] text-[#E4E4E7]"
       style="font-variation-settings: 'wght' 500"
@@ -72,16 +85,3 @@
     </p>
   </div>
 </template>
-
-<script lang="ts" setup>
-const props = defineProps({
-  title: { type: String, required: false, default: 'title' },
-  description: { type: String, required: false, default: 'description' },
-  headline: { type: String, required: false, default: '' },
-  date: { type: Date, required: false, default: null },
-})
-const title = computed(() => (props.title || '').slice(0, 60))
-const description = computed(() => (props.description || '').slice(0, 200))
-const headline = props.headline || ''
-const date = props.date || new Date()
-</script>

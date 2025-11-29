@@ -4,7 +4,7 @@
   </tr>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 tr {
   border-top: 1px solid rgb(var(--mdui-color-primary));
 }

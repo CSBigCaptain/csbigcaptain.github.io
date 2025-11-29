@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import 'mdui/components/dropdown'
 import type { Dropdown } from 'mdui/components/dropdown'
+import 'mdui/components/dropdown'
 
 const props = defineProps<{
   trigger: Dropdown['trigger']
@@ -14,4 +14,4 @@ const props = defineProps<{
   </mdui-dropdown>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped></style>

@@ -4,4 +4,4 @@
   </thead>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped></style>

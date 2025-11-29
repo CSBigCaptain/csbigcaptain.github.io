@@ -1,6 +1,24 @@
-<script setup lang="js">
+<script setup lang="ts">
 import 'mdui/components/card'
 import 'mdui/components/button'
+
+interface MainData {
+  name: string
+  text: string
+}
+
+interface ActionItem {
+  text: string
+  link: string
+  variant: string
+  icon?: string
+  endIcon?: string
+}
+
+interface AdvItem {
+  title: string
+  detail: string
+}
 
 const titleaa = '首页 - CSBigCaptain Blog'
 const descriptionaa = 'The introduction to CSBigCaptain Blog.'
@@ -29,15 +47,17 @@ const { data: advs } = await useAsyncData('indexAdvs', () => {
 })
 
 const data = {
-  main: main.value[0].meta.body,
-  actions: actions.value[0].meta.body,
-  advs: advs.value[0].meta.body,
+  main: main.value?.[0]?.meta?.body as MainData,
+  actions: actions.value?.[0]?.meta?.body as ActionItem[],
+  advs: advs.value?.[0]?.meta?.body as AdvItem[],
 }
 </script>
 
 <template>
   <NuxtLayout name="default">
-    <template #topic-text>首页</template>
+    <template #topic-text>
+      首页
+    </template>
     <main>
       <div class="welcome">
         <h1>
@@ -55,8 +75,8 @@ const data = {
               :icon="item.icon"
               :end-icon="item.endIcon"
             >
-              <Icon slot="icon" :name="item.icon" v-if="item.icon" />
-              <Icon slot="end-icon" :name="item.endIcon" v-if="item.endIcon" />
+              <Icon v-if="item.icon" slot="icon" :name="item.icon" />
+              <Icon v-if="item.endIcon" slot="end-icon" :name="item.endIcon" />
               {{ item.text }}
             </mdui-button>
           </NuxtLink>
@@ -64,11 +84,15 @@ const data = {
       </div>
       <div class="advs">
         <div class="container">
-          <div class="items" v-for="item in data.advs">
+          <div v-for="item in data.advs" :key="item.title" class="items">
             <mdui-card variant="filled">
               <div class="box">
-                <h2 class="title">{{ item.title }}</h2>
-                <div class="detail">{{ item.detail }}</div>
+                <h2 class="title">
+                  {{ item.title }}
+                </h2>
+                <div class="detail">
+                  {{ item.detail }}
+                </div>
               </div>
             </mdui-card>
           </div>

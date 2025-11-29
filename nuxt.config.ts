@@ -1,11 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
+import blogConfig from './blog.config'
 
 export default defineNuxtConfig({
+  ...blogConfig.commonConfig,
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon'],
-  // @ts-expect-error: types are not up to date
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon', '@nuxt/eslint'],
+  // @ts-expect-error content types not properly merged
   content: {
     build: {
       markdown: {
@@ -29,17 +31,7 @@ export default defineNuxtConfig({
             default: 'github-light',
             dark: 'github-dark',
           },
-          langs: [
-            'c',
-            'cpp',
-            'python',
-            'js',
-            'ts',
-            'html',
-            'css',
-            'vue',
-            'yaml',
-          ],
+          langs: ['c', 'cpp', 'python', 'js', 'ts', 'html', 'css', 'vue', 'yaml'],
         },
         toc: {
           depth: 3,
@@ -79,6 +71,7 @@ export default defineNuxtConfig({
         },
       ],
       script: [
+        ...(blogConfig.additionalScripts || []),
         {
           innerHTML: /* js */ `
           // 解决首屏加载闪白问题
@@ -93,36 +86,34 @@ export default defineNuxtConfig({
             }
           `,
         },
-        {
-          // Umami 统计脚本
-          defer: true,
-          src: 'https://stats.kungal.org/script.js',
-          'data-website-id': '3822f94c-9a02-4e86-9a8f-906edb1e0e2c',
-        },
       ],
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith('mdui-'),
+      isCustomElement: tag => tag.startsWith('mdui-'),
     },
   },
-  css: ['mdui/mdui.css', 'katex/dist/katex.min.css', '/assets/css/global.less'],
+  css: [
+    ...(blogConfig.additionalCss || []),
+    'mdui/mdui.css',
+    'katex/dist/katex.min.css',
+    '/assets/css/global.less',
+  ],
   typescript: {
     typeCheck: true,
-  },
-  site: {
-    url:
-      process.env.NODE_ENV === 'production'
-        ? 'https://csbigcaptain.github.io'
-        : 'http://localhost:3000',
-    name: 'CSBigCaptain Blog',
   },
   nuxtseo: {
     colorMode: {
       performance: 'system',
       fallback: 'dark',
+    },
+  },
+  eslint: {
+    config: {
+      standalone: false,
+      stylistic: true,
     },
   },
   ogImage: {

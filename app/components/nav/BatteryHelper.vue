@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { isSupported, chargingTime, dischargingTime, charging, level } =
-  useBattery()
+const { isSupported, chargingTime, dischargingTime, charging, level }
+  = useBattery()
 </script>
 
 <template>
@@ -10,24 +10,32 @@ const { isSupported, chargingTime, dischargingTime, charging, level } =
       <NavBatterySmartIcon />
       <NavDropdownCard>
         <div v-if="isSupported">
-          <div class="item" v-if="chargingTime != Infinity">
+          <div v-if="chargingTime !== Infinity" class="item">
             <strong class="tpc">预计充满时间</strong>
-            <div class="value">{{ chargingTime }}</div>
+            <div class="value">
+              {{ chargingTime }}
+            </div>
           </div>
-          <div class="item" v-if="dischargingTime != Infinity">
+          <div v-if="dischargingTime !== Infinity" class="item">
             <strong class="tpc">预计续航时间</strong>
-            <div class="value">{{ dischargingTime }}</div>
+            <div class="value">
+              {{ dischargingTime }}
+            </div>
           </div>
           <div class="item">
             <strong class="tpc">充电状态</strong>
-            <div class="value">{{ charging ? '充电中' : '使用电池' }}</div>
+            <div class="value">
+              {{ charging ? '充电中' : '使用电池' }}
+            </div>
           </div>
           <div
             class="item"
             style="display: flex; justify-content: space-between"
           >
             <strong class="tpc">当前电量</strong>
-            <div class="value">{{ `${level * 100}%` }}</div>
+            <div class="value">
+              {{ `${level * 100}%` }}
+            </div>
           </div>
         </div>
         <div v-else>
@@ -38,4 +46,4 @@ const { isSupported, chargingTime, dischargingTime, charging, level } =
   </ClientOnly>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped></style>

@@ -3,7 +3,7 @@ name: Deploy csbigcaptain.github.io
 on:
   # 仅在推送到默认分支时运行。
   push:
-    branches: ['main']
+    branches: [main]
 
   # 这个选项可以使你手动在 Action tab 页面触发工作流
   workflow_dispatch:
@@ -16,7 +16,7 @@ permissions:
 
 # 允许一个并发的部署
 concurrency:
-  group: 'pages'
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -37,20 +37,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Generate Static Site
-        env:
-          # 微软分析 ID，在 GitHub Secrets 中
-          MS_ANALYTICS_ID: ${{ secrets.MS_ANALYTICS_ID }}
         run: pnpm run generate
+        env:
+          BLOG_URL: ${{ vars.BLOG_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.output/public'
+          path: .output/public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

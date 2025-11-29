@@ -1,18 +1,4 @@
-<template>
-  <div class="OuterMain">
-    <div class="inner">
-      <div class="sentence" @click="typeText">
-        {{ displayText }}
-        <span class="cursor" v-if="isTyping">|</span>
-      </div>
-      <div class="source">
-        {{ sentence ? sentence.author : '' }}
-        {{ sentence ? `（${sentence.name}）` : '' }}
-      </div>
-    </div>
-  </div>
-</template>
-
+<!-- eslint-disable -->
 <script setup>
 const sentence = ref()
 const displayText = ref('')
@@ -20,15 +6,16 @@ const fullText = ref('')
 const isTyping = ref(false)
 
 // 打字效果函数
-const typeText = async () => {
+async function typeText() {
   isTyping.value = true
   displayText.value = ''
 
   for (let i = 0; i < fullText.value.length; i++) {
-    if (!isTyping.value) break
+    if (!isTyping.value)
+      break
     displayText.value += fullText.value[i]
     const delay = fullText.value[i].match(/[，。！？、]/) ? 300 : 50
-    await new Promise((resolve) => setTimeout(resolve, delay))
+    await new Promise(resolve => setTimeout(resolve, delay))
   }
 
   isTyping.value = false
@@ -69,6 +56,21 @@ onBeforeUnmount(() => {
   isTyping.value = false
 })
 </script>
+
+<template>
+  <div class="OuterMain">
+    <div class="inner">
+      <div class="sentence" @click="typeText">
+        {{ displayText }}
+        <span v-if="isTyping" class="cursor">|</span>
+      </div>
+      <div class="source">
+        {{ sentence ? sentence.author : '' }}
+        {{ sentence ? `（${sentence.name}）` : '' }}
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped lang="less">
 .OuterMain {

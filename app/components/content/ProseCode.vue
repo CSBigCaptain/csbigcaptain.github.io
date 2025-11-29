@@ -2,7 +2,7 @@
   <code class="inline-code"><slot /></code>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .inline-code {
   background-color: rgb(var(--mdui-color-surface-container-highest));
   border-radius: 4px;

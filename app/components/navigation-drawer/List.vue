@@ -1,11 +1,4 @@
-<template>
-  <mdui-list>
-    <NuxtLink :to="item.link" v-for="item in list" :key="item.text">
-      <mdui-list-item>{{ item.text }}</mdui-list-item>
-    </NuxtLink>
-  </mdui-list>
-</template>
-
+<!-- eslint-disable -->
 <script lang="js" setup>
 import 'mdui/components/list'
 import 'mdui/components/list-item'
@@ -16,7 +9,15 @@ const { data } = await useAsyncData('NavigationDrawerList', () => {
 const list = data.value[0].meta.body
 </script>
 
-<style scoped>
+<template>
+  <mdui-list>
+    <NuxtLink v-for="item in list" :key="item.text" :to="item.link">
+      <mdui-list-item>{{ item.text }}</mdui-list-item>
+    </NuxtLink>
+  </mdui-list>
+</template>
+
+<style lang="less" scoped>
 mdui-list {
   padding-top: 64px;
 }

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const { mduiDark, toggleDark } = useTheme()
 </script>
+
 <template>
   <mdui-button-icon
-    slot="trigger"
     @click="
       () => {
         toggleDark[0]!()
@@ -11,12 +11,13 @@ const { mduiDark, toggleDark } = useTheme()
     "
   >
     <client-only>
-      <Icon name="ic:round-nightlight" v-if="mduiDark" />
-      <Icon name="ic:round-wb-sunny" v-else />
+      <Icon v-if="mduiDark" name="ic:round-nightlight" />
+      <Icon v-else name="ic:round-wb-sunny" />
     </client-only>
   </mdui-button-icon>
 </template>
-<style scoped>
+
+<style lang="less" scoped>
 mdui-menu {
   width: 130px;
   height: auto;

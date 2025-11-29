@@ -1,12 +1,14 @@
-<template>
-  <h3 class="prose-h3"><slot /></h3>
-</template>
-
 <script lang="ts" setup>
 // 可以添加一些组件逻辑，比如点击事件、动画效果等
 </script>
 
-<style scoped>
+<template>
+  <h3 class="prose-h3">
+    <slot />
+  </h3>
+</template>
+
+<style lang="less" scoped>
 .prose-h3 {
   margin: 1.5rem 0 1rem;
   font-size: 1.3rem;

@@ -1,9 +1,3 @@
-<template>
-  <mdui-card :style="{ width: props.width + 'px' }">
-    <slot name="default" />
-  </mdui-card>
-</template>
-
 <script setup lang="ts">
 const props = defineProps({
   width: {
@@ -13,7 +7,13 @@ const props = defineProps({
 })
 </script>
 
-<style scoped>
+<template>
+  <mdui-card :style="{ width: `${props.width}px` }">
+    <slot name="default" />
+  </mdui-card>
+</template>
+
+<style lang="less" scoped>
 mdui-card,
 div {
   border: 1px solid rgba(var(--mdui-color-outline), 0.2);

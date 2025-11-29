@@ -6,4 +6,4 @@
   </mdui-button-icon>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped></style>

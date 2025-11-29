@@ -1,14 +1,16 @@
-<template>
-  <div class="prose-h4-container">
-    <h4 class="prose-h4"><slot /></h4>
-  </div>
-</template>
-
 <script lang="ts" setup>
 // 可以添加组件逻辑，如需要
 </script>
 
-<style scoped>
+<template>
+  <div class="prose-h4-container">
+    <h4 class="prose-h4">
+      <slot />
+    </h4>
+  </div>
+</template>
+
+<style lang="less" scoped>
 .prose-h4-container {
   margin: 1.2rem 0 0.8rem;
   position: relative;

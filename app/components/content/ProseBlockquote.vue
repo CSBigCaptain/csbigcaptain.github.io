@@ -4,7 +4,7 @@
   </blockquote>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .blockquote {
   margin: 0.5rem 0; /* 减小外边距 */
   padding: 0.5rem 1.5rem; /* 减小内边距 */

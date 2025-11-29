@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <script setup lang="js">
 import 'mdui/components/card'
 
@@ -16,9 +17,8 @@ defineOgImageComponent('Nuxt', {
   headline: 'CSBigCaptain Blog',
 })
 const { data: posts } = await useAsyncData('blogs', () =>
-  queryCollection('blog').order('date', 'DESC').all(),
-)
-const changeDate = (date) => {
+  queryCollection('blog').order('date', 'DESC').all())
+function changeDate(date) {
   const time = new Date(date)
   const year = time.getFullYear()
   const month = String(time.getMonth() + 1).padStart(2, '0') // 月份从0开始，所以要加1
@@ -33,7 +33,9 @@ const changeDate = (date) => {
 
 <template>
   <NuxtLayout name="default">
-    <template #topic-text>Blog</template>
+    <template #topic-text>
+      Blog
+    </template>
     <template #full-width>
       <AppRandomSentence />
     </template>

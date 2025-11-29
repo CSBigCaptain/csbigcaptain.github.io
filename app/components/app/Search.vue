@@ -1,65 +1,14 @@
-<template>
-  <div class="main">
-    <div class="input">
-      <mdui-text-field
-        :value="query"
-        @input="query = $event.target.value"
-        placeholder="Search..."
-        clearable
-      ></mdui-text-field>
-    </div>
-    <div v-if="query" class="results">
-      <ul class="container">
-        <li v-for="item in results" :key="item.item.id">
-          <NuxtLink :to="item.item.id">
-            <mdui-card variant="filled" clickable>
-              <div class="upper">
-                <div class="titles">
-                  {{ item.item.titles[0] ? item.item.titles[0] + ' > ' : '' }}
-                  {{ item.item.titles[-1] }}
-                </div>
-                <div
-                  class="title"
-                  v-html="
-                    highlightMatch(
-                      item.item.title,
-                      item.matches as any[],
-                      'title',
-                    )
-                  "
-                ></div>
-              </div>
-              <div
-                class="lower"
-                v-if="item.item.content"
-                v-html="
-                  highlightMatch(
-                    item.item.content,
-                    item.matches as any[],
-                    'content',
-                  )
-                "
-              ></div>
-            </mdui-card>
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
+import { useFuse } from '@vueuse/integrations/useFuse'
 import 'mdui/components/card'
 import 'mdui/components/text-field'
-import { useFuse } from '@vueuse/integrations/useFuse'
 
 const query = ref('')
 
 const { data } = await useAsyncData('search-data', () =>
   queryCollectionSearchSections('blog', {
     ignoredTags: ['header', 'footer'],
-  }),
-)
+  }))
 
 const { results } = useFuse(query, data.value || [], {
   fuseOptions: {
@@ -73,13 +22,15 @@ const { results } = useFuse(query, data.value || [], {
 })
 
 // 添加高亮函数
-const highlightMatch = (text: string, matches: any[], key: string) => {
+function highlightMatch(text: string, matches: any[], key: string) {
   // 如果没有文本或匹配信息，直接返回原文本
-  if (!text || !matches) return text
+  if (!text || !matches)
+    return text
 
   // 查找对应字段的匹配信息
-  const match = matches.find((m) => m.key === key)
-  if (!match || !match.indices || !match.indices.length) return text
+  const match = matches.find(m => m.key === key)
+  if (!match || !match.indices || !match.indices.length)
+    return text
 
   // 根据匹配索引构建高亮文本
   let result = ''
@@ -101,6 +52,56 @@ const highlightMatch = (text: string, matches: any[], key: string) => {
   return result
 }
 </script>
+
+<template>
+  <div class="main">
+    <div class="input">
+      <mdui-text-field
+        :value="query"
+        placeholder="Search..."
+        clearable
+        @input="query = $event.target.value"
+      />
+    </div>
+    <div v-if="query" class="results">
+      <ul class="container">
+        <li v-for="item in results" :key="item.item.id">
+          <NuxtLink :to="item.item.id">
+            <mdui-card variant="filled" clickable>
+              <div class="upper">
+                <div class="titles">
+                  {{ item.item.titles[0] ? `${item.item.titles[0]} > ` : '' }}
+                  {{ item.item.titles[-1] }}
+                </div>
+                <div
+                  class="title"
+                  v-html="
+                    highlightMatch(
+                      item.item.title,
+                      item.matches as any[],
+                      'title',
+                    )
+                  "
+                />
+              </div>
+              <div
+                v-if="item.item.content"
+                class="lower"
+                v-html="
+                  highlightMatch(
+                    item.item.content,
+                    item.matches as any[],
+                    'content',
+                  )
+                "
+              />
+            </mdui-card>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
 
 <style scoped lang="less">
 .main {

@@ -5,7 +5,7 @@ const { data: post } = await useAsyncData(`blog-${route.path}`, () => {
   return queryCollection('blog').path(route.path).first()
 })
 
-const titleaa = (post.value?.title || 'Blog') + ' - CSBigCaptain Blog'
+const titleaa = `${post.value?.title || 'Blog'} - CSBigCaptain Blog`
 const descriptionaa = post.value?.description || 'CSBigCaptain Blog post.'
 const short = post.value?.short || ''
 
@@ -14,7 +14,7 @@ useSeoMeta({
   ogTitle: titleaa,
   description: descriptionaa,
   ogDescription: descriptionaa,
-  ogUrl: 'https://csbigcaptain.github.io' + route.path,
+  ogUrl: `https://csbigcaptain.github.io${route.path}`,
 })
 defineOgImageComponent('Nuxt', {
   title: post.value?.title,
@@ -25,10 +25,14 @@ defineOgImageComponent('Nuxt', {
 
 <template>
   <NuxtLayout name="default">
-    <template #topic-text>Blog</template>
+    <template #topic-text>
+      Blog
+    </template>
     <template #full-width>
       <div class="title-wrapper">
-        <h1 v-if="post">{{ post.title }}</h1>
+        <h1 v-if="post">
+          {{ post.title }}
+        </h1>
         <div v-if="post" class="date">
           {{ new Date(post.date).toLocaleDateString() }}
         </div>

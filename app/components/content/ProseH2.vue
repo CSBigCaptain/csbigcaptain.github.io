@@ -1,14 +1,16 @@
-<template>
-  <div class="prose-h2-container">
-    <h2 class="prose-h2"><slot /></h2>
-  </div>
-</template>
-
 <script lang="ts" setup>
 // 可以添加组件逻辑，如锚点链接、动画效果等
 </script>
 
-<style scoped>
+<template>
+  <div class="prose-h2-container">
+    <h2 class="prose-h2">
+      <slot />
+    </h2>
+  </div>
+</template>
+
+<style lang="less" scoped>
 .prose-h2-container {
   margin: 2rem 0 1.2rem;
   position: relative;

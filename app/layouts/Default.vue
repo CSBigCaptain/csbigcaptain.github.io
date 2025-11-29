@@ -1,38 +1,3 @@
-<template>
-  <mdui-layout>
-    <DefaultNav>
-      <template #topic-text><slot name="topic-text" /></template>
-    </DefaultNav>
-    <aside>
-      <mdui-navigation-drawer
-        modal
-        close-on-overlay-click
-        close-on-esc
-        :open="drawerStatus"
-        @close="drawerStatus = false"
-      >
-        <NavigationDrawerList />
-      </mdui-navigation-drawer>
-    </aside>
-    <mdui-layout-main>
-      <slot name="full-width"></slot>
-      <AppContainer>
-        <slot />
-      </AppContainer>
-      <FooterDefault />
-    </mdui-layout-main>
-  </mdui-layout>
-  <mdui-dialog
-    :open="searchStatus"
-    close-on-esc
-    close-on-overlay-click
-    @close="closeAll()"
-    headline="搜索"
-  >
-    <AppSearch />
-  </mdui-dialog>
-</template>
-
 <script setup lang="ts">
 import 'mdui/components/navigation-drawer'
 import 'mdui/components/layout'
@@ -41,6 +6,45 @@ import 'mdui/components/dialog'
 
 const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
 </script>
+
+<template>
+  <div>
+    <mdui-layout>
+      <DefaultNav>
+        <template #topic-text>
+          <slot name="topic-text" />
+        </template>
+      </DefaultNav>
+      <aside>
+        <mdui-navigation-drawer
+          modal
+          close-on-overlay-click
+          close-on-esc
+          :open="drawerStatus"
+          @close="drawerStatus = false"
+        >
+          <NavigationDrawerList />
+        </mdui-navigation-drawer>
+      </aside>
+      <mdui-layout-main>
+        <slot name="full-width" />
+        <AppContainer>
+          <slot />
+        </AppContainer>
+        <FooterDefault />
+      </mdui-layout-main>
+    </mdui-layout>
+    <mdui-dialog
+      :open="searchStatus"
+      close-on-esc
+      close-on-overlay-click
+      headline="搜索"
+      @close="closeAll()"
+    >
+      <AppSearch />
+    </mdui-dialog>
+  </div>
+</template>
 
 <style lang="less" scoped>
 mdui-layout {

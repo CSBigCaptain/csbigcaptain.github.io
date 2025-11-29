@@ -1,12 +1,12 @@
 const [drawerStatus, toggleDrawerStatus] = useToggle(false)
 const [searchStatus, toggleSearchStatus] = useToggle(false)
 
-const closeAll = () => {
+function closeAll() {
   drawerStatus.value = false
   searchStatus.value = false
 }
 
-export const useLayoutStatus = () => {
+export function useLayoutStatus() {
   return {
     drawerStatus,
     toggleDrawerStatus,

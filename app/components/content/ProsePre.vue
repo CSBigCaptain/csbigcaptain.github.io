@@ -1,33 +1,3 @@
-<template>
-  <div class="code-wrapper" v-bind="$attrs">
-    <!-- 代码块头部 -->
-    <div class="code-header">
-      <div class="info">
-        <div class="lang">{{ props.language }}</div>
-      </div>
-      <div class="actions">
-        <Transition name="fade" mode="out-in">
-          <mdui-button-icon @click="copyCode" class="copy-btn">
-            <mdui-icon-content-copy
-              v-if="!copied"
-              key="copy"
-            ></mdui-icon-content-copy>
-            <mdui-icon-done v-else key="done"></mdui-icon-done>
-          </mdui-button-icon>
-        </Transition>
-      </div>
-    </div>
-
-    <!-- 代码内容区 -->
-    <div class="code-container">
-      <pre
-        :class="`language-${props.language}`"
-        class="shiki"
-      ><code><slot /></code></pre>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import '@mdui/icons/content-copy.js'
 import '@mdui/icons/done.js'
@@ -42,7 +12,7 @@ const props = defineProps<{
 const copied = ref(false)
 
 // 复制代码功能
-const copyCode = async () => {
+async function copyCode() {
   await navigator.clipboard.writeText(props.code)
   copied.value = true
   setTimeout(() => {
@@ -50,6 +20,38 @@ const copyCode = async () => {
   }, 2000)
 }
 </script>
+
+<template>
+  <div class="code-wrapper" v-bind="$attrs">
+    <!-- 代码块头部 -->
+    <div class="code-header">
+      <div class="info">
+        <div class="lang">
+          {{ props.language }}
+        </div>
+      </div>
+      <div class="actions">
+        <Transition name="fade" mode="out-in">
+          <mdui-button-icon class="copy-btn" @click="copyCode">
+            <mdui-icon-content-copy
+              v-if="!copied"
+              key="copy"
+            />
+            <mdui-icon-done v-else key="done" />
+          </mdui-button-icon>
+        </Transition>
+      </div>
+    </div>
+
+    <!-- 代码内容区 -->
+    <div class="code-container">
+      <pre
+        :class="`language-${props.language}`"
+        class="shiki"
+      ><code><slot /></code></pre>
+    </div>
+  </div>
+</template>
 
 <style scoped lang="less">
 .code-wrapper {

@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import type { PropType } from 'vue'
+
+const props = defineProps({
+  href: {
+    type: String,
+    default: '',
+  },
+  target: {
+    type: String as PropType<'_blank' | '_parent' | '_self' | '_top'>,
+    default: undefined,
+    required: false,
+  },
+})
+</script>
+
 <template>
   <span class="main">
     <NuxtLink :to="props.href" :target="props.target">
@@ -6,7 +22,7 @@
   </span>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 a {
   text-decoration: none;
   box-sizing: content-box;
@@ -26,19 +42,3 @@ a:visited {
   color: rgb(var(--mdui-color-secondary));
 }
 </style>
-
-<script setup lang="ts">
-import type { PropType } from 'vue'
-
-const props = defineProps({
-  href: {
-    type: String,
-    default: '',
-  },
-  target: {
-    type: String as PropType<'_blank' | '_parent' | '_self' | '_top'>,
-    default: undefined,
-    required: false,
-  },
-})
-</script>

@@ -4,7 +4,7 @@
   </table>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 table {
   width: 100%;
   margin: 25px auto;

@@ -13,25 +13,29 @@ const isHexColor = computed(() => {
 
 <template>
   <NavDropdown trigger="click">
-    <mdui-button-icon disabled="" slot="trigger">
+    <mdui-button-icon slot="trigger" disabled="">
       <Icon name="ic:round-palette" />
     </mdui-button-icon>
     <NavDropdownCard width="180">
       <div class="inner">
-        <div class="topic">选择网页主题色</div>
+        <div class="topic">
+          选择网页主题色
+        </div>
         <input
+          v-model="selectedThemeColor"
           type="color"
           name="theme-color"
           class="color-chooser"
-          v-model="selectedThemeColor"
-        />
-        <div class="topic">或手动输入HEX色号</div>
+        >
+        <div class="topic">
+          或手动输入HEX色号
+        </div>
         <input
+          v-model="selectedThemeColor"
           type="text"
           name="theme-color"
           class="color-hex"
-          v-model="selectedThemeColor"
-        />
+        >
       </div>
       <div class="button-collection">
         <mdui-button-icon
@@ -41,10 +45,7 @@ const isHexColor = computed(() => {
         >
           <Icon name="ic:round-check" />
         </mdui-button-icon>
-        <mdui-button-icon
-          variant="tonal"
-          @click="selectedThemeColor = setRandomColor()"
-        >
+        <mdui-button-icon variant="tonal" @click="selectedThemeColor = setRandomColor()">
           <Icon name="ic:baseline-auto-awesome" />
         </mdui-button-icon>
         <mdui-button-icon
@@ -63,7 +64,7 @@ const isHexColor = computed(() => {
   </NavDropdown>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .inner {
   padding-bottom: 10px;
   .topic {

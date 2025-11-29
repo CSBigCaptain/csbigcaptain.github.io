@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import 'mdui/components/top-app-bar'
+import 'mdui/components/top-app-bar-title'
+import 'mdui/components/button-icon'
+
+const { toggleDrawerStatus } = useLayoutStatus()
+</script>
+
 <template>
   <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
     <ClientOnly>
@@ -22,15 +30,7 @@
   </header>
 </template>
 
-<script setup lang="ts">
-import 'mdui/components/top-app-bar'
-import 'mdui/components/top-app-bar-title'
-import 'mdui/components/button-icon'
-
-const { toggleDrawerStatus } = useLayoutStatus()
-</script>
-
-<style scoped>
+<style lang="less" scoped>
 .header {
   top: 0;
   left: 0;

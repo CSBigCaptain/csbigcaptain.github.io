@@ -1,3 +1,19 @@
+<script lang="ts" setup>
+const year = ref(new Date().getFullYear())
+
+function confirmNavigation(event: Event) {
+  event.preventDefault()
+  // eslint-disable-next-line no-alert
+  const userConfirmed = confirm(
+    '受微信平台限制，即将前往草料二维码，请在此下载二维码并使用微信扫码进入\n'
+    + '请允许此网站弹出窗口和重定向以正确加载网页',
+  )
+  if (userConfirmed) {
+    window.open('https://qr61.cn/oQkUx4/qAfZWE6', '_blank')
+  }
+}
+</script>
+
 <template>
   <footer class="footer">
     <div class="main page-container">
@@ -73,21 +89,6 @@
     </div>
   </footer>
 </template>
-
-<script lang="ts" setup>
-const year = ref(new Date().getFullYear())
-
-const confirmNavigation = (event: Event) => {
-  event.preventDefault()
-  const userConfirmed = confirm(
-    '受微信平台限制，即将前往草料二维码，请在此下载二维码并使用微信扫码进入\n' +
-      '请允许此网站弹出窗口和重定向以正确加载网页',
-  )
-  if (userConfirmed) {
-    window.open('https://qr61.cn/oQkUx4/qAfZWE6', '_blank')
-  }
-}
-</script>
 
 <style scoped lang="less">
 .footer {

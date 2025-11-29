@@ -4,7 +4,7 @@
   </th>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 th {
   padding: 10px;
   font-weight: border;

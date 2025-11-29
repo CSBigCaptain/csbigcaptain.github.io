@@ -2,14 +2,14 @@
   <li><slot /></li>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 li {
   line-height: var(--content-line-height);
   padding-inline-start: var(--inline-padding);
 }
 </style>
 
-<style>
+<style lang="less">
 div[data-content-id] ul > li::marker {
   color: rgb(var(--mdui-color-primary));
   content: '•';

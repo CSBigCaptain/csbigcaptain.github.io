@@ -1,6 +1,6 @@
 import { useStorage } from '@vueuse/core'
 import { setColorScheme } from 'mdui/functions/setColorScheme'
-import { hslToHex, nextHue, hexToHue } from '~/utils/theme'
+import { hexToHue, hslToHex, nextHue } from '~/utils/theme'
 
 const userThemeSettings = useStorage('user-settings', {
   preferredColor: '#478384',
@@ -29,10 +29,7 @@ const toggleDark = [useToggle(mduiDark)]
  * @param color 颜色值，默认使用本地 Storage 里的首选颜色
  * @param target 更改的HTML元素，默认直接用 html 元素
  */
-const setColorTheme = (
-  color: string = userThemeSettings.value.preferredColor,
-  target: string = 'html',
-) => {
+function setColorTheme(color: string = userThemeSettings.value.preferredColor, target: string = 'html') {
   setColorScheme(color, { target })
   userThemeSettings.value.preferredColor = color
 }
@@ -41,13 +38,13 @@ const setColorTheme = (
  * @description 设置主题颜色为随机的颜色
  * @returns color 设置的颜色
  */
-const setRandomColor = (): string => {
+function setRandomColor(): string {
   const color = getRandomColor()
   setColorTheme(color)
   return color
 }
 
-const useDynamicTheme = () => {
+function useDynamicTheme() {
   const hue = ref(0)
   let timer: number | null = null // interval 的句柄
   /**
@@ -55,8 +52,10 @@ const useDynamicTheme = () => {
    * @param [step] 颜色变化步长，默认 1
    */
   const start = (interval: number = 1000, step: number = 1) => {
-    if (!import.meta.client) return
-    if (timer !== null) return // 防止重复启动
+    if (!import.meta.client)
+      return
+    if (timer !== null)
+      return // 防止重复启动
     hue.value = hexToHue(userThemeSettings.value.preferredColor)
     timer = window.setInterval(() => {
       hue.value = nextHue(hue.value, step)
@@ -86,7 +85,7 @@ const useDynamicTheme = () => {
   }
 }
 
-export const useTheme = () => {
+export function useTheme() {
   return {
     userThemeSettings,
     mduiDark,
