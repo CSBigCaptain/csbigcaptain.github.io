@@ -9,8 +9,6 @@
   "description": "CSBigCaptain's personal blog.",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "build": "nuxt build",

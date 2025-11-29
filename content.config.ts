@@ -6,7 +6,7 @@ export default defineContentConfig({
     blog: defineCollection(
       asSeoCollection({
         type: 'page',
-        source: '1.blog/**/*.md',
+        source: 'blog/**/*.md',
         schema: z.object({
           date: z.coerce.date(),
           update: z.coerce.date(),
