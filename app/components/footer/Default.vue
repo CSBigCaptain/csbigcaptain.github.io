@@ -73,18 +73,6 @@ function confirmNavigation(event: Event) {
             . All rights reserved.
           </small>
         </div>
-        <div class="build-info">
-          <small>
-            Build at 2025-11-5. Look at
-            <NuxtLink
-              to="https://github.com/CSBigCaptain/csbigcaptain.github.io/commit/HEAD"
-              target="_blank"
-            >
-              Changelog
-            </NuxtLink>
-            .
-          </small>
-        </div>
       </div>
     </div>
   </footer>

@@ -6,6 +6,7 @@ export default defineBlogConfig({
     'CSBigCaptain Blog 是一个由 Nuxt 4 驱动的开源 Git-CMS 博客系统。博客基于 Material Design 3 设计语言，页面简约清爽而不失美观。支持深浅切换和动态配色，且个性化设置自动保存。博客支持服务端渲染，数据库在客户端本地检索，提供卓越的加载和文章检索速度。博客具有 SEO 优化，支持 Open Graph 和 Twitter Card 元数据，提升搜索引擎排名和社交媒体分享效果。为用户提供了近乎完美的阅读体验。',
   author: {
     name: 'CSBigCaptain',
+    realName: 'Yeshang Ji',
     avatar: 'https://avatars.githubusercontent.com/u/81836540?v=4',
     email: 'csbigcaptain@outlook.com',
   },

@@ -7,7 +7,7 @@ const { isSupported, chargingTime, dischargingTime, charging, level }
   <ClientOnly>
     <!-- 不开仅客户端渲染水合作用会出bug -->
     <NavDropdown trigger="click">
-      <NavBatterySmartIcon />
+      <NavBatterySmartIcon slot="trigger" />
       <NavDropdownCard>
         <div v-if="isSupported">
           <div v-if="chargingTime !== Infinity" class="item">

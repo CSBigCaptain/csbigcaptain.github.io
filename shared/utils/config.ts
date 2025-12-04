@@ -5,6 +5,7 @@ type AdditionalCss = NuxtConfig['css']
 
 interface Author {
   name: string
+  realName?: string
   avatar: string
   email: string
   homepage?: string
