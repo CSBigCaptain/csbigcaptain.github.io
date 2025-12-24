@@ -41,5 +41,3 @@ const { isSupported, level, charging } = useBattery()
     <Icon v-else name="ic:round-battery-alert" />
   </mdui-button-icon>
 </template>
-
-<style lang="less" scoped></style>

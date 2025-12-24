@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import '@mdui/icons/content-copy.js'
-import '@mdui/icons/done.js'
-
 // 定义组件属性
 const props = defineProps<{
   code: string
@@ -33,11 +30,8 @@ async function copyCode() {
       <div class="actions">
         <Transition name="fade" mode="out-in">
           <mdui-button-icon class="copy-btn" @click="copyCode">
-            <mdui-icon-content-copy
-              v-if="!copied"
-              key="copy"
-            />
-            <mdui-icon-done v-else key="done" />
+            <Icon v-if="!copied" key="copy" name="ic:baseline-content-copy" />
+            <Icon v-else key="done" name="ic:baseline-done" />
           </mdui-button-icon>
         </Transition>
       </div>
