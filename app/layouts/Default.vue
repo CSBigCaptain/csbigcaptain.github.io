@@ -34,15 +34,17 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
         <FooterDefault />
       </mdui-layout-main>
     </mdui-layout>
-    <mdui-dialog
-      :open="searchStatus"
-      close-on-esc
-      close-on-overlay-click
-      headline="搜索"
-      @close="closeAll()"
-    >
-      <AppSearch />
-    </mdui-dialog>
+    <ClientOnly>
+      <mdui-dialog
+        :open="searchStatus"
+        close-on-esc
+        close-on-overlay-click
+        headline="搜索"
+        @close="closeAll()"
+      >
+        <AppSearch />
+      </mdui-dialog>
+    </ClientOnly>
   </div>
 </template>
 

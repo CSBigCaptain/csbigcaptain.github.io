@@ -28,7 +28,6 @@ interface BasicConfig {
   language: string
   timeEstablished: string
   timezone: string
-  url: string
   defaultCategory: string
   additionalCss: AdditionalCss
   additionalScripts: AdditionalScript

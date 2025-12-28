@@ -74,10 +74,10 @@ export default defineNuxtConfig({
         ...(blogConfig.additionalScripts || []),
         {
           innerHTML: /* js */ `
-          // 解决首屏加载闪白问题
+            // 解决首屏加载闪白问题
             const localPreference = localStorage.getItem('vueuse-color-scheme');
             const systemPreferenceDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if(localPreference === 'dark') {
+            if (localPreference === 'dark') {
               document.documentElement.classList.toggle('mdui-theme-dark');
             } if (localPreference === 'light') {
               document.documentElement.classList.remove('mdui-theme-dark');

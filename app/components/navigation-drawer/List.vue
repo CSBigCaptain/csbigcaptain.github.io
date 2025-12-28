@@ -1,12 +1,15 @@
 <!-- eslint-disable -->
-<script lang="js" setup>
+<script lang="ts" setup>
 import 'mdui/components/list'
 import 'mdui/components/list-item'
 
 const { data } = await useAsyncData('NavigationDrawerList', () => {
-  return queryCollection('navigationDrawerList').all()
+  return queryCollection('navigationDrawerList').first()
 })
-const list = data.value[0].meta.body
+
+const list = computed(() => {
+  return data.value?.body ?? []
+})
 </script>
 
 <template>

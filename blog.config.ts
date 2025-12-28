@@ -14,8 +14,6 @@ export default defineBlogConfig({
   language: 'zh-CN',
   timeEstablished: '2024-08-03',
   timezone: 'Asia/Shanghai',
-  // eslint-disable-next-line node/prefer-global/process
-  url: process.env.BLOG_URL || 'http://localhost:3000',
   defaultCategory: '未分类',
   additionalCss: [],
   additionalScripts: [

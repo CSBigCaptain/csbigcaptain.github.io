@@ -18,11 +18,13 @@ export default defineContentConfig({
       type: 'data',
       source: 'data/index/actions.yml',
       schema: z.object({
-        text: z.string(),
-        link: z.string(),
-        variant: z.string(),
-        icon: z.string(),
-        endIcon: z.string(),
+        body: z.array(z.object({
+          text: z.string(),
+          link: z.string(),
+          variant: z.string(),
+          icon: z.string(),
+          endIcon: z.string(),
+        })),
       }),
     }),
     indexMain: defineCollection({
@@ -37,17 +39,21 @@ export default defineContentConfig({
       type: 'data',
       source: 'data/index/advs.yml',
       schema: z.object({
-        title: z.string(),
-        detail: z.string(),
+        body: z.array(z.object({
+          title: z.string(),
+          detail: z.string(),
+        })),
       }),
     }),
     navigationDrawerList: defineCollection({
       type: 'data',
       source: 'data/navigation-drawer/list.yml',
       schema: z.object({
-        text: z.string(),
-        icon: z.string(),
-        link: z.string(),
+        body: z.array(z.object({
+          text: z.string(),
+          icon: z.string(),
+          link: z.string(),
+        })),
       }),
     }),
   },

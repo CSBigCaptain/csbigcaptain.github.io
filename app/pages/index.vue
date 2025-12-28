@@ -2,24 +2,6 @@
 import 'mdui/components/card'
 import 'mdui/components/button'
 
-interface MainData {
-  name: string
-  text: string
-}
-
-interface ActionItem {
-  text: string
-  link: string
-  variant: string
-  icon?: string
-  endIcon?: string
-}
-
-interface AdvItem {
-  title: string
-  detail: string
-}
-
 const titleaa = '首页 - CSBigCaptain Blog'
 const descriptionaa = 'The introduction to CSBigCaptain Blog.'
 
@@ -37,20 +19,22 @@ defineOgImageComponent('Nuxt', {
 })
 
 const { data: main } = await useAsyncData('indexMain', () => {
-  return queryCollection('indexMain').all()
+  return queryCollection('indexMain').first()
 })
 const { data: actions } = await useAsyncData('indexActions', () => {
-  return queryCollection('indexActions').all()
+  return queryCollection('indexActions').first()
 })
 const { data: advs } = await useAsyncData('indexAdvs', () => {
-  return queryCollection('indexAdvs').all()
+  return queryCollection('indexAdvs').first()
 })
 
-const data = {
-  main: main.value?.[0]?.meta?.body as MainData,
-  actions: actions.value?.[0]?.meta?.body as ActionItem[],
-  advs: advs.value?.[0]?.meta?.body as AdvItem[],
-}
+const data = computed(() => {
+  return {
+    main: main.value ?? { name: '', text: '' },
+    actions: actions.value?.body ?? [],
+    advs: advs.value?.body ?? [],
+  }
+})
 </script>
 
 <template>

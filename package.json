@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "build": "nuxt build",
-    "dev": "nuxt dev --host 0.0.0.0",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -30,11 +30,11 @@
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
     "@iconify-json/ic": "^1.2.4",
-    "@nuxt/content": "^3.8.2",
+    "@nuxt/content": "^3.10.0",
     "@nuxt/devtools": "3.1.1",
     "@nuxt/eslint": "1.12.1",
     "@nuxt/icon": "2.1.1",
-    "@nuxtjs/seo": "3.2.2",
+    "@nuxtjs/seo": "3.3.0",
     "@unhead/vue": "^2.1.1",
     "@vueuse/core": "14.1.0",
     "@vueuse/integrations": "14.1.0",

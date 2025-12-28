@@ -1,33 +1,32 @@
 <!-- eslint-disable -->
-<script setup lang="js">
+<script setup lang="ts">
 import 'mdui/components/card'
 
-const titleaa = '文章列表 - CSBigCaptain Blog'
-const descriptionaa = 'CSBigCaptain Blog list.'
+const title = '文章列表 - CSBigCaptain Blog'
+const description = 'CSBigCaptain Blog list.'
 
 useSeoMeta({
-  title: titleaa,
-  ogTitle: titleaa,
-  description: descriptionaa,
-  ogDescription: descriptionaa,
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description,
   ogUrl: 'https://csbigcaptain.github.io/blog',
 })
 defineOgImageComponent('Nuxt', {
   title: 'Blog List',
   headline: 'CSBigCaptain Blog',
 })
+
 const { data: posts } = await useAsyncData('blogs', () =>
   queryCollection('blog').order('date', 'DESC').all())
-function changeDate(date) {
+
+function changeDate(date: string) {
   const time = new Date(date)
   const year = time.getFullYear()
   const month = String(time.getMonth() + 1).padStart(2, '0') // 月份从0开始，所以要加1
   const day = String(time.getDate()).padStart(2, '0')
-  const hours = String(time.getHours()).padStart(2, '0')
-  const minutes = String(time.getMinutes()).padStart(2, '0')
-  const seconds = String(time.getSeconds()).padStart(2, '0')
 
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+  return `${year}-${month}-${day}`
 }
 </script>
 
