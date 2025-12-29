@@ -21,10 +21,6 @@ const list = computed(() => {
 </template>
 
 <style lang="less" scoped>
-mdui-list {
-  padding-top: 64px;
-}
-
 mdui-list-item {
   padding-left: 4px;
   letter-spacing: 9em;

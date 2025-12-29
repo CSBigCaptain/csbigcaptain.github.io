@@ -10,9 +10,8 @@ catalog: {}
 catalogs:
   dev: {}
 
-ignoredBuiltDependencies:
-  - '@parcel/watcher'
-  - sharp
 onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - less
   - better-sqlite3
   - esbuild

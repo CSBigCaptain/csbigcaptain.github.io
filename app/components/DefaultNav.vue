@@ -7,7 +7,7 @@ const { toggleDrawerStatus } = useLayoutStatus()
 </script>
 
 <template>
-  <header class="header" style="position: fixed; top: 0; left: 0; right: 0">
+  <header class="header">
     <mdui-top-app-bar>
       <mdui-button-icon @click="toggleDrawerStatus()">
         <Icon name="ic:round-menu" />
@@ -31,13 +31,14 @@ const { toggleDrawerStatus } = useLayoutStatus()
 </template>
 
 <style lang="less" scoped>
-.header {
+header {
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   position: fixed;
   height: 64px;
+  overscroll-behavior: none;
 }
 
 @media (max-width: 375px) {

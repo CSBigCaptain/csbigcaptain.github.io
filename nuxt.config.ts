@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   ...blogConfig.commonConfig,
   compatibilityDate: '2025-03-08',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon', '@nuxt/eslint'],
+  modules: ['@vueuse/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon', '@nuxt/eslint', '@nuxt/hints'],
   // @ts-expect-error content types not properly merged
   content: {
     build: {

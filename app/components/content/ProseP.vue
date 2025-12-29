@@ -5,5 +5,6 @@
 <style lang="less" scoped>
 p {
   line-height: var(--content-line-height);
+  margin-block: var(--content-p-margin-block);
 }
 </style>

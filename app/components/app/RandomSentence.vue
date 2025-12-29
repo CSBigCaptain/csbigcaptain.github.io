@@ -80,7 +80,6 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 45vh;
   background: rgb(var(--mdui-color-surface-container-highest));
-  transform: translateY(calc(-1 * var(--inline-padding)));
 
   .inner {
     width: 70%;

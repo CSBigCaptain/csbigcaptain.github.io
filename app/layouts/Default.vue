@@ -9,23 +9,12 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
 
 <template>
   <div>
+    <DefaultNav>
+      <template #topic-text>
+        <slot name="topic-text" />
+      </template>
+    </DefaultNav>
     <mdui-layout>
-      <DefaultNav>
-        <template #topic-text>
-          <slot name="topic-text" />
-        </template>
-      </DefaultNav>
-      <aside>
-        <mdui-navigation-drawer
-          modal
-          close-on-overlay-click
-          close-on-esc
-          :open="drawerStatus"
-          @close="drawerStatus = false"
-        >
-          <NavigationDrawerList />
-        </mdui-navigation-drawer>
-      </aside>
       <mdui-layout-main>
         <slot name="full-width" />
         <AppContainer>
@@ -35,6 +24,17 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
       </mdui-layout-main>
     </mdui-layout>
     <ClientOnly>
+      <mdui-navigation-drawer
+        modal
+        close-on-overlay-click
+        close-on-esc
+        :open="drawerStatus"
+        @close="drawerStatus = false"
+      >
+        <aside>
+          <NavigationDrawerList />
+        </aside>
+      </mdui-navigation-drawer>
       <mdui-dialog
         :open="searchStatus"
         close-on-esc
@@ -56,8 +56,9 @@ mdui-layout {
 // top-app-bar 的 z-index 值为100
 // navigation-drawer 的 z-index 值为99
 
-aside {
+mdui-navigation-drawer {
   z-index: 99;
+  transform: translateY(64px);
 }
 
 mdui-navigation-drawer {
