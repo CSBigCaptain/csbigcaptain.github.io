@@ -46,6 +46,7 @@ export default withNuxt(
     files: ['**/*.json'],
     ignores: ['content/**'],
     rules: {
+      'pnpm/json-enforce-catalog': 'off',
       'style/eol-last': ['warn', 'never'],
     },
   },

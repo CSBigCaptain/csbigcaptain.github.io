@@ -7,5 +7,5 @@ body:
   - text: Github
     link: 'https://github.com/CSBigCaptain/csbigcaptain.github.io'
     variant: tonal
-    icon: 'pajamas:github'
+    icon: 'mdi:github'
     endIcon: 'ic:round-arrow-forward-ios'
