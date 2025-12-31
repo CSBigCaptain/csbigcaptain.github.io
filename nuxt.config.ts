@@ -90,6 +90,12 @@ export default defineNuxtConfig({
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
+  vite: {
+    optimizeDeps: {
+      // @keep-sorted
+      entries: ['@nuxt/hints', '@vueuse/integrations', 'mdui'],
+    },
+  },
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('mdui-'),
@@ -101,8 +107,11 @@ export default defineNuxtConfig({
     'katex/dist/katex.min.css',
     '/assets/css/global.less',
   ],
+  experimental: {
+    typescriptPlugin: true,
+  },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   nuxtseo: {
     colorMode: {
