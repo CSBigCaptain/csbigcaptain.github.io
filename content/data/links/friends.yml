@@ -1,0 +1,46 @@
+links:
+  - author: CSBigCaptain
+    title: CSBigCaptain Blog
+    nick: Blog
+    desc: ''
+    link: 'https://csbig.top'
+    feed: ''
+    icon: 'https://avatars.githubusercontent.com/u/81836540?v=4'
+    date: 2026-01-01
+    comment: 这是我自己。
+  - author: 纸鹿本鹿
+    title: 纸鹿摸鱼处
+    nick: 摸鱼处
+    desc: 纸鹿至麓不知路，支炉制露不止漉
+    link: 'https://blog.zhilu.site'
+    feed: 'https://blog.zhilu.site/atom.xml'
+    icon: 'https://weavatar.com/avatar/47c0f2e82b76d9b10eb3023df9e02e4e3fdbeaf5b74b842063f207971e7fbe7b?s=160'
+    date: 2026-01-01
+    comment: 纸鹿本鹿的个人博客，分享技术与生活。我天天抄他博客的代码......
+  - author: YangLuoNou
+    title: YangLuoNou's Blog
+    nick: YLN's Blog
+    desc: 随处学学，随便写写
+    link: 'https://www.yangluonou.space'
+    feed: ''
+    icon: 'https://www.yangluonou.space/img/favicon.ico'
+    date: 2026-01-02
+    comment: ''
+  - author: z0z0r4
+    title: z0z0r4's Blog
+    nick: Blog
+    desc: A Long Long Way
+    link: 'https://blog.z0z0r4.top'
+    feed: ''
+    icon: https://blog.z0z0r4.top/avatar/avatar.jpg
+    date: 2026-01-02
+    comment: ''
+  - author: Small Coral
+    title: SmallCocal 的水族馆
+    nick: 水族馆
+    desc: ''
+    link: 'https://smallcoral.github.io'
+    feed: ''
+    icon: https://smallcoral.github.io/images/resource/user.png
+    date: 2026-01-02
+    comment: ''

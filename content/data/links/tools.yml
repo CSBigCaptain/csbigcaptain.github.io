@@ -1,0 +1,43 @@
+links:
+  - title: Vue Playground
+    nick: Vue 演练场
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PGcgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIGZpbGw9IiNmNGYyZWUiIHJ4PSI2MCIvPjxwYXRoIGZpbGw9IiM0MWI4ODMiIGQ9Ik0xODIgNTBoMzZsLTkwIDE1NS4yNUwzOCA1MGg2OC44NUwxMjggODZsMjAuNy0zNnoiLz48cGF0aCBmaWxsPSIjNDFiODgzIiBkPSJtMzggNTBsOTAgMTU1LjI1TDIxOCA1MGgtMzZsLTU0IDkzLjE1TDczLjU1IDUweiIvPjxwYXRoIGZpbGw9IiMzNTQ5NWUiIGQ9Ik03My41NSA1MEwxMjggMTQzLjZMMTgyIDUwaC0zMy4zTDEyOCA4NmwtMjEuMTUtMzZ6Ii8+PC9nPjwvc3ZnPg==
+    link: https://play.vuejs.org/
+    desc: 在线 Vue 代码编辑器
+    date: 2026-01-01
+  - title: MDUI 文档
+    nick: 本站组件库
+    icon: https://cdn.w3cbus.com/mdui/icon.svg
+    link: https://www.mdui.org/
+    desc: 基于 Material Design 的 Vue 组件库，本站技术栈之一
+    date: 2026-01-02
+  - title: Vue 官方文档
+    nick: Vue 文档
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PGcgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIGZpbGw9IiNmNGYyZWUiIHJ4PSI2MCIvPjxwYXRoIGZpbGw9IiM0MWI4ODMiIGQ9Ik0xODIgNTBoMzZsLTkwIDE1NS4yNUwzOCA1MGg2OC44NUwxMjggODZsMjAuNy0zNnoiLz48cGF0aCBmaWxsPSIjNDFiODgzIiBkPSJtMzggNTBsOTAgMTU1LjI1TDIxOCA1MGgtMzZsLTU0IDkzLjE1TDczLjU1IDUweiIvPjxwYXRoIGZpbGw9IiMzNTQ5NWUiIGQ9Ik03My41NSA1MEwxMjggMTQzLjZMMTgyIDUwaC0zMy4zTDEyOCA4NmwtMjEuMTUtMzZ6Ii8+PC9nPjwvc3ZnPg==
+    link: https://vuejs.org/
+    desc: Vue 官方文档
+    date: 2026-01-02
+  - title: Nuxt Official Docs
+    nick: 本站技术栈
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PGcgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIGZpbGw9IiNmNGYyZWQiIHJ4PSI2MCIvPjxwYXRoIGZpbGw9IiMwMGRjODIiIGQ9Ik0xMzguNzg3IDE4OS4zMzNoNjguNzcyYzIuMTg0LjAwMSA0LjMzLS41NjkgNi4yMjItMS42NTJhMTIuNCAxMi40IDAgMCAwIDQuNTU0LTQuNTE1YTEyLjI0IDEyLjI0IDAgMCAwLS4wMDYtMTIuMzMybC00Ni4xODUtNzkuMjg2YTEyLjQgMTIuNCAwIDAgMC00LjU1My00LjUxNGExMi41MyAxMi41MyAwIDAgMC0xMi40NDIgMGExMi40IDEyLjQgMCAwIDAtNC41NTMgNC41MTRsLTExLjgwOSAyMC4yODdsLTIzLjA5LTM5LjY3YTEyLjQgMTIuNCAwIDAgMC00LjU1NS00LjUxM2ExMi41NCAxMi41NCAwIDAgMC0xMi40NDQgMGExMi40IDEyLjQgMCAwIDAtNC41NTUgNC41MTNMMzYuNjcgMTcwLjgzNGExMi4yNCAxMi4yNCAwIDAgMC0uMDA1IDEyLjMzMmExMi40IDEyLjQgMCAwIDAgNC41NTQgNC41MTVhMTIuNSAxMi41IDAgMCAwIDYuMjIyIDEuNjUyaDQzLjE3YzE3LjEwNCAwIDI5LjcxOC03LjQ0NiAzOC4zOTctMjEuOTczbDIxLjA3Mi0zNi4xNjlsMTEuMjg3LTE5LjM1NmwzMy44NzMgNTguMTQyaC00NS4xNnptLTQ4Ljg4LTE5LjM3NmwtMzAuMTI3LS4wMDdsNDUuMTYtNzcuNTE4bDIyLjUzMyAzOC43NTlsLTE1LjA4NyAyNS45MDZjLTUuNzY0IDkuNDI2LTEyLjMxMiAxMi44Ni0yMi40OCAxMi44NiIvPjwvZz48L3N2Zz4=
+    link: https://nuxt.com/
+    desc: ''
+    date: 2026-01-02
+  - title: Iconify
+    nick: 图标库
+    icon: https://iconify.design/favicon.ico
+    link: https://iconify.design/
+    desc: ''
+    date: 2026-01-02
+  - title: Can I Use
+    nick: 浏览器兼容性查询
+    icon: https://caniuse.com/img/favicon-128.png
+    link: https://caniuse.com/
+    desc: 查询 Web API 在各种浏览器中的兼容性
+    date: 2026-01-02
+  - title: PRTS
+    nick: 明日方舟 Wiki
+    icon: https://prts.wiki/favicon.ico
+    link: https://prts.wiki/
+    desc: PRTS - 玩家共同构筑的明日方舟 Wiki
+    date: 2026-01-02

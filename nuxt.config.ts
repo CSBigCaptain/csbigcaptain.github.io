@@ -39,6 +39,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    experimental: { nativeSqlite: true },
     preview: {
       api: 'https://api.nuxt.studio',
     },
@@ -69,6 +70,10 @@ export default defineNuxtConfig({
           media: 'print',
           onload: 'this.media="all"',
         },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.cn/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap',
+        },
       ],
       script: [
         ...(blogConfig.additionalScripts || []),
@@ -93,7 +98,7 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       // @keep-sorted
-      entries: ['@nuxt/hints', '@vueuse/integrations', 'mdui'],
+      include: ['@nuxt/hints', '@vueuse/integrations', 'mdui'],
     },
   },
   vue: {

@@ -2,10 +2,18 @@ import { useStorage } from '@vueuse/core'
 import { setColorScheme } from 'mdui/functions/setColorScheme'
 import { hexToHue, hslToHex, nextHue } from '~/utils/theme'
 
-const userThemeSettings = useStorage('user-settings', {
-  preferredColor: '#478384',
-  enableDynamicColor: true,
-})
+const userThemeSettings = useStorage<{
+  preferredColor: string
+  enableDynamicColor: boolean
+}>(
+  'user-settings',
+  {
+    preferredColor: '#478384',
+    enableDynamicColor: true,
+  },
+  undefined,
+  { mergeDefaults: true },
+)
 
 const mduiDark = useDark({
   selector: 'html',

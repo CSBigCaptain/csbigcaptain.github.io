@@ -2,6 +2,7 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSeoCollection } from '@nuxtjs/seo/content'
 
 export default defineContentConfig({
+  // @keep-sorted
   collections: {
     blog: defineCollection(
       asSeoCollection({
@@ -11,6 +12,7 @@ export default defineContentConfig({
           date: z.coerce.date(),
           update: z.coerce.date(),
           short: z.string(),
+          isFeatured: z.boolean(),
         }),
       }),
     ),
@@ -27,6 +29,16 @@ export default defineContentConfig({
         })),
       }),
     }),
+    indexAdvs: defineCollection({
+      type: 'data',
+      source: 'data/index/advs.yml',
+      schema: z.object({
+        body: z.array(z.object({
+          title: z.string(),
+          detail: z.string(),
+        })),
+      }),
+    }),
     indexMain: defineCollection({
       type: 'data',
       source: 'data/index/main.yml',
@@ -35,13 +47,36 @@ export default defineContentConfig({
         text: z.string(),
       }),
     }),
-    indexAdvs: defineCollection({
-      type: 'data',
-      source: 'data/index/advs.yml',
+    linkPageFriends: defineCollection({
+      // @keep-sorted
       schema: z.object({
-        body: z.array(z.object({
+        links: z.array(z.object({
+          author: z.string(),
+          nick: z.string(),
           title: z.string(),
-          detail: z.string(),
+          desc: z.string(),
+          link: z.string(),
+          feed: z.string(),
+          icon: z.string(),
+          comment: z.string(),
+          date: z.string(),
+        })),
+      }),
+      source: 'data/links/friends.yml',
+      type: 'data',
+    }),
+    linkPageTools: defineCollection({
+      type: 'data',
+      source: 'data/links/tools.yml',
+      schema: z.object({
+        // @keep-sorted
+        links: z.array(z.object({
+          date: z.string(),
+          desc: z.string(),
+          icon: z.string(),
+          link: z.string(),
+          nick: z.string(),
+          title: z.string(),
         })),
       }),
     }),

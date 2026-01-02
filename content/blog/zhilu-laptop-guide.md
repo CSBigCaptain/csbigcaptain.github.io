@@ -5,11 +5,12 @@ date: 2024-10-28 08:23:08
 updated: 2024-11-21 01:41:56
 categories: [杂谈]
 tags: [电脑, Windows, 新手]
+isFeatured: true
 references:
   - title: 文档太多，时间跨度也大，罄竹难书。
 ---
 
-> 本文转载自 [纸鹿摸鱼处](https://blog.zhilu.site/2024/new-laptop-guide)，并根据 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议，转载请注明源出处。
+> 本文转载自 [纸鹿摸鱼处](https://blog.zhilu.site/2024/new-laptop-guide)，并根据 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议，转载请注明源出处。为适配本站，**已对原文进行部分修改**。
 
 本文所说的「恶」并非入侵、破坏计算机系统，而是指用户体验不友好。
 
