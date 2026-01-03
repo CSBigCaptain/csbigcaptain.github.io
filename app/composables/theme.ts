@@ -75,16 +75,8 @@ function useDynamicTheme() {
     if (timer !== null) {
       clearInterval(timer)
       timer = null
-      setColorScheme(userThemeSettings.value.preferredColor, { target: 'html' })
     }
   }
-  watch(
-    () => userThemeSettings.value.enableDynamicColor,
-    (enabled) => {
-      enabled ? start() : stop()
-    },
-    { immediate: true },
-  )
 
   return {
     hue,

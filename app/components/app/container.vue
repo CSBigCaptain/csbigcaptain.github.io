@@ -1,22 +1,18 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="outer">
-    <div class="left">
-      <slot name="left" />
-    </div>
-    <div class="main page-container">
+  <div class="page-outer">
+    <slot name="left" />
+    <div class="main">
       <slot />
     </div>
-    <div class="right">
-      <slot name="right" />
-    </div>
+    <slot name="right" />
   </div>
 </template>
 
 <style lang="less" scoped>
-.outer {
-  display: flex;
-  justify-content: center;
+.main {
+  flex: 1;
+  min-width: 0;
 }
 </style>

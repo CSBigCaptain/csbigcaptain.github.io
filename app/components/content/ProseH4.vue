@@ -14,6 +14,7 @@
 .prose-h4-container {
   margin: 1.2rem 0 0.8rem;
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 .prose-h4 {

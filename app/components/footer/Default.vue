@@ -83,10 +83,15 @@ function confirmNavigation(event: Event) {
   display: flex;
   justify-content: center;
   background-color: rgb(var(--mdui-color-surface-variant));
+
 }
 
 .main {
   height: auto;
+
+  @media(max-width: 1079px) {
+    width: 100%;
+  }
 
   .more-info {
     display: flex;

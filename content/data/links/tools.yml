@@ -5,6 +5,12 @@ links:
     link: https://play.vuejs.org/
     desc: 在线 Vue 代码编辑器
     date: 2026-01-01
+  - title: Meta Tag Checker
+    nick: NuxtSEO Tools
+    icon: https://nuxtseo.com/icon.svg
+    link: https://nuxtseo.com/tools/meta-tag-checker
+    desc: 检查网站元标签是否符合规范
+    date: 2026-01-03
   - title: MDUI 文档
     nick: 本站组件库
     icon: https://cdn.w3cbus.com/mdui/icon.svg

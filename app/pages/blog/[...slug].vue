@@ -38,7 +38,21 @@ defineOgImageComponent('Nuxt', {
         </div>
       </div>
     </template>
-    <main class="content-container">
+    <template #right>
+      <aside>
+        <AppWechatCard />
+        <AppPostToc :post="post" />
+        <AppPostAd
+          clickable variant="filled"
+          target="_blank" to="https://chat.csbig.top/"
+          title="隆重推出 Carbon Chat"
+          desc="在线与多种 LLM 大模型聊天"
+        >
+          <Icon name="hugeicons:chat-gpt" />
+        </AppPostAd>
+      </aside>
+    </template>
+    <main>
       <div class="content">
         <ContentRenderer v-if="post" :value="post" />
       </div>
@@ -82,14 +96,50 @@ defineOgImageComponent('Nuxt', {
 
 main {
   width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
   padding: 0;
   min-height: 100vh;
   overflow: hidden;
 
   .content {
+    width: 100%;
+    word-break: break-word;
     padding: var(--inline-padding);
   }
+}
+
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  height: fit-content;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--inline-padding);
+  position: sticky;
+  top: 64px;
+  font-size: 0.9em;
+
+  @media (max-width: 1079px) {
+    padding-left: 0;
+    width: 220px;
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  mdui-card {
+    width: 100%;
+    padding: var(--inline-padding);
+  }
+}
+</style>
+
+<style lang="less">
+// 解决sticky元素遮挡问题
+mdui-layout,
+mdui-layout-main {
+  overflow: visible;
 }
 </style>

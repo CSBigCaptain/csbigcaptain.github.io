@@ -65,6 +65,7 @@ function changeDate(date: string) {
 main {
   width: 100%;
   min-height: 500px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;

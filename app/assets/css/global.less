@@ -15,6 +15,7 @@
     -apple-system,
     sans-serif;
   font-variant-alternates: styleset(open-digits, disambiguation, round-quotes-and-commas);
+  scroll-behavior: smooth;
 
   --inline-padding: 15px;
   --content-line-height: 1.5;
@@ -49,6 +50,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--bold-font-weight);
+  scroll-margin-top: 80px;
 }
 
 body {
@@ -86,6 +88,19 @@ footer {
   background-color: rgb(var(--mdui-color-surface-variant));
 }
 
+.page-outer {
+  width: 85%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1079px) {
+    width: 100%;
+  }
+}
+
 .page-container {
   width: 85%;
   max-width: 1920px;
@@ -93,10 +108,10 @@ footer {
   display: flex;
   flex-direction: column;
 
-  @media (width <= 768px) {
+  @media (max-width: 767px) {
     width: 100%;
   }
-  @media (width <= 425px) {
+  @media (max-width: 424px) {
     padding: 22px;
   }
 }

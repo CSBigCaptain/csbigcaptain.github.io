@@ -18,7 +18,13 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
       <mdui-layout-main>
         <slot name="full-width" />
         <AppContainer>
+          <template #left>
+            <slot name="left" />
+          </template>
           <slot />
+          <template #right>
+            <slot name="right" />
+          </template>
         </AppContainer>
         <FooterDefault />
       </mdui-layout-main>

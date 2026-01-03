@@ -14,6 +14,7 @@
 .prose-h2-container {
   margin: 2rem 0 1.2rem;
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 .prose-h2 {

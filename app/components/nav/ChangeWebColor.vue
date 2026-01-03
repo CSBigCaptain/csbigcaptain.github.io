@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTheme } from '~/composables/theme'
 import { checkHexColor } from '~/utils/theme'
 import 'mdui/components/switch'
 
@@ -11,10 +12,21 @@ const isHexColor = computed(() => {
   return checkHexColor(selectedThemeColor.value)
 })
 
+// 创建一个动态主题实例，根据用户设置是否启用动态主题
+const dynamicTheme = useTheme().useDynamicTheme()
+if (userThemeSettings.value.enableDynamicColor) {
+  dynamicTheme.start()
+}
+
 function toggleDynamicColor(event: Event) {
   const target = event.target as HTMLInputElement
   userThemeSettings.value.enableDynamicColor = target.checked
 }
+
+// 监听用户调整动态主题设置
+watch(() => userThemeSettings.value.enableDynamicColor, (enabled) => {
+  enabled ? dynamicTheme.start() : dynamicTheme.stop()
+})
 </script>
 
 <template>
