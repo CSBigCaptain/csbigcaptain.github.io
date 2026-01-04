@@ -21,6 +21,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vueuse/motion": "^3.0.3",
     "fuse.js": "^7.1.0",
     "katex": "0.16.27",
     "mdui": "^2.1.4",

@@ -41,6 +41,12 @@ links:
     link: https://caniuse.com/
     desc: 查询 Web API 在各种浏览器中的兼容性
     date: 2026-01-02
+  - title: IT Tools
+    nick: 在线工具集合
+    icon: https://sharevb-it-tools.vercel.app/favicon.ico
+    link: https://sharevb-it-tools.vercel.app/
+    desc: 开发者实用工具集合
+    date: 2026-01-04
   - title: PRTS
     nick: 明日方舟 Wiki
     icon: https://prts.wiki/favicon.ico

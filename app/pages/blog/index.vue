@@ -38,7 +38,28 @@ function changeDate(date: string) {
     <template #full-width>
       <AppRandomSentence />
     </template>
-    <main class="content-container">
+    <template #right>
+      <aside>
+        <AppWechatCard />
+        <AppPostAd
+          clickable variant="filled"
+          target="_blank" to="https://qm.qq.com/q/c2bJHbwTDy"
+          title="来 QQ 群看看？"
+          desc="一起交流新鲜事！"
+        >
+          <Icon name="mingcute:qq-fill" />
+        </AppPostAd>
+        <AppPostAd
+          clickable variant="filled"
+          target="_blank" to="https://chat.csbig.top/"
+          title="隆重推出 Carbon Chat"
+          desc="在线与多种 LLM 大模型聊天"
+        >
+          <Icon name="hugeicons:chat-gpt" />
+        </AppPostAd>
+      </aside>
+    </template>
+    <main>
       <ul>
         <li v-for="post in posts" :key="post.id">
           <NuxtLink :to="post.path">
@@ -64,17 +85,16 @@ function changeDate(date: string) {
 
 main {
   width: 100%;
-  min-height: 500px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  container-type: inline-size;
 
   ul {
     width: 100%;
-    padding: 0;
+    padding: 15px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
 
     @media (width <= 768px) {
@@ -100,6 +120,34 @@ main {
         }
       }
     }
+  }
+}
+
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  height: fit-content;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--inline-padding);
+  position: sticky;
+  top: 64px;
+  font-size: 0.9em;
+
+  @media (max-width: 1079px) {
+    padding-left: 0;
+    width: 220px;
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  mdui-card {
+    width: 100%;
+    padding: var(--inline-padding);
   }
 }
 </style>

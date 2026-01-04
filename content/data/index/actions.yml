@@ -1,11 +1,11 @@
 body:
-  - text: Go to Blog
+  - text: Read Articles
     link: /blog
     variant: filled
     icon: 'ic:round-article'
     endIcon: 'ic:round-arrow-forward-ios'
   - text: Github
-    link: 'https://github.com/CSBigCaptain/csbigcaptain.github.io'
+    link: 'https://github.com/CSBigCaptain'
     variant: tonal
     icon: 'mdi:github'
     endIcon: 'ic:round-arrow-forward-ios'
