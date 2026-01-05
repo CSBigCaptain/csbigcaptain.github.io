@@ -15,7 +15,7 @@ const isHexColor = computed(() => {
 // 创建一个动态主题实例，根据用户设置是否启用动态主题
 const dynamicTheme = useTheme().useDynamicTheme()
 if (userThemeSettings.value.enableDynamicColor) {
-  dynamicTheme.start()
+  // dynamicTheme.start()
 }
 
 function toggleDynamicColor(event: Event) {
@@ -25,7 +25,7 @@ function toggleDynamicColor(event: Event) {
 
 // 监听用户调整动态主题设置
 watch(() => userThemeSettings.value.enableDynamicColor, (enabled) => {
-  enabled ? dynamicTheme.start() : dynamicTheme.stop()
+  // enabled ? dynamicTheme.start() : dynamicTheme.stop()
 })
 </script>
 
