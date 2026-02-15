@@ -2,13 +2,6 @@ shellEmulator: true
 
 trustPolicy: no-downgrade
 
-packages:
-  - ./
-
-pnpm:
-  overrides:
-    vite: npm:rolldown-vite@latest
-
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - less

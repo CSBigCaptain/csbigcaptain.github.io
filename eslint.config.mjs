@@ -11,8 +11,7 @@ export default withNuxt(
     },
     formatters: false,
     rules: {
-      'nuxt/nuxt-config-keys-order': 'off', // 禁用有 bug 的规则
-      'vue/no-deprecated-slot-attribute': 'off', // Web Components 需要使用 slot 属性
+      'vue/no-deprecated-slot-attribute': 'off',
       'vue/block-lang': ['error', {
         script: { lang: ['ts', 'tsx'] },
       }],
@@ -30,24 +29,28 @@ export default withNuxt(
       '*.log',
       'pnpm-lock.yaml',
     ],
+    overrides: [
+      {
+        files: ['content/**'],
+        rules: {
+          'antfu/consistent-list-newline': 'off',
+          'eqeqeq': 'off',
+          'no-irregular-whitespace': 'off',
+          'style/indent': 'off',
+          'style/quotes': 'off',
+          'style/semi': 'off',
+        },
+      },
+      {
+        files: ['**/*.json', '**/*.json5', '**/*.jsonc'],
+        excludes: ['content/**'],
+        parser: 'jsonc-eslint-parser',
+        rules: {
+          'pnpm/json-enforce-catalog': 'off',
+          'jsonc/no-comments': 'off',
+          'style/eol-last': ['warn', 'never'],
+        },
+      },
+    ],
   }),
-  {
-    files: ['content/**'],
-    rules: {
-      'antfu/consistent-list-newline': 'off',
-      'eqeqeq': 'off',
-      'no-irregular-whitespace': 'off',
-      'style/indent': 'off',
-      'style/quotes': 'off',
-      'style/semi': 'off',
-    },
-  },
-  {
-    files: ['**/*.json'],
-    ignores: ['content/**'],
-    rules: {
-      'pnpm/json-enforce-catalog': 'off',
-      'style/eol-last': ['warn', 'never'],
-    },
-  },
 )

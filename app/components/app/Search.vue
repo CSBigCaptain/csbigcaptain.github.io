@@ -6,9 +6,13 @@ import 'mdui/components/text-field'
 const query = ref('')
 
 const { data } = await useAsyncData('search-data', () =>
-  queryCollectionSearchSections('blog', {
-    ignoredTags: ['header', 'footer'],
-  }))
+  queryCollectionSearchSections('blog' as never, {
+    ignoredTags: ['header', 'footer', 'pre', 'code', 'style', 'script'],
+  }), {
+  server: true,
+  lazy: false,
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+})
 
 const { results } = useFuse(query, data.value || [], {
   fuseOptions: {

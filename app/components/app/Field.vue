@@ -4,7 +4,7 @@ defineProps<{ label?: string }>()
 
 <template>
   <section class="z-field">
-    <h2 class="z-field-label">
+    <h2 class="z-field-label text-2xl font-bold">
       <slot name="label">
         {{ label }}
       </slot>

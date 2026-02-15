@@ -58,13 +58,16 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="OuterMain">
-    <div class="inner">
-      <div class="sentence" @click="typeText">
+  <div
+    class="OuterMain flex justify-center items-center
+    w-full h-[45vh] bg-surface-container-highest"
+  >
+    <div class="inner w-[70%] min-w-92.5 max-w-540 p-3.75 flex flex-col items-center">
+      <div class="text-2xl cursor-pointer text-center font-bold min-h-8 mb-4">
         {{ displayText }}
         <span v-if="isTyping" class="cursor">|</span>
       </div>
-      <div class="source">
+      <div class="source text-md opacity-70 text-center">
         {{ sentence ? sentence.author : '' }}
         {{ sentence ? `（${sentence.name}）` : '' }}
       </div>
@@ -73,45 +76,8 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="less">
-.OuterMain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 45vh;
-  background: rgb(var(--mdui-color-surface-container-highest));
-
-  .inner {
-    width: 70%;
-    min-width: 370px;
-    max-width: 2160px;
-    padding: var(--inline-padding);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-
-    .sentence {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      min-height: 2em;
-      cursor: pointer;
-      text-align: center;
-      font-weight: var(--bold-font-weight);
-    }
-
-    .source {
-      font-size: 1rem;
-      opacity: 0.7;
-      text-align: center;
-    }
-
-    .cursor {
-      animation: blink 1s infinite;
-      color: var(--mdui-color-primary);
-    }
-  }
+.cursor {
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {

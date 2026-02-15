@@ -1,15 +1,12 @@
 import { useStorage } from '@vueuse/core'
 import { setColorScheme } from 'mdui/functions/setColorScheme'
-import { hexToHue, hslToHex, nextHue } from '~/utils/theme'
 
 const userThemeSettings = useStorage<{
   preferredColor: string
-  enableDynamicColor: boolean
 }>(
   'user-settings',
   {
     preferredColor: '#478384',
-    enableDynamicColor: true,
   },
   undefined,
   { mergeDefaults: true },
@@ -52,39 +49,6 @@ function setRandomColor(): string {
   return color
 }
 
-function useDynamicTheme() {
-  const hue = ref(0)
-  let timer: number | null = null // interval 的句柄
-  /**
-   * @param [interval] 颜色变化周期，默认 1000 毫秒
-   * @param [step] 颜色变化步长，默认 1
-   */
-  const start = (interval: number = 1000, step: number = 1) => {
-    if (!import.meta.client)
-      return
-    if (timer !== null)
-      return // 防止重复启动
-    hue.value = hexToHue(userThemeSettings.value.preferredColor)
-    timer = window.setInterval(() => {
-      hue.value = nextHue(hue.value, step)
-      const color = hslToHex(hue.value, 70, 55)
-      setColorScheme(color, { target: 'html' })
-    }, interval)
-  }
-  const stop = () => {
-    if (timer !== null) {
-      clearInterval(timer)
-      timer = null
-    }
-  }
-
-  return {
-    hue,
-    start,
-    stop,
-  }
-}
-
 export function useTheme() {
   return {
     userThemeSettings,
@@ -93,6 +57,5 @@ export function useTheme() {
     toggleDark,
     setColorTheme,
     setRandomColor,
-    useDynamicTheme,
   }
 }

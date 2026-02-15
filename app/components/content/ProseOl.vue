@@ -1,15 +1,8 @@
 <template>
-  <ol>
+  <ol class="leading-normal ps-4">
     <slot />
   </ol>
 </template>
-
-<style scoped>
-ol {
-  line-height: var(--content-line-height);
-  padding-inline-start: var(--inline-padding);
-}
-</style>
 
 <style lang="less">
 ol > li[content] {
@@ -37,6 +30,6 @@ ol > li[content] {
 }
 
 ol li[content]::marker {
-  color: rgb(var(--mdui-color-primary));
+  color: var(--color-outline);
 }
 </style>

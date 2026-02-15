@@ -1,12 +1,14 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="page-outer">
-    <slot name="left" />
-    <div class="main">
-      <slot />
+  <div class="out">
+    <div class="container flex">
+      <slot name="left" />
+      <div class="main">
+        <slot />
+      </div>
+      <slot name="right" />
     </div>
-    <slot name="right" />
   </div>
 </template>
 

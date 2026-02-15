@@ -35,10 +35,10 @@ const props = defineProps<{
         <div slot="headline">
           {{ props.title || props.desc }}
         </div>
-        <div slot="content" class="popup-content">
-          <p class="content-desc" v-text="props.desc || 'undefined'" />
+        <div slot="content" class="popup-content w-full relative">
+          <p class="content-desc text-on-surface" v-text="props.desc || 'undefined'" />
           <p v-if="props.comment" v-text="props.comment" />
-          <div class="date">
+          <div class="date absolute right-0 bottom-0 text-4xl text-on-surface opacity-10">
             {{ props.date }}
           </div>
         </div>
@@ -50,29 +50,21 @@ const props = defineProps<{
 <style lang="less" scoped>
 mdui-tooltip::part(popup) {
   min-width: 250px;
-  background: rgb(var(--mdui-color-surface-container));
+  background: rgb(var(--mdui-color-surface));
 }
 mdui-tooltip::part(headline) {
   font-size: 1em;
   line-height: 1.6;
   font-weight: 700;
-  color: rgba(var(--mdui-color-tertiary), 0.7);
+  color: rgba(var(--mdui-color-tertiary), 1);
 }
 mdui-tooltip::part(content) {
   font-size: .75em;
 }
 
 .popup-content {
-  width: 100%;
-  position: relative;
 
-  .content-desc {
-    color: rgba(var(--mdui-color-on-surface), 1);
-  }
   .date {
-    position: absolute; right: 0; bottom: 0;
-    font-size: 3em;
-    color: rgba(var(--mdui-color-on-surface), 0.1);
     pointer-events: none;
     user-select: none;
   }

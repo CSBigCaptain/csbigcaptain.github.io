@@ -19,14 +19,14 @@ isFeatured: true
 我们初次使用 Claude Code 扩展时，会被要求登录 Claude 账号，这是针对使用 [anthropic.com](http://anthropic.com/) 官方 API 的同学的。我们只是使用 Claude Code 调用第三方 API 的话，需要在 VSCode 设置中禁用扩展的登录功能：
 
 > 禁用登录对应的设置ID： `claudeCode.disableLoginPrompt` ，启用此配置即可
-> 
+>
 
 ### 配置：调用第三方 API
 
 > Claude Code 设置文档：[Claude Code 设置 - Claude Code Docs](https://code.claude.com/docs/zh-CN/settings)
-> 
+>
 
-#### 配置文件的作用域及影响 
+#### 配置文件的作用域及影响
 
 第三方 API 的配置在 Claude Code 的配置文件中，这个配置文件对于 VSCode 插件和 Claude Code  Cli 都是适用的：
 
@@ -66,7 +66,7 @@ Claude Code 的配置文件在 `~/.claude/settings.json` 如果没有找到的�
 - 如果你当前可用的模型较少（DeepSeek 和小米只提供了 1 个模型），这三个选项可以填写同一个模型。
 
 > TIPS：请确保模型的 API 支持 Authropic API 格式，具体需要参阅模型提供商提供的 Authropic API 或 Claude Code 的使用文档。
-> 
+>
 
 ## Claude Code Cli
 
@@ -75,7 +75,7 @@ Claude Code 的配置文件在 `~/.claude/settings.json` 如果没有找到的�
 各个平台的安装教程：[Claude Code 概览 - Claude Code Docs](https://code.claude.com/docs/zh-CN/overview#30-%E7%A7%92%E5%86%85%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8)
 
 > TIPS：对于国内用户，更建议使用 Winget 和 Homebrew 安装方式
-> 
+>
 
 ### 配置
 

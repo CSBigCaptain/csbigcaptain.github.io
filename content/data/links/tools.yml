@@ -20,7 +20,7 @@ links:
   - title: Vue 官方文档
     nick: Vue 文档
     icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PGcgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIGZpbGw9IiNmNGYyZWUiIHJ4PSI2MCIvPjxwYXRoIGZpbGw9IiM0MWI4ODMiIGQ9Ik0xODIgNTBoMzZsLTkwIDE1NS4yNUwzOCA1MGg2OC44NUwxMjggODZsMjAuNy0zNnoiLz48cGF0aCBmaWxsPSIjNDFiODgzIiBkPSJtMzggNTBsOTAgMTU1LjI1TDIxOCA1MGgtMzZsLTU0IDkzLjE1TDczLjU1IDUweiIvPjxwYXRoIGZpbGw9IiMzNTQ5NWUiIGQ9Ik03My41NSA1MEwxMjggMTQzLjZMMTgyIDUwaC0zMy4zTDEyOCA4NmwtMjEuMTUtMzZ6Ii8+PC9nPjwvc3ZnPg==
-    link: https://vuejs.org/
+    link: https://cn.vuejs.org/
     desc: Vue 官方文档
     date: 2026-01-02
   - title: Nuxt Official Docs

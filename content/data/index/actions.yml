@@ -1,11 +1,18 @@
 body:
   - text: Read Articles
+    style: large
     link: /blog
     variant: filled
     icon: 'ic:round-article'
     endIcon: 'ic:round-arrow-forward-ios'
-  - text: Github
+    target: _self
+  - style: small
     link: 'https://github.com/CSBigCaptain'
     variant: tonal
     icon: 'mdi:github'
-    endIcon: 'ic:round-arrow-forward-ios'
+    target: _blank
+  - style: small
+    link: 'https://space.bilibili.com/606574672'
+    variant: tonal
+    icon: 'streamline-ultimate:bilibili-logo-bold'
+    target: _blank

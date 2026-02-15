@@ -18,7 +18,11 @@ defineOgImageComponent('Nuxt', {
 })
 
 const { data: posts } = await useAsyncData('blogs', () =>
-  queryCollection('blog').order('date', 'DESC').all())
+  queryCollection('blog').order('date', 'DESC').all(), {
+  server: true,
+  lazy: false,
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+})
 
 function changeDate(date: string) {
   const time = new Date(date)
@@ -39,7 +43,10 @@ function changeDate(date: string) {
       <AppRandomSentence />
     </template>
     <template #right>
-      <aside>
+      <aside
+        class="hidden md:flex px-3.75 py-10 w-50 md:w-75
+          shrink-0 h-fit flex-col gap-3.75 sticky top-10"
+      >
         <AppWechatCard />
         <AppPostAd
           clickable variant="filled"
@@ -59,15 +66,19 @@ function changeDate(date: string) {
         </AppPostAd>
       </aside>
     </template>
-    <main>
-      <ul>
+    <main class="w-full py-10 overflow-hidden contain-inline-size">
+      <ul class="w-full grid gap-5">
         <li v-for="post in posts" :key="post.id">
           <NuxtLink :to="post.path">
-            <mdui-card variant="filled" clickable>
-              <h2>{{ post.title }}</h2>
-              <p>{{ post.description }}</p>
+            <mdui-card variant="filled" clickable class="w-full h-full p-7.25 flex flex-col justify-between">
+              <h2 class="text-left text-2xl font-bold">
+                {{ post.title }}
+              </h2>
+              <p class="py-2.5">
+                {{ post.description }}
+              </p>
               <small>
-                {{ changeDate(post.update ?? post.date) }}
+                <NuxtTime :datetime="new Date(post.update ?? post.date)" />
               </small>
             </mdui-card>
           </NuxtLink>
@@ -78,76 +89,13 @@ function changeDate(date: string) {
 </template>
 
 <style scoped lang="less">
-* {
-  margin: 0;
-  padding: 0;
-}
-
 main {
-  width: 100%;
-  padding: 0;
-  min-height: 100vh;
-  overflow: hidden;
-  container-type: inline-size;
-
   ul {
-    width: 100%;
-    padding: 15px;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
 
     @media (width <= 768px) {
       grid-template-columns: 1fr;
     }
-
-    li {
-      mdui-card {
-        width: 100%;
-        height: 100%;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        h2 {
-          text-align: left;
-          font-size: 1.5rem;
-        }
-
-        p {
-          padding: 10px 0;
-        }
-      }
-    }
-  }
-}
-
-aside {
-  width: 300px;
-  flex-shrink: 0;
-  height: fit-content;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--inline-padding);
-  position: sticky;
-  top: 64px;
-  font-size: 0.9em;
-
-  @media (max-width: 1079px) {
-    padding-left: 0;
-    width: 220px;
-    font-size: 0.8em;
-  }
-
-  @media (max-width: 767px) {
-    display: none;
-  }
-
-  mdui-card {
-    width: 100%;
-    padding: var(--inline-padding);
   }
 }
 </style>

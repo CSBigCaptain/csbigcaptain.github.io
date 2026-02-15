@@ -5,7 +5,7 @@
   "name": "csbigcaptain.github.io",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.18.0",
+  "packageManager": "pnpm@10.29.1",
   "description": "CSBigCaptain's personal blog.",
   "license": "MIT",
   "imports": {
@@ -21,34 +21,38 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "@vueuse/motion": "^3.0.3",
     "fuse.js": "^7.1.0",
     "katex": "0.16.27",
     "mdui": "^2.1.4",
-    "nuxt": "4.2.2",
+    "nuxt": "4.3.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
+    "tailwindcss": "^4.1.18",
     "unstorage": "1.17.3",
-    "vue": "^3.5.26"
+    "vue": "^3.5.28"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.7.3",
+    "@antfu/eslint-config": "^7.4.3",
     "@iconify-json/ic": "^1.2.4",
-    "@nuxt/content": "^3.10.0",
+    "@nuxt/content": "^3.11.2",
     "@nuxt/devtools": "3.1.1",
-    "@nuxt/eslint": "1.12.1",
+    "@nuxt/eslint": "1.15.1",
     "@nuxt/hints": "1.0.0-alpha.5",
     "@nuxt/icon": "2.1.1",
-    "@nuxtjs/seo": "3.3.0",
-    "@unhead/vue": "^2.1.1",
+    "@nuxtjs/seo": "3.4.0",
+    "@unhead/vue": "^2.1.4",
     "@vueuse/core": "14.1.0",
     "@vueuse/integrations": "14.1.0",
     "@vueuse/nuxt": "14.1.0",
-    "eslint": "^9.39.2",
-    "eslint-plugin-format": "^1.1.0",
+    "browserslist": "^4.28.1",
+    "eslint": "^10.0.0",
+    "eslint-plugin-format": "^1.4.0",
     "less": "4.5.1",
+    "lightningcss": "^1.31.1",
     "typescript": "^5.9.3",
-    "ufo": "^1.6.1",
+    "ufo": "^1.6.3",
     "vue-tsc": "3.2.1"
   }
 }

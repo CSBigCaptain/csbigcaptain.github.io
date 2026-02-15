@@ -1,5 +1,8 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
+import browserslist from 'browserslist'
+import { browserslistToTargets } from 'lightningcss'
 import { defineNuxtConfig } from 'nuxt/config'
+
 import blogConfig from './blog.config'
 // @keep-sorted
 export default defineNuxtConfig({
@@ -50,7 +53,6 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2025-03-08',
-  // @ts-expect-error content types not properly merged
   content: {
     build: {
       markdown: {
@@ -74,7 +76,7 @@ export default defineNuxtConfig({
             default: 'github-light',
             dark: 'github-dark',
           },
-          langs: ['c', 'cpp', 'python', 'js', 'ts', 'html', 'css', 'vue', 'yaml'],
+          langs: ['c', 'cpp', 'python', 'js', 'ts', 'html', 'css', 'vue', 'json', 'yaml'],
         },
         toc: {
           depth: 3,
@@ -82,16 +84,12 @@ export default defineNuxtConfig({
         },
       },
     },
-    experimental: { nativeSqlite: true },
-    preview: {
-      api: 'https://api.nuxt.studio',
-    },
+    experimental: { sqliteConnector: 'native' },
   },
   css: [
     ...(blogConfig.additionalCss || []),
     'mdui/mdui.css',
-    'katex/dist/katex.min.css',
-    '/assets/css/global.less',
+    '/assets/css/global.css',
   ],
   devtools: { enabled: true },
   eslint: {
@@ -102,6 +100,7 @@ export default defineNuxtConfig({
   },
   experimental: {
     typescriptPlugin: true,
+    componentIslands: true,
   },
   linkChecker: {
     enabled: false,
@@ -111,6 +110,9 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: true,
       crawlLinks: true,
+      // 修复部分平台会在文章路径添加 '/'，导致闪现 404 错误
+      // https://github.com/nuxt/content/issues/2378
+      // autoSubfolderIndex: process.env.CLOUDFLARE_PAGES || process.env.GITHUB_ACTIONS || process.env.NETLIFY ? false : undefined,
     },
   },
   nuxtseo: {
@@ -140,10 +142,22 @@ export default defineNuxtConfig({
     typeCheck: false,
   },
   vite: {
+    build: {
+      cssMinify: 'lightningcss',
+    },
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        targets: browserslistToTargets(browserslist('>= 0.25%')),
+      },
+    },
     optimizeDeps: {
       // @keep-sorted
       include: ['@nuxt/hints', '@vueuse/integrations', 'mdui'],
     },
+    plugins: [
+      tailwindcss() as any,
+    ],
     resolve: {
       // TODO: @vueuse/motion 依赖 tslib，构建时打包进服务端 bundle，结果 tslib 的 ESM/CJS 互操作出了问题，默认导出是 undefined
       // 修复 SSR 预渲染崩溃：tslib 在 ESM/CJS 互操作中默认导出为 undefined。

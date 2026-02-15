@@ -103,5 +103,3 @@ export function hexToHue(hex: string): number {
 
   return hue
 }
-
-export const nextHue = (h: number, step: number): number => (h + step) % 360

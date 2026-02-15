@@ -16,7 +16,7 @@ const visible = computed(() => {
       type: 'spring',
       stiffness: 220,
       damping: 22,
-      mass: 0.6,
+      mass: 1,
     },
   }
 })

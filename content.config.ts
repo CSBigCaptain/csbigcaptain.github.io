@@ -21,11 +21,13 @@ export default defineContentConfig({
       source: 'data/index/actions.yml',
       schema: z.object({
         body: z.array(z.object({
-          text: z.string(),
+          style: z.enum(['large', 'small']),
+          text: z.string().optional(),
           link: z.string(),
-          variant: z.string(),
+          variant: z.enum(['standard', 'filled', 'tonal', 'outlined']),
           icon: z.string(),
-          endIcon: z.string(),
+          endIcon: z.string().optional(),
+          target: z.enum(['_blank', '_self']),
         })),
       }),
     }),

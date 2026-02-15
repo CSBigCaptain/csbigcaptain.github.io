@@ -16,7 +16,7 @@
 
 推荐使用 [Node Version Manager](https://github.com/nvm-sh/nvm) 来安装 Node ，以便于随时切换系统中 Node 的版本。
 
-本项目使用 Node 20 版本构建，也建议使用此版本来构建项目。
+本项目使用 Node 22 & 24 版本构建，也建议使用此版本来构建项目。
 
 ### 包管理器
 

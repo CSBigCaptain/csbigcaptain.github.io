@@ -1,0 +1,71 @@
+@theme {
+    /* mdui colors */
+    --color-primary: rgb(var(--mdui-color-primary));
+    --color-on-primary: rgb(var(--mdui-color-on-primary));
+    --color-primary-container: rgb(var(--mdui-color-primary-container));
+    --color-on-primary-container: rgb(var(--mdui-color-on-primary-container));
+    --color-secondary: rgb(var(--mdui-color-secondary));
+    --color-on-secondary: rgb(var(--mdui-color-on-secondary));
+    --color-secondary-container: rgb(var(--mdui-color-secondary-container));
+    --color-on-secondary-container: rgb(var(--mdui-color-on-secondary-container));
+    --color-tertiary: rgb(var(--mdui-color-tertiary));
+    --color-on-tertiary: rgb(var(--mdui-color-on-tertiary));
+    --color-tertiary-container: rgb(var(--mdui-color-tertiary-container));
+    --color-on-tertiary-container: rgb(var(--mdui-color-on-tertiary-container));
+    --color-error: rgb(var(--mdui-color-error));
+    --color-on-error: rgb(var(--mdui-color-on-error));
+    --color-error-container: rgb(var(--mdui-color-error-container));
+    --color-on-error-container: rgb(var(--mdui-color-on-error-container));
+    --color-background: rgb(var(--mdui-color-background));
+    --color-on-background: rgb(var(--mdui-color-on-background));
+    --color-surface: rgb(var(--mdui-color-surface));
+    --color-on-surface: rgb(var(--mdui-color-on-surface));
+    --color-surface-variant: rgb(var(--mdui-color-surface-variant));
+    --color-on-surface-variant: rgb(var(--mdui-color-on-surface-variant));
+    --color-outline: rgb(var(--mdui-color-outline));
+    --color-outline-variant: rgb(var(--mdui-color-outline-variant));
+    --color-shadow: rgb(var(--mdui-color-shadow));
+    --color-scrim: rgb(var(--mdui-color-scrim));
+    --color-inverse-surface: rgb(var(--mdui-color-inverse-surface));
+    --color-inverse-on-surface: rgb(var(--mdui-color-inverse-on-surface));
+    --color-inverse-primary: rgb(var(--mdui-color-inverse-primary));
+    --color-surface-dim: rgb(var(--mdui-color-surface-dim));
+    --color-surface-bright: rgb(var(--mdui-color-surface-bright));
+    --color-surface-container-lowest: rgb(var(--mdui-color-surface-container-lowest));
+    --color-surface-container-low: rgb(var(--mdui-color-surface-container-low));
+    --color-surface-container: rgb(var(--mdui-color-surface-container));
+    --color-surface-container-high: rgb(var(--mdui-color-surface-container-high));
+    --color-surface-container-highest: rgb(var(--mdui-color-surface-container-highest));
+    --color-surface-tint-color: rgb(var(--mdui-color-surface-tint-color));
+
+    --radius-none: var(--mdui-shape-corner-none);
+    --radius-xs: var(--mdui-shape-corner-extra-small);
+    --radius-sm: var(--mdui-shape-corner-small);
+    --radius-md: var(--mdui-shape-corner-medium);
+    --radius-lg: var(--mdui-shape-corner-large);
+    --radius-xl: var(--mdui-shape-corner-extra-large);
+    --radius-full: var(--mdui-shape-corner-full);
+}
+
+    /* mdui shadows */
+    @layer utilities {
+        .shadow-l0 {
+            box-shadow: none;
+        }
+        .shadow-l1 {
+            box-shadow: var(--mdui-elevation-level1);
+        }
+        .shadow-l2 {
+            box-shadow: var(--mdui-elevation-level2);
+        }
+        .shadow-l3 {
+            box-shadow: var(--mdui-elevation-level3);
+        }
+        .shadow-l4 {
+            box-shadow: var(--mdui-elevation-level4);
+        }
+        .shadow-l5 {
+            box-shadow: var(--mdui-elevation-level5);
+        }
+    }
+

@@ -5,5 +5,6 @@ setColorTheme()
 
 <template>
   <NuxtRouteAnnouncer />
+  <NuxtLoadingIndicator color="gray" />
   <NuxtPage />
 </template>

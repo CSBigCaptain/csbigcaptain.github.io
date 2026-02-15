@@ -5,6 +5,10 @@ import 'mdui/components/list-item'
 
 const { data } = await useAsyncData('NavigationDrawerList', () => {
   return queryCollection('navigationDrawerList').first()
+}, {
+  server: true,
+  lazy: false,
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
 })
 
 const list = computed(() => {
@@ -15,20 +19,7 @@ const list = computed(() => {
 <template>
   <mdui-list>
     <NuxtLink v-for="item in list" :key="item.text" :to="item.link">
-      <mdui-list-item>{{ item.text }}</mdui-list-item>
+      <mdui-list-item class="ps-1">{{ item.text }}</mdui-list-item>
     </NuxtLink>
   </mdui-list>
 </template>
-
-<style lang="less" scoped>
-mdui-list-item {
-  padding-left: 4px;
-  letter-spacing: 9em;
-}
-
-a:-webkit-any-link,
-a:any-link {
-  text-decoration: none;
-  color: inherit;
-}
-</style>

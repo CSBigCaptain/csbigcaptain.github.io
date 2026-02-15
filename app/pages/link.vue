@@ -17,10 +17,20 @@ defineOgImageComponent('Nuxt', {
 const { data: friendsData } = await useAsyncData(
   'linkPageFriends',
   () => queryCollection('linkPageFriends').first(),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  }
 )
 const { data: toolsData } = await useAsyncData(
   'linkPageTools',
   () => queryCollection('linkPageTools').first(),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  }
 )
 </script>
 
@@ -32,19 +42,19 @@ const { data: toolsData } = await useAsyncData(
     <main>
       <section class="friends">
         <h2>友情链接</h2>
-        <menu>
+        <ul>
           <li v-for="friend in friendsData?.links" :key="friend.title">
             <LinkPageCard :author="friend.author" :comment="friend.comment" :date="friend.date" :title="friend.title" :nick="friend.nick" :desc="friend.desc" :icon="friend.icon" :to="friend.link" />
           </li>
-        </menu>
+        </ul>
       </section>
       <section class="tools">
         <h2>工具集</h2>
-        <menu>
+        <ul>
           <li v-for="tool in toolsData?.links" :key="tool.title">
             <LinkPageCard :date="tool.date" :title="tool.title" :nick="tool.nick" :desc="tool.desc" :icon="tool.icon" :to="tool.link" />
           </li>
-        </menu>
+        </ul>
       </section>
     </main>
   </NuxtLayout>
@@ -80,7 +90,7 @@ section{
   }
 }
 
-menu {
+ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
   justify-content: center;
@@ -88,13 +98,6 @@ menu {
   gap: 15px;
 }
 @media(max-width: 767px) {
-  menu {grid-template-columns: repeat(auto-fill, 120px);}
-}
-.link-card {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ul {grid-template-columns: repeat(auto-fill, 120px);}
 }
 </style>

@@ -31,10 +31,7 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
     </mdui-layout>
     <ClientOnly>
       <mdui-navigation-drawer
-        modal
-        close-on-overlay-click
-        close-on-esc
-        :open="drawerStatus"
+        modal close-on-overlay-click close-on-esc :open="drawerStatus"
         @close="drawerStatus = false"
       >
         <aside>
@@ -42,10 +39,7 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
         </aside>
       </mdui-navigation-drawer>
       <mdui-dialog
-        :open="searchStatus"
-        close-on-esc
-        close-on-overlay-click
-        headline="搜索"
+        :open="searchStatus" close-on-esc close-on-overlay-click headline="搜索"
         @close="closeAll()"
       >
         <AppSearch />
@@ -63,11 +57,8 @@ mdui-layout {
 // navigation-drawer 的 z-index 值为99
 
 mdui-navigation-drawer {
+  --shape-corner: 0px;
   z-index: 99;
   transform: translateY(64px);
-}
-
-mdui-navigation-drawer {
-  --shape-corner: 0px;
 }
 </style>

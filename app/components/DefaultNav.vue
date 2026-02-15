@@ -7,12 +7,15 @@ const { toggleDrawerStatus } = useLayoutStatus()
 </script>
 
 <template>
-  <header class="header">
-    <mdui-top-app-bar>
-      <mdui-button-icon @click="toggleDrawerStatus()">
+  <header class="top-0 left-0 fixed h-16 z-100">
+    <mdui-top-app-bar class="px-2 py-3" variant="small">
+      <mdui-button-icon
+        name="" value="" type="button" variant="standard"
+        @click="toggleDrawerStatus()"
+      >
         <Icon name="ic:round-menu" />
       </mdui-button-icon>
-      <mdui-top-app-bar-title style="flex-grow: 1">
+      <mdui-top-app-bar-title class="grow px-1 opacity-0 sm:opacity-100">
         <!-- 插槽 topic-text : 顶部导航显示的标题 -->
         <slot name="topic-text" />
       </mdui-top-app-bar-title>
@@ -29,21 +32,3 @@ const { toggleDrawerStatus } = useLayoutStatus()
     </mdui-top-app-bar>
   </header>
 </template>
-
-<style lang="less" scoped>
-header {
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  position: fixed;
-  height: 64px;
-  overscroll-behavior: none;
-}
-
-@media (max-width: 375px) {
-  mdui-top-app-bar-title {
-    visibility: hidden;
-  }
-}
-</style>

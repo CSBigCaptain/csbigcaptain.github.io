@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import './mdui.css';
+@import './utils.css';
+
+@theme {
+  --font-sans: 'InterVariable', 'Noto Sans SC', 'MiSans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Noto Serif SC', sans-serif;
+  --font-mono: 'Google Sans Code', 'Consolas', 'Monaco', 'Courier New', 'Noto Sans SC', 'MiSans', monospace;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 90rem;
+  --breakpoint-3xl: 96rem;
+
+  --tracking-normal: 0.03em;
+  --tracking-tight: 0.01em;
+  --tracking-tighter: -0.02em;
+
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+@layer base {
+  body {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--tracking-normal);
+    line-height: var(--leading-normal);
+  }
+
+  p {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+}
+
+:root {
+  font-optical-sizing: auto;
+  font-synthesis: weight style;
+  font-variant-alternates: styleset(open-digits, disambiguation, round-quotes-and-commas);
+  scroll-behavior: smooth;
+
+  --inline-padding: 15px;
+  --content-line-height: 1.5;
+  --content-p-margin-block: 1rem;
+  --content-li-margin-block: 0.15rem;
+
+  --mdui-breakpoint-sm: 424px;
+  --mdui-breakpoint-md: 767px;
+  --mdui-breakpoint-lg: 1079px;
+
+  --thin-font-weight: 300;
+  --regular-font-weight: 500;
+  --bold-font-weight: 600;
+}
+
+.shiki .iconify {
+  background-color: currentColor !important;
+}
+
+mdui-top-app-bar {
+  color: rgb(var(--mdui-color-on-surface-variant));
+  background-color: rgba(var(--mdui-color-surface-variant), 0.85);
+  -webkit-backdrop-filter: saturate(140%) blur(4.8px);
+  backdrop-filter: saturate(140%) blur(4.8px);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+footer {
+  color: rgb(var(--mdui-color-on-surface-variant));
+  background-color: rgb(var(--mdui-color-surface-variant));
+}

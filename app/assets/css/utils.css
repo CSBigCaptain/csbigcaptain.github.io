@@ -1,0 +1,7 @@
+@utility out {
+    @apply w-full
+}
+
+@utility container {
+    @apply max-w-(--breakpoint-2xl) mx-auto px-5 lg:px-8
+}
