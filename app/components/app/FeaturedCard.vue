@@ -20,7 +20,7 @@ const props = defineProps<{
           {{ props.title }}
         </h3>
         <div class="content">
-          {{ props.short || props.description }}
+          {{ props.description }}
         </div>
       </mdui-card>
       <ClientOnly>
