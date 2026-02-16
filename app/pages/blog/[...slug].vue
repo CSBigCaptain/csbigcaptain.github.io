@@ -17,13 +17,13 @@ useSeoMeta({
   title,
   ogTitle: title,
   description,
-  ogDescription: description,
+  ogDescription: short,
   ogUrl: `https://csbigcaptain.github.io${route.path}`,
 })
 defineOgImageComponent('Nuxt', {
   title: post.value?.title,
   headline: 'CSBigCaptain Blog',
-  description: short,
+  description,
 })
 </script>
 
