@@ -1,5 +1,5 @@
 <template>
-  <ol class="leading-normal ps-4">
+  <ol class="leading-normal ps-4 my-4">
     <slot />
   </ol>
 </template>
@@ -27,6 +27,10 @@ ol > li[content] {
       }
     }
   }
+}
+
+ol ol, ol ul {
+  margin-block: 0.25rem;
 }
 
 ol li[content]::marker {

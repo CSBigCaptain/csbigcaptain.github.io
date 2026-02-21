@@ -39,7 +39,7 @@ const { data: toolsData } = await useAsyncData(
     <template #topic-text>
       Link
     </template>
-    <main>
+    <main class="py-12 min-h-[70vh]">
       <section class="friends">
         <h2>友情链接</h2>
         <ul>
@@ -61,10 +61,6 @@ const { data: toolsData } = await useAsyncData(
 </template>
 
 <style lang="less" scoped>
-main {
-  min-height: 70vh;
-}
-
 section{
   & > h2 {
     width: fit-content;

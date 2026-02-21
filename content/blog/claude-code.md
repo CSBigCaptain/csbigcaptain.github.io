@@ -2,7 +2,7 @@
 title: 手把手教你配好 Claude Code
 description: 本文将手把手教你如何配好Claude Code，重点介绍在VSCode中安装和配置Claude Code扩展，包括禁用登录功能的具体步骤，以便使用第三方API。
 date: 2026-02-06
-updated: 2026-02-06
+updated: 2026-02-21
 categories: [教程]
 tags: [Claude Code, AI 工具]
 isFeatured: true
@@ -88,3 +88,7 @@ Claude Code 官网提供了非常详尽的文档教程，敬请参考：
 - [VS Code 扩展与 Claude Code CLI](https://code.claude.com/docs/zh-CN/vs-code#vs-code-%E6%89%A9%E5%B1%95%E4%B8%8E-claude-code-cli)
 - [常见工作流程 - Claude Code Docs](https://code.claude.com/docs/zh-CN/common-workflows)
 - [快速入门 - Claude Code Docs](https://code.claude.com/docs/zh-CN/quickstart)
+
+---
+
+不错，说了这么多，媲美 Sonnet 的模型 API 从哪里找？
