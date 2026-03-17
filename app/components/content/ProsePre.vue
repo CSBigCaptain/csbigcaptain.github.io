@@ -24,7 +24,7 @@ async function copyCode() {
       overflow-hidden bg-surface-container-highest shadow-l1" v-bind="$attrs"
   >
     <!-- 代码块头部 -->
-    <div class="code-header flex justify-between px-4 py-2 md:px-5 bg-secondary-container">
+    <div class="code-header flex justify-between px-5 py-2 bg-secondary-container">
       <div class="text-xl text-on-secondary-container flex items-center">
         <div class="w-20">
           {{ props.language }}
@@ -44,7 +44,7 @@ async function copyCode() {
     <div class="flex">
       <pre
         :class="`language-${props.language}`"
-        class="shiki w-full h-auto m-0 text-sm/normal px-4 py-4 md:px-5 overflow-x-auto flex-1"
+        class="shiki w-full h-auto m-0 text-sm/normal px-5 py-4 overflow-x-auto flex-1"
       ><code><slot /></code></pre>
     </div>
   </div>
@@ -59,5 +59,13 @@ async function copyCode() {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+/* 在 blockquote 中的代码块用负 margin 撑满 */
+blockquote .code-wrapper {
+  margin-inline: calc(-5 * var(--spacing));
+  border-radius: 0;
 }
 </style>
