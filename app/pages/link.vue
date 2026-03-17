@@ -20,8 +20,8 @@ const { data: friendsData } = await useAsyncData(
   {
     server: true,
     lazy: false,
-    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
-  }
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
 )
 const { data: toolsData } = await useAsyncData(
   'linkPageTools',
@@ -29,8 +29,8 @@ const { data: toolsData } = await useAsyncData(
   {
     server: true,
     lazy: false,
-    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
-  }
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
 )
 </script>
 

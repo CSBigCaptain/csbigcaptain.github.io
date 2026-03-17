@@ -11,7 +11,7 @@ const { data } = await useAsyncData('search-data', () =>
   }), {
   server: true,
   lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
 })
 
 const { results } = useFuse(query, data.value || [], {

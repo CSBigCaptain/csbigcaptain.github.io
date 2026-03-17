@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   ...blogConfig.commonConfig,
   app: {
     baseURL: '/',
-    // cdnURL: "https://cdn.shaly.sdutacm.cn/csbig/",
     buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
@@ -88,8 +87,7 @@ export default defineNuxtConfig({
   },
   css: [
     ...(blogConfig.additionalCss || []),
-    'mdui/mdui.css',
-    '/assets/css/global.css',
+    '~/assets/css/global.css',
   ],
   devtools: { enabled: true },
   eslint: {

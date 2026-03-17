@@ -18,21 +18,21 @@ const { data: actions } = await useAsyncData('indexActions', () => {
 }, {
   server: true,
   lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
 })
 const { data: posts } = await useAsyncData('featuredPosts', () => {
   return queryCollection('blog').where('isFeatured', '=', true).order('date', 'DESC').all()
 }, {
   server: true,
   lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
 })
 const { data: advs } = await useAsyncData('indexAdvs', () => {
   return queryCollection('indexAdvs').first()
 }, {
   server: true,
   lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
+  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
 })
 </script>
 

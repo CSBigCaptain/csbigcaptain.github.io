@@ -19,7 +19,9 @@ const list = computed(() => {
 <template>
   <mdui-list>
     <NuxtLink v-for="item in list" :key="item.text" :to="item.link">
-      <mdui-list-item class="ps-1">{{ item.text }}</mdui-list-item>
+      <mdui-list-item class="ps-1">
+        {{ item.text }}
+      </mdui-list-item>
     </NuxtLink>
   </mdui-list>
 </template>

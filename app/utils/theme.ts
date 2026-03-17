@@ -1,6 +1,9 @@
 import type { Theme } from 'mdui/internal/theme'
 import { setTheme } from 'mdui/functions/setTheme'
 
+const HEX_COLOR_REGEX = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
+const HEX_COLOR_WITH_ALPHA_REGEX = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i
+
 /**
  * @description 更改页面深浅
  * @param theme 深浅或者跟随系统
@@ -30,9 +33,7 @@ export function getRandomColor(): string {
  * @param withAlpha 是否支持透明度
  */
 export function checkHexColor(hex: string, withAlpha = false): boolean {
-  const re = withAlpha
-    ? /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i
-    : /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
+  const re = withAlpha ? HEX_COLOR_WITH_ALPHA_REGEX : HEX_COLOR_REGEX
   return re.test(hex.trim())
 }
 
