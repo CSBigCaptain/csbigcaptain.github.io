@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const { isSupported, chargingTime, dischargingTime, charging, level }
-  = useBattery()
+const { isSupported, chargingTime, dischargingTime, charging, level } = useBattery()
 </script>
 
 <template>
@@ -28,10 +27,7 @@ const { isSupported, chargingTime, dischargingTime, charging, level }
               {{ charging ? '充电中' : '使用电池' }}
             </div>
           </div>
-          <div
-            class="item"
-            style="display: flex; justify-content: space-between"
-          >
+          <div class="item" style="display: flex; justify-content: space-between">
             <strong class="tpc">当前电量</strong>
             <div class="value">
               {{ `${level * 100}%` }}

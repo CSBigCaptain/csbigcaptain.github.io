@@ -11,11 +11,10 @@ async function typeText() {
   displayText.value = ''
 
   for (let i = 0; i < fullText.value.length; i++) {
-    if (!isTyping.value)
-      break
+    if (!isTyping.value) break
     displayText.value += fullText.value[i]
     const delay = fullText.value[i].match(/[，。！？、]/) ? 300 : 50
-    await new Promise(resolve => setTimeout(resolve, delay))
+    await new Promise((resolve) => setTimeout(resolve, delay))
   }
 
   isTyping.value = false
@@ -59,15 +58,14 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="OuterMain flex justify-center items-center
-    w-full h-[45vh] bg-surface-container-highest"
+    class="OuterMain flex h-[45vh] w-full items-center justify-center bg-surface-container-highest"
   >
-    <div class="inner w-[70%] min-w-92.5 max-w-540 p-3.75 flex flex-col items-center">
-      <div class="text-2xl cursor-pointer text-center font-bold min-h-8 mb-4">
+    <div class="inner flex w-[70%] max-w-540 min-w-92.5 flex-col items-center p-3.75">
+      <div class="mb-4 min-h-8 cursor-pointer text-center text-2xl font-bold">
         {{ displayText }}
         <span v-if="isTyping" class="cursor">|</span>
       </div>
-      <div class="source text-md opacity-70 text-center">
+      <div class="source text-md text-center opacity-70">
         {{ sentence ? sentence.author : '' }}
         {{ sentence ? `（${sentence.name}）` : '' }}
       </div>

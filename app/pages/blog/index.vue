@@ -17,12 +17,15 @@ defineOgImageComponent('Nuxt', {
   headline: 'CSBigCaptain Blog',
 })
 
-const { data: posts } = await useAsyncData('blogs', () =>
-  queryCollection('blog').order('date', 'DESC').all(), {
-  server: true,
-  lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
-})
+const { data: posts } = await useAsyncData(
+  'blogs',
+  () => queryCollection('blog').order('date', 'DESC').all(),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: (key) => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
+)
 
 function changeDate(date: string) {
   const time = new Date(date)
@@ -44,21 +47,24 @@ function changeDate(date: string) {
     </template>
     <template #right>
       <aside
-        class="hidden md:flex px-3.75 py-10 w-50 md:w-75
-          shrink-0 h-fit flex-col gap-3.75 sticky top-10"
+        class="sticky top-10 hidden h-fit w-50 shrink-0 flex-col gap-3.75 px-3.75 py-10 md:flex md:w-75"
       >
         <AppWechatCard />
         <AppPostAd
-          clickable variant="filled"
-          target="_blank" to="https://qm.qq.com/q/c2bJHbwTDy"
+          clickable
+          variant="filled"
+          target="_blank"
+          to="https://qm.qq.com/q/c2bJHbwTDy"
           title="来 QQ 群看看？"
           desc="一起交流新鲜事！"
         >
           <Icon name="mingcute:qq-fill" />
         </AppPostAd>
         <AppPostAd
-          clickable variant="filled"
-          target="_blank" to="https://chat.csbig.top/"
+          clickable
+          variant="filled"
+          target="_blank"
+          to="https://chat.csbig.top/"
           title="隆重推出 Carbon Chat"
           desc="在线与多种 LLM 大模型聊天"
         >
@@ -66,11 +72,15 @@ function changeDate(date: string) {
         </AppPostAd>
       </aside>
     </template>
-    <main class="w-full py-10 overflow-hidden contain-inline-size">
-      <ul class="w-full grid gap-5">
+    <main class="w-full overflow-hidden py-10 contain-inline-size">
+      <ul class="grid w-full gap-5">
         <li v-for="post in posts" :key="post.id">
           <NuxtLink :to="post.path">
-            <mdui-card variant="filled" clickable class="w-full h-full p-7.25 flex flex-col justify-between">
+            <mdui-card
+              variant="filled"
+              clickable
+              class="flex h-full w-full flex-col justify-between p-7.25"
+            >
               <h2 class="text-left text-2xl font-bold">
                 {{ post.title }}
               </h2>

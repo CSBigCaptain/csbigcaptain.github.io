@@ -18,7 +18,8 @@ const props = defineProps({
   <span class="main">
     <NuxtLink
       class="text-primary underline decoration-dotted underline-offset-3"
-      :to="props.href" :target="props.target"
+      :to="props.href"
+      :target="props.target"
     >
       <slot />
     </NuxtLink>

@@ -12,9 +12,9 @@ const _date = props.date || new Date()
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col justify-center bg-[#020420] relative">
+  <div class="relative flex h-full w-full flex-col justify-center bg-[#020420]">
     <svg
-      class="absolute right-0 top-0"
+      class="absolute top-0 right-0"
       width="629"
       height="593"
       viewBox="0 0 629 593"
@@ -38,47 +38,33 @@ const _date = props.date || new Date()
           color-interpolation-filters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"
-          />
-          <feGaussianBlur
-            stdDeviation="40.5"
-            result="effect1_foregroundBlur_199_94966"
-          />
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur stdDeviation="40.5" result="effect1_foregroundBlur_199_94966" />
         </filter>
       </defs>
     </svg>
 
     <div class="w-[1000px] pl-[100px]">
-      <p
-        v-if="headline"
-        class="uppercase text-[24px] text-[#00DC82] mb-4 font-semibold"
-      >
+      <p v-if="headline" class="mb-4 text-[24px] font-semibold text-[#00DC82] uppercase">
         {{ headline }}
       </p>
-      <h1
-        v-if="title"
-        class="text-[70px] w-[1400px] m-0 font-bold mb-4 text-white"
-      >
+      <h1 v-if="title" class="m-0 mb-4 w-[1400px] text-[70px] font-bold text-white">
         {{ title }}
       </h1>
       <p
         v-if="description"
-        class="text-[32px] text-[#E4E4E7] leading-tight"
+        class="text-[32px] leading-tight text-[#E4E4E7]"
         style="display: block; line-clamp: 3; text-overflow: ellipsis"
       >
         {{ description }}
       </p>
     </div>
     <img
-      class="absolute right-[100px] bottom-[50px] w-[100px] h-[100px] rounded-full object-cover"
+      class="absolute right-[100px] bottom-[50px] h-[100px] w-[100px] rounded-full object-cover"
       src="https://avatars.githubusercontent.com/u/81836540?v=4"
     >
     <p
-      class="absolute left-[100px] bottom-[40px] font-bold text-[15px] text-[#E4E4E7]"
+      class="absolute bottom-[40px] left-[100px] text-[15px] font-bold text-[#E4E4E7]"
       style="font-variation-settings: 'wght' 500"
     >
       Driven by CSBigCaptain Blog.

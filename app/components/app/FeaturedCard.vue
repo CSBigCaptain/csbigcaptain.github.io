@@ -54,7 +54,7 @@ mdui-tooltip::part(headline) {
   color: rgba(var(--mdui-color-primary), 0.7);
 }
 mdui-tooltip::part(content) {
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .popup-title {
@@ -66,7 +66,9 @@ mdui-tooltip::part(content) {
   position: relative;
 
   .date {
-    position: absolute; right: 0; bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     font-size: 3em;
     color: rgba(var(--mdui-color-on-surface), 0.1);
     pointer-events: none;
@@ -97,7 +99,7 @@ mdui-tooltip::part(content) {
 
     .content {
       margin: 0;
-      font-size: .9em;
+      font-size: 0.9em;
       color: rgba(var(--mdui-color-on-surface), 1);
     }
   }

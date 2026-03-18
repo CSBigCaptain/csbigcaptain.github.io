@@ -31,7 +31,10 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
     </mdui-layout>
     <ClientOnly>
       <mdui-navigation-drawer
-        modal close-on-overlay-click close-on-esc :open="drawerStatus"
+        modal
+        close-on-overlay-click
+        close-on-esc
+        :open="drawerStatus"
         @close="drawerStatus = false"
       >
         <aside>
@@ -39,7 +42,10 @@ const { drawerStatus, searchStatus, closeAll } = useLayoutStatus()
         </aside>
       </mdui-navigation-drawer>
       <mdui-dialog
-        :open="searchStatus" close-on-esc close-on-overlay-click headline="搜索"
+        :open="searchStatus"
+        close-on-esc
+        close-on-overlay-click
+        headline="搜索"
         @close="closeAll()"
       >
         <AppSearch />

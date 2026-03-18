@@ -1,6 +1,5 @@
 <template>
   <code
-    class="inline-code text-on-surface bg-surface-container-high
-      rounded-xs py-[0.1em] px-[0.4em] border border-outline-variant"
+    class="inline-code rounded-xs border border-outline-variant bg-surface-container-high px-[0.4em] py-[0.1em] text-on-surface"
   ><slot /></code>
 </template>

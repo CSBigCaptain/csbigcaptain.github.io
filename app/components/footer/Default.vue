@@ -16,8 +16,8 @@ function confirmNavigation(event: Event) {
 
 <template>
   <footer class="bg-color-surface-variant">
-    <nav class="py-7 border-b border-surface-container out">
-      <ul class="container flex flex-wrap *:pe-16 *:pt-4 leading-8">
+    <nav class="out border-b border-surface-container py-7">
+      <ul class="container flex flex-wrap leading-8 *:pe-16 *:pt-4">
         <li>
           <ul>
             <li>
@@ -30,10 +30,7 @@ function confirmNavigation(event: Event) {
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink
-                to="https://github.com/CSBigCaptain/csbigcaptain.github.io"
-                target="_blank"
-              >
+              <NuxtLink to="https://github.com/CSBigCaptain/csbigcaptain.github.io" target="_blank">
                 项目地址
               </NuxtLink>
             </li>
@@ -69,7 +66,7 @@ function confirmNavigation(event: Event) {
       </ul>
     </nav>
     <div class="other-info out">
-      <div class="py-5 container text-sm tracking-tight relative">
+      <div class="relative container py-5 text-sm tracking-tight">
         <p>
           Copyright © 2024 - {{ year }} by
           <NuxtLink to="https://github.com/CSBigCaptain" target="_blank">
@@ -81,11 +78,19 @@ function confirmNavigation(event: Event) {
           本站源码基于 MIT License 开源。但本站博客除另有声明外，均在
           <NuxtLink to="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
             CC BY-NC-SA 4.0
-          </NuxtLink> 协议下授权。
+          </NuxtLink>
+          协议下授权。
         </p>
-        <picture class=" md:absolute right-6 lg:right-8 bottom-5">
-          <NuxtLink class="after:hidden" to="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-            <img src="https://prts.wiki/resources/assets/licenses/cc-by-nc-sa.png" alt="CC BY-NC-SA 4.0"></NuxtLink>
+        <picture class="right-6 bottom-5 md:absolute lg:right-8">
+          <NuxtLink
+            class="after:hidden"
+            to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+          >
+            <img
+              src="https://prts.wiki/resources/assets/licenses/cc-by-nc-sa.png"
+              alt="CC BY-NC-SA 4.0"
+            ></NuxtLink>
         </picture>
       </div>
     </div>

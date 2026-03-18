@@ -35,7 +35,7 @@ const props = defineProps<{
         <div slot="headline">
           {{ props.title || props.desc }}
         </div>
-        <div slot="content" class="popup-content w-full relative">
+        <div slot="content" class="popup-content relative w-full">
           <p class="content-desc text-on-surface" v-text="props.desc || 'undefined'" />
           <p v-if="props.comment" v-text="props.comment" />
           <div class="date absolute right-0 bottom-0 text-4xl text-on-surface opacity-10">
@@ -59,11 +59,10 @@ mdui-tooltip::part(headline) {
   color: rgba(var(--mdui-color-tertiary), 1);
 }
 mdui-tooltip::part(content) {
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .popup-content {
-
   .date {
     pointer-events: none;
     user-select: none;
@@ -109,18 +108,18 @@ mdui-card {
 
     .title {
       width: 100%;
-      font-size: .9em;
+      font-size: 0.9em;
       line-height: 1.4;
     }
     .nick {
       width: 100%;
-      font-size: .8em;
+      font-size: 0.8em;
       color: rgba(var(--mdui-color-secondary), 0.7);
     }
   }
 }
 
-@container card-root (max-width: 200px){
+@container card-root (max-width: 200px) {
   mdui-card {
     height: 100%;
     flex-direction: column;
@@ -133,7 +132,7 @@ mdui-card {
 
     .content {
       width: 100%;
-      font-size: .9em;
+      font-size: 0.9em;
       text-align: center;
     }
   }

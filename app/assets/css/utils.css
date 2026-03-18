@@ -1,7 +1,7 @@
 @utility out {
-    @apply w-full
+  @apply w-full;
 }
 
 @utility container {
-    @apply max-w-(--breakpoint-2xl) mx-auto px-5 lg:px-8
+  @apply mx-auto max-w-(--breakpoint-2xl) px-5 lg:px-8;
 }

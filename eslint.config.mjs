@@ -11,6 +11,8 @@ const antfuConfig = await antfu({
   formatters: false,
   rules: {
     'vue/no-deprecated-slot-attribute': 'off',
+    'no-console': ['error'],
+    'pnpm/yaml-enforce-settings': 'off',
   },
   ignores: [
     'node_modules/',
@@ -32,9 +34,12 @@ export default withNuxt(
   {
     files: ['**/*.vue'],
     rules: {
-      'vue/block-lang': ['error', {
-        script: { lang: ['ts', 'tsx'] },
-      }],
+      'vue/block-lang': [
+        'error',
+        {
+          script: { lang: ['ts', 'tsx'] },
+        },
+      ],
     },
   },
   {
@@ -49,18 +54,12 @@ export default withNuxt(
     },
   },
   {
-    files: ['nuxt.config.*'],
-    rules: {
-      'nuxt/nuxt-config-keys-order': 'off',
-    },
-  },
-  {
     files: ['**/*.json', '**/*.json5', '**/*.jsonc'],
     ignores: ['content/**'],
     rules: {
       'pnpm/json-enforce-catalog': 'off',
       'jsonc/no-comments': 'off',
-      'style/eol-last': ['warn', 'never'],
+      'style/eol-last': ['warn', 'always'],
     },
   },
 )

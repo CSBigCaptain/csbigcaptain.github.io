@@ -3,10 +3,17 @@ import browserslist from 'browserslist'
 import { browserslistToTargets } from 'lightningcss'
 import { defineNuxtConfig } from 'nuxt/config'
 
-import blogConfig from './blog.config'
-// @keep-sorted
 export default defineNuxtConfig({
-  ...blogConfig.commonConfig,
+  modules: [
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/seo',
+    '@nuxt/content',
+    '@nuxt/icon',
+    '@nuxt/eslint',
+    '@nuxt/hints',
+  ],
+  devtools: { enabled: true },
   app: {
     baseURL: '/',
     head: {
@@ -31,7 +38,13 @@ export default defineNuxtConfig({
         },
       ],
       script: [
-        ...(blogConfig.additionalScripts || []),
+        {
+          // Umami 统计脚本
+          'defer': true,
+          'src': 'https://stats.kungal.org/script.js',
+          'data-website-id': '3822f94c-9a02-4e86-9a8f-906edb1e0e2c',
+          'data-domains': 'csbig.top, www.csbig.top, blog.csbig.top, csbigcaptain.github.io',
+        },
         {
           innerHTML: /* js */ `
             // 解决首屏加载闪白问题
@@ -50,7 +63,16 @@ export default defineNuxtConfig({
       noscript: [{ innerHTML: 'JavaScript is required' }],
     },
   },
-  compatibilityDate: '2025-03-08',
+  css: ['~/assets/css/global.css'],
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => tag.startsWith('mdui-'),
+    },
+  },
+  colorMode: {
+    performance: 'system',
+    fallback: 'dark',
+  },
   content: {
     build: {
       markdown: {
@@ -84,25 +106,11 @@ export default defineNuxtConfig({
     },
     experimental: { sqliteConnector: 'native' },
   },
-  css: [
-    ...(blogConfig.additionalCss || []),
-    '~/assets/css/global.css',
-  ],
-  devtools: { enabled: true },
-  eslint: {
-    config: {
-      standalone: false,
-      stylistic: true,
-    },
-  },
   experimental: {
     typescriptPlugin: true,
     componentIslands: true,
   },
-  linkChecker: {
-    enabled: false,
-  },
-  modules: ['@vueuse/nuxt', '@vueuse/motion/nuxt', '@nuxtjs/seo', '@nuxt/content', '@nuxt/icon', '@nuxt/eslint', '@nuxt/hints'],
+  compatibilityDate: '2025-03-08',
   nitro: {
     prerender: {
       failOnError: true,
@@ -112,11 +120,48 @@ export default defineNuxtConfig({
       // autoSubfolderIndex: process.env.CLOUDFLARE_PAGES || process.env.GITHUB_ACTIONS || process.env.NETLIFY ? false : undefined,
     },
   },
-  nuxtseo: {
-    colorMode: {
-      performance: 'system',
-      fallback: 'dark',
+  vite: {
+    build: {
+      cssMinify: 'lightningcss',
     },
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        targets: browserslistToTargets(browserslist('>= 0.25%')),
+      },
+    },
+    optimizeDeps: {
+      // @keep-sorted
+      include: [
+        '@nuxt/hints',
+        '@vueuse/integrations',
+        'mdui',
+        'mdui/functions/setColorScheme',
+        'mdui/functions/setTheme',
+        'tslib/tslib.js',
+      ],
+    },
+    plugins: [tailwindcss() as any],
+    resolve: {
+      // TODO: @vueuse/motion 依赖 tslib，构建时打包进服务端 bundle，结果 tslib 的 ESM/CJS 互操作出了问题，默认导出是 undefined
+      // 修复 SSR 预渲染崩溃：tslib 在 ESM/CJS 互操作中默认导出为 undefined。
+      alias: { tslib: 'tslib/tslib.js' },
+    },
+    ssr: {
+      // 让 tslib 保持在 SSR bundle 内，避免预渲染的 ESM 互操作问题。
+      noExternal: ['tslib'],
+    },
+  },
+  typescript: {
+    typeCheck: false,
+  },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+  linkChecker: {
+    enabled: false,
   },
   ogImage: {
     zeroRuntime: true,
@@ -134,40 +179,5 @@ export default defineNuxtConfig({
   },
   sitemap: {
     zeroRuntime: true,
-  },
-  typescript: {
-    typeCheck: false,
-  },
-  vite: {
-    build: {
-      cssMinify: 'lightningcss',
-    },
-    css: {
-      transformer: 'lightningcss',
-      lightningcss: {
-        targets: browserslistToTargets(browserslist('>= 0.25%')),
-      },
-    },
-    optimizeDeps: {
-      // @keep-sorted
-      include: ['@nuxt/hints', '@vueuse/integrations', 'mdui'],
-    },
-    plugins: [
-      tailwindcss() as any,
-    ],
-    resolve: {
-      // TODO: @vueuse/motion 依赖 tslib，构建时打包进服务端 bundle，结果 tslib 的 ESM/CJS 互操作出了问题，默认导出是 undefined
-      // 修复 SSR 预渲染崩溃：tslib 在 ESM/CJS 互操作中默认导出为 undefined。
-      alias: { tslib: 'tslib/tslib.js' },
-    },
-    ssr: {
-      // 让 tslib 保持在 SSR bundle 内，避免预渲染的 ESM 互操作问题。
-      noExternal: ['tslib'],
-    },
-  },
-  vue: {
-    compilerOptions: {
-      isCustomElement: tag => tag.startsWith('mdui-'),
-    },
   },
 })

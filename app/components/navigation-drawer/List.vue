@@ -3,13 +3,17 @@
 import 'mdui/components/list'
 import 'mdui/components/list-item'
 
-const { data } = await useAsyncData('NavigationDrawerList', () => {
-  return queryCollection('navigationDrawerList').first()
-}, {
-  server: true,
-  lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key]
-})
+const { data } = await useAsyncData(
+  'NavigationDrawerList',
+  () => {
+    return queryCollection('navigationDrawerList').first()
+  },
+  {
+    server: true,
+    lazy: false,
+    getCachedData: (key) => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
+)
 
 const list = computed(() => {
   return data.value?.body ?? []

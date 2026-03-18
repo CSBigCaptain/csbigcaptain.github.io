@@ -2,10 +2,14 @@
   <mdui-card class="wechat">
     <div class="flip">
       <div class="wc-card face front">
-        <img src="https://upload-bbs.miyoushe.com/upload/2025/08/06/125766904/cf92d0f791458c288c7e308e9e8df1f5_5078983739960715024.png">
+        <img
+          src="https://upload-bbs.miyoushe.com/upload/2025/08/06/125766904/cf92d0f791458c288c7e308e9e8df1f5_5078983739960715024.png"
+        >
       </div>
       <div class="wc-card face back">
-        <img src="https://wdcdn.qpic.cn/MTMxMDI2NjM5MzQ0NzA0Nzg_20442_GkCgScqf2_Ve7n58_1767451285">
+        <img
+          src="https://wdcdn.qpic.cn/MTMxMDI2NjM5MzQ0NzA0Nzg_20442_GkCgScqf2_Ve7n58_1767451285"
+        >
       </div>
     </div>
   </mdui-card>

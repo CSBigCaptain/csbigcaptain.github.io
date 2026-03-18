@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @import 'mdui/mdui.css';
 @import './mdui.css';
 @import './utils.css';
@@ -6,7 +6,8 @@
 @theme {
   --font-sans: 'InterVariable', 'Noto Sans SC', 'MiSans', system-ui, -apple-system, sans-serif;
   --font-serif: 'Noto Serif SC', sans-serif;
-  --font-mono: 'Google Sans Code', 'Consolas', 'Monaco', 'Courier New', 'Noto Sans SC', 'MiSans', monospace;
+  --font-mono:
+    'Google Sans Code', 'Consolas', 'Monaco', 'Courier New', 'Noto Sans SC', 'MiSans', monospace;
 
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;

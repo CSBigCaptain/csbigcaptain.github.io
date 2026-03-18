@@ -39,12 +39,21 @@ const { data: toolsData } = await useAsyncData(
     <template #topic-text>
       Link
     </template>
-    <main class="py-12 min-h-[70vh]">
+    <main class="min-h-[70vh] py-12">
       <section class="friends">
         <h2>友情链接</h2>
         <ul>
           <li v-for="friend in friendsData?.links" :key="friend.title">
-            <LinkPageCard :author="friend.author" :comment="friend.comment" :date="friend.date" :title="friend.title" :nick="friend.nick" :desc="friend.desc" :icon="friend.icon" :to="friend.link" />
+            <LinkPageCard
+              :author="friend.author"
+              :comment="friend.comment"
+              :date="friend.date"
+              :title="friend.title"
+              :nick="friend.nick"
+              :desc="friend.desc"
+              :icon="friend.icon"
+              :to="friend.link"
+            />
           </li>
         </ul>
       </section>
@@ -52,7 +61,14 @@ const { data: toolsData } = await useAsyncData(
         <h2>工具集</h2>
         <ul>
           <li v-for="tool in toolsData?.links" :key="tool.title">
-            <LinkPageCard :date="tool.date" :title="tool.title" :nick="tool.nick" :desc="tool.desc" :icon="tool.icon" :to="tool.link" />
+            <LinkPageCard
+              :date="tool.date"
+              :title="tool.title"
+              :nick="tool.nick"
+              :desc="tool.desc"
+              :icon="tool.icon"
+              :to="tool.link"
+            />
           </li>
         </ul>
       </section>
@@ -61,7 +77,7 @@ const { data: toolsData } = await useAsyncData(
 </template>
 
 <style lang="less" scoped>
-section{
+section {
   & > h2 {
     width: fit-content;
     margin: 0 auto;
@@ -93,7 +109,9 @@ ul {
   padding: 0;
   gap: 15px;
 }
-@media(max-width: 767px) {
-  ul {grid-template-columns: repeat(auto-fill, 120px);}
+@media (max-width: 767px) {
+  ul {
+    grid-template-columns: repeat(auto-fill, 120px);
+  }
 }
 </style>

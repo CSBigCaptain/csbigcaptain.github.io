@@ -1,3 +1,3 @@
 <template>
-  <hr class="border border-secondary h-0 my-8">
+  <hr class="my-8 h-0 border border-secondary">
 </template>

@@ -7,11 +7,15 @@ const { activeHeadings, updateHeadings } = useScrollspy()
 const nuxtApp = useNuxtApp()
 
 nuxtApp.hooks.hook('page:loading:end', () => {
-  const headings = Array.from(document.querySelectorAll('.prose-h4-container, .prose-h3, .prose-h2-container'))
+  const headings = Array.from(
+    document.querySelectorAll('.prose-h4-container, .prose-h3, .prose-h2-container'),
+  )
   updateHeadings(headings)
 })
 nuxtApp.hooks.hook('page:transition:finish', () => {
-  const headings = Array.from(document.querySelectorAll('.prose-h4-container, .prose-h3, .prose-h2-container'))
+  const headings = Array.from(
+    document.querySelectorAll('.prose-h4-container, .prose-h3, .prose-h2-container'),
+  )
   updateHeadings(headings)
 })
 </script>
@@ -20,17 +24,29 @@ nuxtApp.hooks.hook('page:transition:finish', () => {
   <mdui-card class="contents" variant="filled">
     <ul v-if="props.post?.body?.toc?.links?.length">
       <li v-for="item in props.post.body.toc.links" :key="item.id">
-        <NuxtLink :to="`#${item.id}`" class="link" :class="{ active: activeHeadings.includes(item.id) }">
+        <NuxtLink
+          :to="`#${item.id}`"
+          class="link"
+          :class="{ active: activeHeadings.includes(item.id) }"
+        >
           {{ item.text }}
         </NuxtLink>
         <ul v-if="item.children?.length">
           <li v-for="child in item.children" :key="child.id">
-            <NuxtLink :to="`#${child.id}`" class="link" :class="{ active: activeHeadings.includes(child.id) }">
+            <NuxtLink
+              :to="`#${child.id}`"
+              class="link"
+              :class="{ active: activeHeadings.includes(child.id) }"
+            >
               {{ child.text }}
             </NuxtLink>
             <ul v-if="child.children?.length">
               <li v-for="grand in child.children" :key="grand.id">
-                <NuxtLink :to="`#${grand.id}`" class="link" :class="{ active: activeHeadings.includes(grand.id) }">
+                <NuxtLink
+                  :to="`#${grand.id}`"
+                  class="link"
+                  :class="{ active: activeHeadings.includes(grand.id) }"
+                >
                   {{ grand.text }}
                 </NuxtLink>
               </li>

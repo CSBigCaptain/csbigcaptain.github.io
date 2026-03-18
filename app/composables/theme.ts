@@ -34,7 +34,10 @@ const toggleDark = [useToggle(mduiDark)]
  * @param color 颜色值，默认使用本地 Storage 里的首选颜色
  * @param target 更改的HTML元素，默认直接用 html 元素
  */
-function setColorTheme(color: string = userThemeSettings.value.preferredColor, target: string = 'html') {
+function setColorTheme(
+  color: string = userThemeSettings.value.preferredColor,
+  target: string = 'html',
+) {
   setColorScheme(color, { target })
   userThemeSettings.value.preferredColor = color
 }

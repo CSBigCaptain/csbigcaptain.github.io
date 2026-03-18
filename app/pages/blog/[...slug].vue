@@ -1,13 +1,17 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: post } = await useAsyncData(`blog-${route.path}`, () => {
-  return queryCollection('blog').path(route.path).first()
-}, {
-  server: true,
-  lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
-})
+const { data: post } = await useAsyncData(
+  `blog-${route.path}`,
+  () => {
+    return queryCollection('blog').path(route.path).first()
+  },
+  {
+    server: true,
+    lazy: false,
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
+)
 
 const title = `${post.value?.title || 'Blog'} - CSBigCaptain Blog`
 const description = post.value?.description || 'CSBigCaptain Blog post.'
@@ -33,25 +37,28 @@ defineOgImageComponent('Nuxt', {
       Blog
     </template>
     <template #full-width>
-      <div class="title-wrapper flex flex-col items-center justify-center w-full h-[45vh] bg-surface-container-highest">
-        <h1 v-if="post" class="w-[80%] text-center mb-2 text-4xl text-on-surface font-light">
+      <div
+        class="title-wrapper flex h-[45vh] w-full flex-col items-center justify-center bg-surface-container-highest"
+      >
+        <h1 v-if="post" class="mb-2 w-[80%] text-center text-4xl font-light text-on-surface">
           {{ post.title }}
         </h1>
-        <div v-if="post" class="text-sm text-color-thirdary mt-2">
+        <div v-if="post" class="text-color-thirdary mt-2 text-sm">
           <NuxtTime :datetime="new Date(post.date)" />
         </div>
       </div>
     </template>
     <template #right>
       <aside
-        class="hidden md:flex px-3.75 py-10 w-50 md:w-75
-          shrink-0 h-fit flex-col gap-3.75 sticky top-10"
+        class="sticky top-10 hidden h-fit w-50 shrink-0 flex-col gap-3.75 px-3.75 py-10 md:flex md:w-75"
       >
         <AppWechatCard />
         <AppPostToc :post="post" />
         <AppPostAd
-          clickable variant="filled"
-          target="_blank" to="https://chat.csbig.top/"
+          clickable
+          variant="filled"
+          target="_blank"
+          to="https://chat.csbig.top/"
           title="隆重推出 Carbon Chat"
           desc="在线与多种 LLM 大模型聊天"
         >
@@ -59,7 +66,7 @@ defineOgImageComponent('Nuxt', {
         </AppPostAd>
       </aside>
     </template>
-    <main class="py-10 w-full min-h-screen">
+    <main class="min-h-screen w-full py-10">
       <div class="wrap-break-word">
         <ContentRenderer v-if="post" :value="post" />
       </div>

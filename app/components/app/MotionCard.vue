@@ -23,12 +23,7 @@ const visible = computed(() => {
 </script>
 
 <template>
-  <div
-    v-motion
-    :initial="initial"
-    :visible="visible"
-    :visible-once="false"
-  >
+  <div v-motion :initial="initial" :visible="visible" :visible-once="false">
     <slot />
   </div>
 </template>

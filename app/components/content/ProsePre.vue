@@ -20,12 +20,12 @@ async function copyCode() {
 
 <template>
   <div
-    class="code-wrapper -mx-5 my-4 rounded-none md:mx-0 md:rounded-md
-      overflow-hidden bg-surface-container-highest shadow-l1" v-bind="$attrs"
+    class="code-wrapper shadow-l1 -mx-5 my-4 overflow-hidden rounded-none bg-surface-container-highest md:mx-0 md:rounded-md"
+    v-bind="$attrs"
   >
     <!-- 代码块头部 -->
-    <div class="code-header flex justify-between px-5 py-2 bg-secondary-container">
-      <div class="text-xl text-on-secondary-container flex items-center">
+    <div class="code-header flex justify-between bg-secondary-container px-5 py-2">
+      <div class="flex items-center text-xl text-on-secondary-container">
         <div class="w-20">
           {{ props.language }}
         </div>
@@ -44,7 +44,7 @@ async function copyCode() {
     <div class="flex">
       <pre
         :class="`language-${props.language}`"
-        class="shiki w-full h-auto m-0 text-sm/normal px-5 py-4 overflow-x-auto flex-1"
+        class="shiki m-0 h-auto w-full flex-1 overflow-x-auto px-5 py-4 text-sm/normal"
       ><code><slot /></code></pre>
     </div>
   </div>

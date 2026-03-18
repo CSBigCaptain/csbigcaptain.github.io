@@ -5,14 +5,18 @@ import 'mdui/components/text-field'
 
 const query = ref('')
 
-const { data } = await useAsyncData('search-data', () =>
-  queryCollectionSearchSections('blog' as never, {
-    ignoredTags: ['header', 'footer', 'pre', 'code', 'style', 'script'],
-  }), {
-  server: true,
-  lazy: false,
-  getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
-})
+const { data } = await useAsyncData(
+  'search-data',
+  () =>
+    queryCollectionSearchSections('blog' as never, {
+      ignoredTags: ['header', 'footer', 'pre', 'code', 'style', 'script'],
+    }),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: key => useNuxtApp().payload.data[key] || useNuxtApp().static.data[key],
+  },
+)
 
 const { results } = useFuse(query, data.value || [], {
   fuseOptions: {
@@ -79,25 +83,13 @@ function highlightMatch(text: string, matches: any[], key: string) {
                 </div>
                 <div
                   class="title"
-                  v-html="
-                    highlightMatch(
-                      item.item.title,
-                      item.matches as any[],
-                      'title',
-                    )
-                  "
+                  v-html="highlightMatch(item.item.title, item.matches as any[], 'title')"
                 />
               </div>
               <div
                 v-if="item.item.content"
                 class="lower"
-                v-html="
-                  highlightMatch(
-                    item.item.content,
-                    item.matches as any[],
-                    'content',
-                  )
-                "
+                v-html="highlightMatch(item.item.content, item.matches as any[], 'content')"
               />
             </mdui-card>
           </NuxtLink>

@@ -25,19 +25,19 @@ const isHexColor = computed(() => {
             选择网页主题色
           </div>
           <input
-            v-model="selectedThemeColor" type="color" name="theme-color"
+            v-model="selectedThemeColor"
+            type="color"
+            name="theme-color"
             class="color-chooser"
           >
           <div class="topic">
             或手动输入HEX色号
           </div>
-          <input
-            v-model="selectedThemeColor" type="text" name="theme-color"
-            class="color-hex"
-          >
+          <input v-model="selectedThemeColor" type="text" name="theme-color" class="color-hex">
           <div class="button-collection">
             <mdui-button-icon
-              variant="filled" :disabled="!isHexColor"
+              variant="filled"
+              :disabled="!isHexColor"
               @click="setColorTheme(selectedThemeColor)"
             >
               <Icon name="ic:round-check" />
@@ -46,7 +46,8 @@ const isHexColor = computed(() => {
               <Icon name="ic:baseline-auto-awesome" />
             </mdui-button-icon>
             <mdui-button-icon
-              variant="outlined" @click="
+              variant="outlined"
+              @click="
                 () => {
                   setColorTheme(defaultThemeColor)
                   selectedThemeColor = defaultThemeColor

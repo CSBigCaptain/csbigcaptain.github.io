@@ -7,10 +7,13 @@ const { toggleDrawerStatus } = useLayoutStatus()
 </script>
 
 <template>
-  <header class="top-0 left-0 fixed h-16 z-100">
+  <header class="fixed top-0 left-0 z-100 h-16">
     <mdui-top-app-bar class="px-2 py-3" variant="small">
       <mdui-button-icon
-        name="" value="" type="button" variant="standard"
+        name=""
+        value=""
+        type="button"
+        variant="standard"
         @click="toggleDrawerStatus()"
       >
         <Icon name="ic:round-menu" />
