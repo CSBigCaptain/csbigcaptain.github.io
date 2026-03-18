@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   ...blogConfig.commonConfig,
   app: {
     baseURL: '/',
-    buildAssetsDir: 'nuxt_assets',
     head: {
       htmlAttrs: { lang: 'zh-CN' },
       link: [

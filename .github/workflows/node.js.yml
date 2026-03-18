@@ -34,14 +34,12 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Generate Static Site
         run: pnpm run generate
-        env:
-          BLOG_URL: ${{ vars.BLOG_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
