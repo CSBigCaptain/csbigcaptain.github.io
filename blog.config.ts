@@ -22,7 +22,7 @@ export default defineBlogConfig({
       'defer': true,
       'src': 'https://stats.kungal.org/script.js',
       'data-website-id': '3822f94c-9a02-4e86-9a8f-906edb1e0e2c',
-      'data-domains': 'csbig.top, csbigcaptain.github.io',
+      'data-domains': 'csbig.top, www.csbig.top, blog.csbig.top, csbigcaptain.github.io',
     },
   ],
   // 这里的配置为公共配置，会注入到 nuxt.config.ts 中
