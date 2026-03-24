@@ -135,7 +135,7 @@ export default defineNuxtConfig({
       include: [
         '@nuxt/hints',
         '@vueuse/integrations',
-        'mdui',
+        'mdui/components/card',
         'mdui/functions/setColorScheme',
         'mdui/functions/setTheme',
         'tslib/tslib.js',
