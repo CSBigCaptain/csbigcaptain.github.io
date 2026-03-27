@@ -39,7 +39,7 @@ function confirmNavigation(event: Event) {
                 to="https://github.com/CSBigCaptain/csbigcaptain.github.io/issues"
                 target="_blank"
               >
-                建言献策
+                问题反馈 & 建言献策
               </NuxtLink>
             </li>
           </ul>

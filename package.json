@@ -20,14 +20,14 @@
     "@tailwindcss/vite": "^4.2.2",
     "@vueuse/motion": "^3.0.3",
     "fuse.js": "^7.1.0",
-    "katex": "0.16.40",
+    "katex": "0.16.43",
     "mdui": "^2.1.4",
     "nuxt": "4.4.2",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "tailwindcss": "^4.2.2",
-    "unstorage": "1.17.4",
-    "vue": "^3.5.30"
+    "unstorage": "1.17.5",
+    "vue": "^3.5.31"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.7.3",
