@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-const title = '链接 - CSBigCaptain Blog'
+const { name } = useSite()
+
+const title = `链接 - ${name}`
 const description = '此页面记录了博主其他朋友的博客，以及一些使用的网页工具'
 
 useSeoMeta({
   title,
   ogTitle: title,
+  twitterTitle: title,
   description,
   ogDescription: description,
-  ogUrl: 'https://csbigcaptain.github.io/link',
-})
-defineOgImageComponent('Nuxt', {
-  title: 'Link',
-  headline: 'CSBigCaptain Blog',
+  twitterDescription: description,
 })
 
 const { data: friendsData } = await useAsyncData(

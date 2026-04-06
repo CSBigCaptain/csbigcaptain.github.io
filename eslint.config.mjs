@@ -43,6 +43,13 @@ export default withNuxt(
     },
   },
   {
+    files: ['nuxt.config.*'],
+    rules: {
+      'node/prefer-global/process': 'off',
+      'nuxt/nuxt-config-keys-order': 'warn',
+    },
+  },
+  {
     files: ['content/**'],
     rules: {
       'antfu/consistent-list-newline': 'off',

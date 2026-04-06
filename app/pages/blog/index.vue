@@ -2,19 +2,15 @@
 <script setup lang="ts">
 import 'mdui/components/card'
 
-const title = '文章列表 - CSBigCaptain Blog'
-const description = 'CSBigCaptain Blog list.'
+const { name, description } = useSite()
+const title = `文章列表 | ${name}`
 
 useSeoMeta({
   title,
   ogTitle: title,
+  twitterTitle: title,
   description,
   ogDescription: description,
-  ogUrl: 'https://csbigcaptain.github.io/blog',
-})
-defineOgImageComponent('Nuxt', {
-  title: 'Blog List',
-  headline: 'CSBigCaptain Blog',
 })
 
 const { data: posts } = await useAsyncData(

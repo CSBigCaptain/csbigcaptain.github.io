@@ -1,21 +1,23 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
-import { asSeoCollection } from '@nuxtjs/seo/content'
+import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
+import { defineSchemaOrgSchema } from 'nuxt-schema-org/content'
 
 export default defineContentConfig({
   // @keep-sorted
   collections: {
-    blog: defineCollection(
-      asSeoCollection({
-        type: 'page',
-        source: 'blog/**/*.md',
-        schema: z.object({
-          date: z.coerce.date(),
-          update: z.coerce.date(),
-          short: z.string(),
-          isFeatured: z.boolean(),
-        }),
+    blog: defineCollection({
+      type: 'page',
+      source: 'blog/**/*.md',
+      schema: z.object({
+        date: z.coerce.date(),
+        update: z.coerce.date(),
+        short: z.string(),
+        isFeatured: z.boolean(),
+
+        sitemap: defineSitemapSchema(),
+        schemaOrg: defineSchemaOrgSchema(),
       }),
-    ),
+    }),
     indexActions: defineCollection({
       type: 'data',
       source: 'data/index/actions.yml',

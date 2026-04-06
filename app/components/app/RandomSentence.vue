@@ -32,7 +32,12 @@ const { data } = await useAsyncData(
     }
   },
   {
-    default: () => null,
+    default: () => ({
+      // 默认
+      sentence: `If you don't change your direction, and if you keep looking, you may end up where you are heading.`,
+      author: 'Anonymous',
+      name: '',
+    }),
     server: false,
   },
 )
@@ -67,7 +72,7 @@ onBeforeUnmount(() => {
       </div>
       <div class="source text-md text-center opacity-70">
         {{ sentence ? sentence.author : '' }}
-        {{ sentence ? `（${sentence.name}）` : '' }}
+        {{ sentence.name ? `（${sentence.name}）` : '' }}
       </div>
     </div>
   </div>

@@ -13,21 +13,18 @@ const { data: post } = await useAsyncData(
   },
 )
 
-const title = `${post.value?.title || 'Blog'} - CSBigCaptain Blog`
-const description = post.value?.description || 'CSBigCaptain Blog post.'
-const short = post.value?.short || ''
+const { name, description: siteDescription } = useSite()
+
+const title = `${post.value?.title || 'Blog'} | ${name}`
+const description = post.value?.description || siteDescription
 
 useSeoMeta({
   title,
   ogTitle: title,
+  twitterTitle: title,
   description,
-  ogDescription: short,
-  ogUrl: `https://csbigcaptain.github.io${route.path}`,
-})
-defineOgImageComponent('Nuxt', {
-  title: post.value?.title,
-  headline: 'CSBigCaptain Blog',
-  description,
+  ogDescription: description,
+  twitterDescription: description,
 })
 </script>
 

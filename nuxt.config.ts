@@ -69,9 +69,12 @@ export default defineNuxtConfig({
       isCustomElement: tag => tag.startsWith('mdui-'),
     },
   },
-  colorMode: {
-    performance: 'system',
-    fallback: 'dark',
+  site: {
+    // 站点 URL，不写是因为开发环境下会自动设置
+    // 在环境变量中配置 NUXT_SITE_URL
+    name: '', // 站点名称，在环境变量中配置 NUXT_SITE_NAME
+    description: 'CSBigCaptain 的个人博客，分享技术与生活。这个博客记录了他在生活和技术学习中的点滴经历，充满启发与思考。网站界面简洁美观，内容丰富实用，人气互动活跃，涵盖了编程、生活、学习等多个领域，为读者提供了卓越的阅读体验。',
+    locale: 'zh-CN',
   },
   content: {
     build: {
@@ -179,10 +182,7 @@ export default defineNuxtConfig({
   linkChecker: {
     enabled: false,
   },
-  ogImage: {
-    zeroRuntime: true,
-    fonts: ['Noto+Sans+SC'],
-  },
+  ogImage: false,
   robots: {
     // sitemap 模块依赖于 robots 模块
     enabled: true,

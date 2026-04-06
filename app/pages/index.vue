@@ -5,12 +5,11 @@ import 'mdui/components/card'
 import 'mdui/components/button'
 import 'mdui/components/button-icon'
 
+const title = `CSBigCaptain (Yeshang Ji)`
 useSeoMeta({
-  title: `${blogConfig.author.name}(${blogConfig.author.realName})`,
-  ogTitle: `${blogConfig.author.name}(${blogConfig.author.realName})`,
-  description: 'The introduction to CSBigCaptain Blog.',
-  ogDescription: 'The introduction to CSBigCaptain Blog.',
-  ogUrl: 'https://csbigcaptain.github.io/',
+  title,
+  ogTitle: title,
+  twitterTitle: title,
 })
 
 const { data: actions } = await useAsyncData(
