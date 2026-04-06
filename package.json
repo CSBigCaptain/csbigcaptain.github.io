@@ -45,6 +45,7 @@
     "eslint": "^10.2.0",
     "less": "4.6.4",
     "lightningcss": "^1.32.0",
+    "nuxt-schema-org": "^6.0.4",
     "oxfmt": "^0.43.0",
     "typescript": "^6.0.2",
     "ufo": "^1.6.3",

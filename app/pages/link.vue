@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { name } = useSite()
 
-const title = `链接 - ${name}`
+const title = `链接 | ${name}`
 const description = '此页面记录了博主其他朋友的博客，以及一些使用的网页工具'
 
 useSeoMeta({

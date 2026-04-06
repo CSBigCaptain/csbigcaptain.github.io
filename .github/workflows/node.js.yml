@@ -22,7 +22,7 @@ concurrency:
 jobs:
   # 单次部署的工作描述
   deploy:
-    env: 
+    env:
       NUXT_SITE_NAME: ${{ vars.NUXT_SITE_NAME }}
       NUXT_SITE_URL: ${{ vars.NUXT_SITE_URL }}
     environment:

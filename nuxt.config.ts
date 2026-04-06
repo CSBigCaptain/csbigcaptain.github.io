@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite'
 import browserslist from 'browserslist'
 import { browserslistToTargets } from 'lightningcss'
 import { defineNuxtConfig } from 'nuxt/config'
+import { person } from './shared/utils/person'
 
 export default defineNuxtConfig({
   modules: [
@@ -73,7 +74,8 @@ export default defineNuxtConfig({
     // 站点 URL，不写是因为开发环境下会自动设置
     // 在环境变量中配置 NUXT_SITE_URL
     name: '', // 站点名称，在环境变量中配置 NUXT_SITE_NAME
-    description: 'CSBigCaptain 的个人博客，分享技术与生活。这个博客记录了他在生活和技术学习中的点滴经历，充满启发与思考。网站界面简洁美观，内容丰富实用，人气互动活跃，涵盖了编程、生活、学习等多个领域，为读者提供了卓越的阅读体验。',
+    description:
+      'CSBigCaptain 的个人博客，分享技术与生活。这个博客记录了他在生活和技术学习中的点滴经历，充满启发与思考。网站界面简洁美观，内容丰富实用，人气互动活跃，涵盖了编程、生活、学习等多个领域，为读者提供了卓越的阅读体验。',
     locale: 'zh-CN',
   },
   content: {
@@ -179,19 +181,17 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
-  linkChecker: {
-    enabled: false,
-  },
   ogImage: false,
   robots: {
     // sitemap 模块依赖于 robots 模块
     enabled: true,
   },
   schemaOrg: {
-    enabled: false,
+    identity: person,
   },
   seo: {
-    enabled: false,
+    mergeWithSiteConfig: false,
+    automaticDefaults: false,
   },
   sitemap: {
     zeroRuntime: true,

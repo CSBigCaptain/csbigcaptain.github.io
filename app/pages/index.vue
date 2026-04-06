@@ -110,7 +110,6 @@ const { data: advs } = await useAsyncData(
                 :description="post.description"
                 :link="post.path"
                 :title="post.title"
-                :short="post.short"
                 :date="post.date"
               />
             </li>

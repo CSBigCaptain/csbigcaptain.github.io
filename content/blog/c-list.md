@@ -1,6 +1,15 @@
 ---
 date: 2024-11-29 19:47:56
 title: C 语言数组 & 函数
+description: 本文介绍了 C 语言中数组和函数的基本概念、定义、初始化、访问方式以及使用示例。
+schemaOrg:
+  - type: 'BlogPosting'
+    headline: 'C 语言数组 & 函数'
+    description: '本文介绍了 C 语言中数组和函数的基本概念、定义、初始化、访问方式以及使用示例。'
+    author:
+      type: 'Person'
+      name: 'CSBigCaptain'
+    datePublished: '2024-11-29'
 ---
 
 > 本文来自我在 2024 年 10 月 15 日的一次分享会。

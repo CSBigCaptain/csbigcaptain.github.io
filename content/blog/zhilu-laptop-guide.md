@@ -8,6 +8,15 @@ tags: [电脑, Windows, 新手]
 isFeatured: true
 references:
   - title: 文档太多，时间跨度也大，罄竹难书。
+schemaOrg:
+  - type: 'BlogPosting'
+    headline: '【转载】给电脑新手的笔记本开荒指南导读'
+    description: '成为电脑高手，机魂大悦，人亦绥。我已避开联想预装软件所带问题的瓢泊大雨，而持续收到新手关于厂商作恶所致问题的咨询，却是相伴许久的潮湿。总结成文，恶意软件退!退!退！'
+    author:
+      type: 'Person'
+      name: '纸鹿'
+      url: 'https://blog.zhilu.site/'
+    datePublished: '2024-10-28'
 ---
 
 > 本文转载自 [纸鹿摸鱼处](https://blog.zhilu.site/2024/new-laptop-guide)，并根据 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 许可协议，转载请注明源出处。为适配本站，**已对原文进行部分修改**。

@@ -8,7 +8,7 @@ export default {
     name: 'CSBigCaptain',
     realName: 'Yeshang Ji',
     avatar: 'https://avatars.githubusercontent.com/u/81836540?v=4',
-    email: 'csbigcaptain@outlook.com',
+    email: 'yth666@csbig.top',
   },
   favicon: '/public/favicon.ico',
   language: 'zh-CN',

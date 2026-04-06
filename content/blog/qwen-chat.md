@@ -2,6 +2,14 @@
 title: 别再用豆包啦，来试试这个免费AI！
 date: 2025-11-7 20:17:26
 description: 本文介绍了 Qwen Chat，一款由千问开发的免费AI聊天工具，功能强大且易于使用。
+schemaOrg:
+  - type: 'BlogPosting'
+    headline: '别再用豆包啦，来试试这个免费AI！'
+    description: '本文介绍了 Qwen Chat，一款由千问开发的免费AI聊天工具，功能强大且易于使用。'
+    author:
+      type: 'Person'
+      name: 'CSBigCaptain'
+    datePublished: '2025-11-07'
 ---
 
 相信很多朋友经常使用豆包来完成一些日常任务，但是若让豆包去完成一些较为复杂的任务，你会发现豆包可能完成的并不理想。

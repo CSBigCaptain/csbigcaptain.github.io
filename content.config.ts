@@ -11,7 +11,7 @@ export default defineContentConfig({
       schema: z.object({
         date: z.coerce.date(),
         update: z.coerce.date(),
-        short: z.string(),
+        description: z.string(),
         isFeatured: z.boolean(),
 
         sitemap: defineSitemapSchema(),

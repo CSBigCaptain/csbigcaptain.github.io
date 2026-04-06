@@ -5,6 +5,14 @@ date: 2026-03-27
 categories: [教程]
 tags: [OpenClaw, AI 工具, 微信]
 isFeatured: true
+schemaOrg:
+  - type: 'BlogPosting'
+    headline: '在微信里养一只“龙虾”'
+    description: '本文详细地介绍了如何将电脑中的 OpenClaw 与微信进行连接，从而在微信中与 OpenClaw 进行交流。介绍了安装 OpenClaw、配置 AI 模型、安装微信插件以及连接多个微信账号的步骤。'
+    author:
+      type: 'Person'
+      name: 'CSBigCaptain'
+    datePublished: '2026-03-27'
 ---
 
 最近“龙虾”的爆火，掀起了一股“养虾热”。越来越多的人了解到了 OpenClaw 这个强大的 AI 小玩具。相对于其他的 Agent，OpenClaw 安装简单，且社区插件丰富，能够轻易接入 Telegram、Discord、飞书等聊天软件。

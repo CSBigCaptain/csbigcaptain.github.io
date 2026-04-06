@@ -7,7 +7,6 @@ const props = defineProps<{
   date: string
   description: string
   link: string
-  short?: string
   title: string
 }>()
 </script>
