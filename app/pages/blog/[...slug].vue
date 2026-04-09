@@ -50,17 +50,7 @@ useSeoMeta({
         class="sticky top-10 hidden h-fit w-50 shrink-0 flex-col gap-3.75 px-3.75 py-10 md:flex md:w-75"
       >
         <AppWechatCard />
-        <AppPostToc :post="post" />
-        <AppPostAd
-          clickable
-          variant="filled"
-          target="_blank"
-          to="https://chat.csbig.top/"
-          title="隆重推出 Carbon Chat"
-          desc="在线与多种 LLM 大模型聊天"
-        >
-          <Icon name="hugeicons:chat-gpt" />
-        </AppPostAd>
+        <AppPostToc v-if="post?.body?.toc?.links?.length" :post="post" />
       </aside>
     </template>
     <main class="min-h-screen w-full py-10">
