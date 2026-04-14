@@ -56,6 +56,12 @@ useSeoMeta({
     <main class="min-h-screen w-full py-10">
       <div class="wrap-break-word">
         <ContentRenderer v-if="post" :value="post" />
+        <AppPostShareCard
+          v-if="post"
+          class="mt-8"
+          :title="post.title"
+          :url="useSite().url + route.path"
+        />
       </div>
     </main>
   </NuxtLayout>
