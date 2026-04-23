@@ -24,13 +24,18 @@ function confirmNavigation(event: Event) {
               <NuxtLink
                 to="https://qr61.cn/oQkUx4/qAfZWE6"
                 target="_blank"
+                external
                 @click="confirmNavigation"
               >
                 看看我们的微信公众号?
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="https://github.com/CSBigCaptain/csbigcaptain.github.io" target="_blank">
+              <NuxtLink
+                to="https://github.com/CSBigCaptain/csbigcaptain.github.io"
+                target="_blank"
+                external
+              >
                 项目地址
               </NuxtLink>
             </li>
@@ -38,6 +43,7 @@ function confirmNavigation(event: Event) {
               <NuxtLink
                 to="https://github.com/CSBigCaptain/csbigcaptain.github.io/issues"
                 target="_blank"
+                external
               >
                 问题反馈 & 建言献策
               </NuxtLink>
@@ -47,17 +53,17 @@ function confirmNavigation(event: Event) {
         <li>
           <ul>
             <li>
-              <NuxtLink to="https://space.bilibili.com/606574672" target="_blank">
+              <NuxtLink to="https://space.bilibili.com/606574672" target="_blank" external>
                 Bilibili
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="https://github.com/csbigcaptain" target="_blank">
+              <NuxtLink to="https://github.com/csbigcaptain" target="_blank" external>
                 GitHub
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="https://qm.qq.com/q/c2bJHbwTDy" target="_blank">
+              <NuxtLink to="https://qm.qq.com/q/c2bJHbwTDy" target="_blank" external>
                 QQ 交流群
               </NuxtLink>
             </li>
@@ -69,14 +75,18 @@ function confirmNavigation(event: Event) {
       <div class="relative container py-5 text-sm tracking-tight">
         <p>
           Copyright © 2024 - {{ year }} by
-          <NuxtLink to="https://github.com/CSBigCaptain" target="_blank">
+          <NuxtLink to="https://github.com/CSBigCaptain" target="_blank" external>
             CSBigCaptain
           </NuxtLink>
           . All rights reserved.
         </p>
         <p>
           本站源码基于 MIT License 开源。但本站博客除另有声明外，均在
-          <NuxtLink to="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+          <NuxtLink
+            to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+            external
+          >
             CC BY-NC-SA 4.0
           </NuxtLink>
           协议下授权。
@@ -86,6 +96,7 @@ function confirmNavigation(event: Event) {
             class="after:hidden"
             to="https://creativecommons.org/licenses/by-nc-sa/4.0/"
             target="_blank"
+            external
           >
             <img
               src="https://prts.wiki/resources/assets/licenses/cc-by-nc-sa.png"

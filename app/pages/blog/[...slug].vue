@@ -62,6 +62,15 @@ useSeoMeta({
           :title="post.title"
           :url="useSite().url + route.path"
         />
+        <AppPostReturnButton class="mt-8" />
+        <div class="mt-5 flex flex-col gap-1 text-on-surface-variant">
+          <NuxtLink to="/blog" class="return-button">
+            <code>> cd ..</code>
+          </NuxtLink>
+          <NuxtLink to="/" class="return-button">
+            <code>> cd /</code>
+          </NuxtLink>
+        </div>
       </div>
     </main>
   </NuxtLayout>

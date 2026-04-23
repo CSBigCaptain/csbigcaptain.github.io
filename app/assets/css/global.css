@@ -80,3 +80,7 @@ footer {
   color: rgb(var(--mdui-color-on-surface-variant));
   background-color: rgb(var(--mdui-color-surface-variant));
 }
+
+.return-button {
+  @apply w-fit opacity-50 transition-opacity *:duration-200 hover:opacity-75;
+}

@@ -71,6 +71,13 @@ const { data: toolsData } = await useAsyncData(
           </li>
         </ul>
       </section>
+      <section class="mt-8">
+        <ul>
+          <NuxtLink to="/" class="return-button">
+            <code>> cd ..</code>
+          </NuxtLink>
+        </ul>
+      </section>
     </main>
   </NuxtLayout>
 </template>

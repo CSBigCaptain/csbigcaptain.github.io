@@ -49,12 +49,9 @@ const indicatorStyle = computed(() => {
       <Icon slot="icon" name="ic:outline-article" />
       On this page
     </mdui-button>
-    <div class="content pl-4 max-h-[60vh] overflow-y-auto overscroll-contain">
+    <div class="content max-h-[60vh] overflow-y-auto overscroll-contain pl-4">
       <div class="indicator relative bg-surface-container-highest">
-        <div
-          class="absolute left-0 w-full bg-primary duration-200"
-          :style="indicatorStyle"
-        />
+        <div class="absolute left-0 w-full bg-primary duration-200" :style="indicatorStyle" />
       </div>
       <ul class="text-md pl-4">
         <li v-for="item in props.post.body.toc.links" :key="item.id">

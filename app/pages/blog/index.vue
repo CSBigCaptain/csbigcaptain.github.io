@@ -90,6 +90,11 @@ function changeDate(date: string) {
           </NuxtLink>
         </li>
       </ul>
+      <div class="mt-5 flex flex-col">
+        <NuxtLink to="/" class="return-button">
+          <code>> cd ..</code>
+        </NuxtLink>
+      </div>
     </main>
   </NuxtLayout>
 </template>
