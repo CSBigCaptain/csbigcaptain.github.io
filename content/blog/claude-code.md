@@ -1,6 +1,6 @@
 ---
 title: 手把手教你配好 Claude Code
-description: 本文将手把手教你如何配好Claude Code，重点介绍在VSCode中安装和配置Claude Code扩展，包括禁用登录功能的具体步骤，以便使用第三方API。
+description: 本文将手把手教你如何配好 Claude Code，重点介绍在VSCode中安装和配置 Claude Code 扩展，包括禁用登录功能的具体步骤，以便使用第三方 API。
 date: 2026-02-06
 updated: 2026-02-21
 categories: [教程]
@@ -9,7 +9,7 @@ isFeatured: true
 schemaOrg:
   - type: 'BlogPosting'
     headline: '手把手教你配好 Claude Code'
-    description: '本文将手把手教你如何配好Claude Code，重点介绍在VSCode中安装和配置Claude Code扩展，包括禁用登录功能的具体步骤，以便使用第三方API。'
+    description: '本文将手把手教你如何配好 Claude Code，重点介绍在VSCode中安装和配置 Claude Code 扩展，包括禁用登录功能的具体步骤，以便使用第三方 API。'
     author:
       type: 'Person'
       name: 'CSBigCaptain'
