@@ -6,17 +6,17 @@
 
 虽然是静态博客系统，但是仍然具有以下优势：
 
-- Markdown 以及 LaTeX 公式支持
+- Markdown 增强：开箱即用的 LaTeX 公式、Shiki 代码高亮支持
 - 极速的搜索功能：博客预渲染时自动生成优化文件，搜索时可以体验毫秒级响应的速度！
-- 完备的 SEO SSR 以及 SMO
+- 完善的 SEO 优化：支持结构化数据，站点地图以及社交媒体优化
 
 ## 预览 & 修改项目
 
 ### Node
 
-推荐使用 [Node Version Manager](https://github.com/nvm-sh/nvm) 来安装 Node ，以便于随时切换系统中 Node 的版本。
+推荐使用 [Node Version Manager](https://github.com/nvm-sh/nvm) 等 Node 版本管理工具来安装 Node ，以便于随时切换系统中 Node 的版本。
 
-本项目使用 Node 22 & 24 版本构建，也建议使用此版本来构建项目。
+本项目开发及构建均使用 Node 24，Node 22 和 26 理论上也没问题。
 
 ### 包管理器
 
@@ -30,20 +30,28 @@ npm install -g pnpm
 
 ### 安装依赖
 
-> [!WARNING]
-> 由于本项目使用了依赖 better-sqlite3 模块，该模块是一个 Node.js 的原生模块，安装时会编译底层的 C++ 代码 (native bindings) 。因此需要拥有 C/C++ 编译环境。
-
 安装依赖：
 
 ```shell
 pnpm install
 ```
 
-另外，如果你使用的是 pnpm ， pnpm 出于安全考虑默认会组织某些包的构建脚本自动执行，你需要在 pnpm 中允许 better-sqlite3 执行构建脚本。
+### 环境变量
+
+#### 开发环境
+
+在项目根目录创建 `.env` 文件：
 
 ```shell
-pnpm approve-builds
+# 站点名称
+NUXT_SITE_NAME="Your Blog Name"
+# 站点 URL（生产环境填写实际域名）
+NUXT_SITE_URL="http://localhost:3000"
 ```
+
+#### 生产环境
+
+如果你的项目部署在服务器上或者是托管平台，此时不会读取 .env 文件，你需要在部署服务器或者托管平台的环境变量设置中设置这些环境变量。具体请参考[这里](https://nuxt.com/docs/4.x/directory-structure/env#production)
 
 ### 剔除原有数据
 
