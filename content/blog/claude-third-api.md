@@ -2,6 +2,7 @@
 title: Claude APP 也能用第三方 API 了？！
 description: 本文简要介绍了在 Claude APP 中不登录 Anthropic 账号，而使用第三方 API 的方法。
 date: 2026-04-29
+update: 2026-05-27
 categories: [教程]
 tags: [Claude, AI 工具]
 isFeatured: true
@@ -30,19 +31,13 @@ isFeatured: true
 
 完成后软件会自动重新启动，并进入开发者模式。
 
-## 配置第三方 API
+## 启用 CC Switch 路由功能
 
-软件重启后，再次找到软件的工具菜单。找到新出现的 “Developer” 一栏，点击 “Configure Third-Party Inference...” 选项，进入第三方 API 配置界面。
+由于 Claude APP 仅允许使用 Claude 系列的模型。如果你使用的是 DeepSeek、GLM 等其他厂商的模型，那么你需要启用 CC Switch 路由功能。
 
-在 “Connection” 选项卡中，填写第三方 API 的相关信息。
+通过路由功能，CC Switch 可以在本地启动一个代理服务器，夹在你的 CLI 工具和上游 API 之间，能够将不同格式的 API 转换为统一的 Anthropic 格式的 API。这意味着通过路由功能，你的 Claude Code 能够轻松接入不提供 Anthropic API 的 API 平台。
 
-- 类别选择 “Gateway”
-- Gateway Base URL 填写第三方 API 的 Base URL
-- API Key 填写第三方 API 的 Key
-- Gateway auth scheme 使用默认的 “Bearer”，Gateway Extra Headers 不填
-- Model List 填写模型列表，如果你的模型支持百万上下文，则勾选 Offer 1M-context variant 选项，这样你就可以使用百万上下文模式的模型了。如果你不确定，可以不选
-- 其他的选项不用修改
+事实上，大多数的 API 平台都提供了 Anthropic API 的兼容接口，为什么还要特意去用路由功能代理呢？代理功能不仅能转换 API 格式，还能把模型的名称映射为 Claude 系列的模型，以绕过 Claude APP 对于第三方模型名称的限制。
 
-修改完成之后，点击 Apply locally 按钮保存配置，软件会自动重启。
+在 CC Switch 中找到“Claude Desktop”一栏，如果没有显示的话，需要去设置中打开。配置完供应商之后，在设置 -> 路由设置中找到路由开关并启用即可。做完上述操作后就可以享用 Claude APP 了。
 
-此外，如果你有多个第三方 API 端点，你可以在右上角的下拉菜单中管理多个 API 配置。

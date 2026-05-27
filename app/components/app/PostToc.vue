@@ -53,7 +53,7 @@ const indicatorStyle = computed(() => {
       <div class="indicator relative bg-surface-container-highest">
         <div class="absolute left-0 w-full bg-primary duration-200" :style="indicatorStyle" />
       </div>
-      <ul class="text-md pl-4">
+      <ul class="text-sm md:text-md pl-3 lg:pl-4">
         <li v-for="item in props.post.body.toc.links" :key="item.id">
           <NuxtLink
             :to="`#${item.id}`"
