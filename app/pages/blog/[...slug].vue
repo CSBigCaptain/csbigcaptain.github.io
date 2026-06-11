@@ -53,7 +53,7 @@ useSeoMeta({
         <AppPostToc v-if="post?.body?.toc?.links?.length" :post="post" />
       </aside>
     </template>
-    <main class="min-h-screen w-full py-10">
+    <main class="min-h-screen w-full py-10 md:mx-auto md:max-w-3xl">
       <div class="wrap-break-word">
         <ContentRenderer v-if="post" :value="post" />
         <AppPostShareCard

@@ -1,7 +1,5 @@
 <!-- eslint-disable -->
 <script setup lang="ts">
-import 'mdui/components/card'
-
 const { name, description } = useSite()
 const title = `文章列表 | ${name}`
 
@@ -23,14 +21,17 @@ const { data: posts } = await useAsyncData(
   },
 )
 
-function changeDate(date: string) {
-  const time = new Date(date)
-  const year = time.getFullYear()
-  const month = String(time.getMonth() + 1).padStart(2, '0') // 月份从0开始，所以要加1
-  const day = String(time.getDate()).padStart(2, '0')
-
-  return `${year}-${month}-${day}`
-}
+const postsByYear = computed(() => {
+  const groups: Record<string, typeof posts.value> = {}
+  for (const post of posts.value || []) {
+    const year = new Date(post.date).getFullYear().toString()
+    if (!groups[year]) groups[year] = []
+    groups[year].push(post)
+  }
+  return Object.entries(groups)
+    .sort((a, b) => Number(b[0]) - Number(a[0]))
+    .map(([year, posts]) => ({ year, posts }))
+})
 </script>
 
 <template>
@@ -43,7 +44,7 @@ function changeDate(date: string) {
     </template>
     <template #right>
       <aside
-        class="sticky top-10 hidden h-fit w-50 shrink-0 flex-col gap-3.75 px-3.75 py-10 md:flex md:w-75"
+        class="sticky top-10 hidden h-fit w-50 shrink-0 flex-col gap-3.75 px-3.75 py-10 md:flex md:w-60 lg:w-75"
       >
         <AppWechatCard />
         <AppPostAd
@@ -68,28 +69,36 @@ function changeDate(date: string) {
         </AppPostAd>
       </aside>
     </template>
-    <main class="w-full overflow-hidden py-10 contain-inline-size">
-      <ul class="grid w-full gap-5">
-        <li v-for="post in posts" :key="post.id">
-          <NuxtLink :to="post.path">
-            <mdui-card
-              variant="filled"
-              clickable
-              class="flex h-full w-full flex-col justify-between p-7.25"
-            >
-              <h2 class="text-left text-2xl font-bold">
-                {{ post.title }}
-              </h2>
-              <p class="py-2.5">
-                {{ post.description }}
-              </p>
-              <small>
-                <NuxtTime :datetime="new Date(post.update ?? post.date)" />
-              </small>
-            </mdui-card>
-          </NuxtLink>
-        </li>
-      </ul>
+    <main
+      class="w-full overflow-hidden py-10 contain-inline-size md:mx-auto md:max-w-2xl lg:max-w-3xl"
+    >
+      <div v-for="group in postsByYear" :key="group.year" class="year-group mb-10">
+        <h2 class="year-title">
+          {{ group.year }}
+        </h2>
+        <ul class="flex flex-col">
+          <li v-for="post in group.posts" :key="post.id" class="">
+            <AppMotionCard>
+              <NuxtLink
+                :to="post.path"
+                class="flex items-baseline gap-2 py-2 opacity-60 transition-opacity duration-200 hover:opacity-100"
+              >
+                <h3 class="text-xl font-semibold">
+                  {{ post.title }}
+                </h3>
+                <small class="shrink-0 text-sm text-on-surface opacity-50">
+                  <NuxtTime
+                    :datetime="new Date(post.update ?? post.date)"
+                    year="numeric"
+                    month="short"
+                    day="numeric"
+                  />
+                </small>
+              </NuxtLink>
+            </AppMotionCard>
+          </li>
+        </ul>
+      </div>
       <div class="mt-5 flex flex-col">
         <NuxtLink to="/" class="return-button">
           <code>> cd ..</code>
@@ -100,13 +109,25 @@ function changeDate(date: string) {
 </template>
 
 <style scoped lang="less">
-main {
-  ul {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+.year-group {
+  & > .year-title:first-child {
+    margin-top: 0;
+  }
 
-    @media (width <= 768px) {
-      grid-template-columns: 1fr;
-    }
+  & > .year-title {
+    width: fit-content;
+    color: transparent;
+    cursor: pointer;
+    font-size: 6em;
+    font-weight: 700;
+    text-align: left;
+    margin: 30px 0 -30px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    -webkit-mask-image: linear-gradient(#fff 50%, transparent);
+    mask-image: linear-gradient(#fff 0%, transparent);
+    -webkit-text-stroke: 0.5px rgba(var(--mdui-color-primary), 1);
+    font-variant-alternates: styleset(open-digits, round-quotes-and-commas);
   }
 }
 </style>

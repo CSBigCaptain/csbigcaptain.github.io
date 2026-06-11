@@ -126,8 +126,8 @@ const { data: advs } = await useAsyncData(
         <ul class="grid grid-cols-1 gap-5 pt-5 md:grid-cols-2 2xl:grid-cols-4">
           <li v-for="item in advs?.body" :key="item.title">
             <AppMotionCard class="motion-card h-full">
-              <mdui-card variant="filled" class="h-full w-full p-5">
-                <h3 class="pb-3 text-2xl font-bold">
+              <mdui-card variant="filled" class="h-full w-full p-6">
+                <h3 class="pb-4 text-2xl font-bold">
                   {{ item.title }}
                 </h3>
                 <div class="detail">
