@@ -6,6 +6,6 @@
 
 <style lang="less" scoped>
 tbody {
-  border-top: rgb(var(--mdui-color-primary)) 2px solid;
+  border-top: rgb(var(--mdui-color-secondary)) 2px solid;
 }
 </style>

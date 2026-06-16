@@ -41,7 +41,9 @@ useSeoMeta({
           {{ post.title }}
         </h1>
         <div v-if="post" class="text-color-thirdary mt-2 text-sm">
+          <span class="mr-1 inline-block scale-80 font-extrabold select-none">[</span>
           <NuxtTime :datetime="new Date(post.date)" />
+          <span class="ml-1 inline-block scale-80 font-extrabold select-none">]</span>
         </div>
       </div>
     </template>
@@ -62,7 +64,6 @@ useSeoMeta({
           :title="post.title"
           :url="useSite().url + route.path"
         />
-        <AppPostReturnButton class="mt-8" />
         <div class="mt-5 flex flex-col gap-1 text-on-surface-variant">
           <NuxtLink to="/blog" class="return-button">
             <code>> cd ..</code>

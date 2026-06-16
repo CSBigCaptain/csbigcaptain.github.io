@@ -11,6 +11,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   border-radius: 20px;
-  border: rgb(var(--mdui-color-primary)) 2px solid;
+  border: rgb(var(--mdui-color-secondary)) 2px solid;
 }
 </style>
