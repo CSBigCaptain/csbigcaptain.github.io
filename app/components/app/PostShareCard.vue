@@ -5,11 +5,16 @@ import 'mdui/components/button'
 const props = defineProps<{
   title: string
   url: string
+  description: string
 }>()
 
-const cpySource = shallowRef(`${props.title} | ${useSite().name} \n${props.url}`)
+const link = shallowRef(`${props.url}`)
+const full = shallowRef(
+  `${props.title} | ${useSite().name} \n\n${props.url}\n\n${props.description}`,
+)
 
-const { copy, copied } = useClipboard({ source: cpySource })
+const { copy: copyLink, copied: copiedLink } = useClipboard({ source: link })
+const { copy: copyFull, copied: copiedFull } = useClipboard({ source: full })
 </script>
 
 <template>
@@ -21,12 +26,30 @@ const { copy, copied } = useClipboard({ source: cpySource })
       {{ props.url }}
     </NuxtLink>
     <div class="mt-3 flex gap-3">
-      <mdui-button variant="filled" @click="copy()">
-        <span v-if="!copied">复制分享链接</span>
-        <span v-else>已成功复制</span>
+      <mdui-button variant="filled" @click="copyLink()">
+        <Transition name="fade" mode="out-in">
+          <span v-if="!copiedLink" key="link">复制链接</span>
+          <span v-else key="copied-link" class="w-[4em]">已复制</span>
+        </Transition>
+      </mdui-button>
+      <mdui-button @click="copyFull()">
+        <Transition name="fade" mode="out-in">
+          <span v-if="!copiedFull" key="content">复制完整内容</span>
+          <span v-else key="copied-content" class="w-[6em]">已复制</span>
+        </Transition>
       </mdui-button>
     </div>
   </mdui-card>
 </template>
 
-<style></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

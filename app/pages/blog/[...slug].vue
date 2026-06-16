@@ -63,6 +63,7 @@ useSeoMeta({
           class="mt-8"
           :title="post.title"
           :url="useSite().url + route.path"
+          :description="post.description"
         />
         <div class="mt-5 flex flex-col gap-1 text-on-surface-variant">
           <NuxtLink to="/blog" class="return-button">
