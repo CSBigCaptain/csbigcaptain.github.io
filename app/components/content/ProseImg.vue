@@ -42,6 +42,7 @@ img {
   min-width: 50%;
   margin: 0 auto;
   height: auto;
+  max-height: 50vh;
 
   img {
     max-height: 600px;
