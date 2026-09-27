@@ -17,7 +17,7 @@ definePageMeta({
       首页
     </template>
     <template #full-width>
-      <div class="flex max-h-300 w-full flex-col" style="height: calc(100dvh - 64px)">
+      <div class="flex max-h-300 w-full flex-col" style="height: calc(100svh - 64px)">
         <IndexHeroSection />
         <IndexSocialGrid />
       </div>
